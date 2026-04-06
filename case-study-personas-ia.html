@@ -59,14 +59,13 @@
   </figure>
 </header>
 
-<div class="container">
-  <p class="hero-sub">Bitsight's platform served two fundamentally different user types in the same navigation. I led the user research that defined 4 personas and drove the decision to split the product into two dedicated experiences.</p>
-</div>
+<main class="page-wrap">
+<p class="hero-sub">Bitsight's platform served two fundamentally different user types in the same navigation. I led the user research that defined 4 personas and drove the decision to split the product into two dedicated experiences.</p>
 
 <!-- THE PROBLEM -->
-<section>
-  <div class="container fade-in">
-    <span class="section-label">The Problem</span>
+
+<section id="problem" class="reveal">
+<span class="section-label">The Problem</span>
     <h2>Built by engineers, for no one in particular</h2>
     <p>ThirdPartyTrust had been running for years before a UX/UI team existed. It was built by engineers — solid technically, but without a user-centered design process. Two fundamentally different users — <strong>customers</strong> (companies managing third-party risk) and <strong>vendors</strong> (companies being assessed) — were navigating the same interface, even though their goals, workflows, and mental models had almost nothing in common.</p>
     <p>Without a UX team, there was no user feedback infrastructure in place. Companies without a subscription were generating a high volume of support tickets with no clear signal about what was actually failing. There was no customer success support for them either — just noise, and no way to make sense of it.</p>
@@ -74,13 +73,12 @@
       <p>Companies with no subscription had a significant amount of issues and tickets, with no clear user feedback.</p>
     </blockquote>
     <p>When I joined ThirdPartyTrust, the signal was already there. The job was to build the process to read it — and then act on it.</p>
-  </div>
 </section>
 
 <!-- RESEARCH -->
-<section style="background: var(--bg-muted); padding: 5rem 0;">
-  <div class="container fade-in">
-    <span class="section-label">Research Approach</span>
+
+<section id="research" class="reveal">
+<span class="section-label">Research Approach</span>
     <h2>Mixed methods, deliberate choices</h2>
     <p>The core challenge was understanding two very different user populations with different goals, contexts, and levels of platform access.</p>
     <div class="methods-grid">
@@ -143,17 +141,15 @@
         </tbody>
       </table>
     </div>
-  </div>
 </section>
 
 <!-- PERSONAS -->
-<section>
-  <div class="container-wide fade-in">
-    <div class="container" style="padding: 0;">
-      <span class="section-label">User Personas</span>
+
+<section id="personas" class="reveal">
+<span class="section-label">User Personas</span>
       <h2>Four people. Two sides of the same platform.</h2>
       <p>Primary personas drove design decisions. Secondary personas shaped onboarding requirements and feedback pattern design. Both were necessary — subscribed users showed the potential; unsubscribed users showed the failure.</p>
-    </div>
+    
 
     <div class="personas-grid" style="margin-top: 2rem;">
 
@@ -411,19 +407,18 @@
       </div>
 
     </div><!-- /personas-grid -->
-  </div>
 </section>
 
 <!-- JOURNEY MAP -->
-<section class="journey-section">
-  <div class="container fade-in">
-    <span class="section-label">Journey Map · VRM Subscribed Customer</span>
+
+<section id="journey" class="journey-section reveal">
+<span class="section-label">Journey Map · VRM Subscribed Customer</span>
     <h2>Sarah's full vendor lifecycle — before and after</h2>
     <p>A current-state / future-state hybrid map tracing the end-to-end experience of a subscribed customer running an annual assessment cycle. This format was chosen because the case study spans both the research phase (ThirdPartyTrust) and the implementation phase (Bitsight).</p>
     <p style="font-size:0.82rem; color:var(--grey-400);">Persona: Sarah Chen · Scenario: Annual vendor assessment cycle · Scope: Full vendor lifecycle in VRM</p>
   </div>
 
-  <div class="container-wide fade-in" style="margin-top: 2rem;">
+  
 
     <!-- Stage headers -->
     <div class="journey-stages">
@@ -568,14 +563,13 @@
           <text x="564" y="40" font-size="9" fill="#2b0c7d" font-family="DM Sans, sans-serif">After redesign</text>
         </svg>
       </div>
-    </div>
-  </div>
+    
 </section>
 
 <!-- KEY TAKEAWAYS -->
-<section>
-  <div class="container fade-in">
-    <span class="section-label">Key Takeaways From Research</span>
+
+<section id="insights" class="reveal">
+<span class="section-label">Key Takeaways From Research</span>
     <h2>Five themes. Five design principles.</h2>
     <p>The affinity diagramming sessions consolidated findings into five core themes — each one became a design principle for the new IA and product experience.</p>
     <div class="themes-grid">
@@ -610,13 +604,12 @@
         <div class="theme-implication">The IA itself needed to be rebuilt around user mental models — which is where the object-oriented design approach became critical.</div>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- FROM RESEARCH TO ARCHITECTURE -->
-<section style="background: var(--bg-muted); padding: 5rem 0;">
-  <div class="container fade-in">
-    <span class="section-label">From Research to Architecture</span>
+
+<section id="architecture" class="reveal">
+<span class="section-label">From Research to Architecture</span>
     <h2>Objects first, not features</h2>
     <p>The research revealed that customers and vendors weren't just different personas — they were operating with fundamentally different conceptual objects. Putting them in the same navigation was the root cause of the confusion.</p>
 
@@ -664,13 +657,12 @@
     <blockquote style="margin-top: 2rem;">
       <p>These object sets didn't overlap. Putting them in the same navigation was the root cause of the confusion. The IA decision followed directly: <strong>split the products</strong>. VRM for customers. TMH for vendors.</p>
     </blockquote>
-  </div>
 </section>
 
 <!-- FEEDBACK PATTERNS -->
-<section>
-  <div class="container fade-in">
-    <span class="section-label">Feedback Patterns</span>
+
+<section id="patterns" class="reveal">
+<span class="section-label">Feedback Patterns</span>
     <h2>Designing for visibility</h2>
     <p>Before the redesign, users had no reliable way to know where an assessment stood, what required their attention, or whether an action had succeeded. This generated support tickets — not because the feature was broken, but because users couldn't read the system.</p>
     <div class="patterns-grid">
@@ -696,13 +688,12 @@
       </div>
     </div>
     <p style="margin-top:1.5rem; font-size:0.875rem;">These patterns were built into the Bitsight Design System so they applied consistently across VRM and TMH.</p>
-  </div>
 </section>
 
 <!-- OUTCOMES -->
-<section class="outcomes-section">
-  <div class="container fade-in">
-    <span class="section-label">Outcomes</span>
+
+<section id="outcomes" class="outcomes-section reveal">
+<span class="section-label">Outcomes</span>
     <h2>What shipped. What changed.</h2>
     <div class="outcomes-grid">
       <div class="outcome-card">
@@ -735,13 +726,12 @@
       <p>"We were assessing our third-parties using Excel spreadsheets and it was hard to keep track of everything. With ThirdPartyTrust, our average assessment turnaround went from 15 days to 2 days."</p>
       <cite>— Thiago Ribeiro, Associate Director for Information Security Engineering, Charles River Laboratories</cite>
     </div>
-  </div>
 </section>
 
 <!-- REFLECTION -->
-<section>
-  <div class="container fade-in">
-    <span class="section-label">Reflection</span>
+
+<section id="reflection" class="reveal">
+<span class="section-label">Reflection</span>
     <h2>What I'd do differently</h2>
     <div class="reflection-grid">
       <div class="reflection-card">
@@ -757,10 +747,12 @@
     <div style="margin-top:3rem; padding:0.75rem 1rem; background:var(--grey-100); border-radius:var(--radius); font-size:0.82rem; color:var(--grey-400); text-align:center;">
       📎 Affinity Diagrams from FigJam — to be added
     </div>
-  </div>
 </section>
 
 <!-- FOOTER -->
+
+</main>
+
 <footer>
   <div class="container">
     <p style="margin-bottom:0.5rem;">Ariel — Product Designer · <a href="index.html">Back to all work</a> &nbsp;·&nbsp; <a href="#" data-email-href><span clas
