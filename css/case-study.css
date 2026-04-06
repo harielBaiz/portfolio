@@ -7,68 +7,69 @@
  */
 
 /* ══════════════════════════════════════════════════════════
-   CASE STUDY HERO — updated to match doc.cc editorial style
-   Single centered column · no full-width breakout
-   Optional cover image flows between hero and first section
+   CASE STUDY HERO — full viewport width (Figma blog style)
+   The .hero sits OUTSIDE .page-wrap and spans 100vw.
+   Text is constrained inside .hero-inner.
+   Cover image is full-width within the hero band.
    ══════════════════════════════════════════════════════════ */
 
-/* ── PAGE WRAP ────────────────────────────────────────────
-   Reading column — matches doc.cc narrow prose width        */
+/* ── PAGE WRAP ──────────────────────────────────────────── */
 .page-wrap {
   max-width: 720px;
   margin: 0 auto;
   padding: 0 1.5rem 6rem;
 }
 
-/* ── HERO ─────────────────────────────────────────────────
-   No background, no image, no decoration.
-   Just the article opener — editorial and clean.            */
+/* ── HERO — full bleed ──────────────────────────────────────
+   Lives outside .page-wrap. Spans 100% viewport width.
+   Background creates a distinct header zone.                */
 .hero {
-  padding: 4rem 0 2.5rem;
-  border-bottom: none;         /* removed — cover image or section divider handles this */
+  width: 100%;
+  background: var(--bg-subtle);
+  padding: 5rem 48px 0;
 }
 
-/* Mono eyebrow pill */
+/* Inner text column — same max-width as .page-wrap */
+.hero-inner {
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+/* Mono eyebrow */
 .hero-tag,
 .hero-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
+  display: inline-block;
   font-family: var(--f-mono);
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
-  background: transparent;
-  border: none;
-  padding: 0;
   margin-bottom: 1.25rem;
 }
 
-/* Display/LG — Space Grotesk Bold · case study title */
+/* Display/LG — Space Grotesk Bold */
 .hero h1 {
   font-family: var(--f-display);
   font-weight: 700;
-  font-size: clamp(2rem, 5vw, 40px);
-  line-height: 1.15;
+  font-size: clamp(2rem, 5vw, 64px);
+  line-height: 1.1;
   letter-spacing: -1px;
   color: var(--text);
   margin-bottom: 1.25rem;
 }
 .hero h1 em { font-style: italic; }
 
-/* Body/LG — Lora Regular · hero subtitle */
+/* Body/LG — Lora · now lives at the top of .page-wrap, below the hero band */
 .hero-sub {
   font-family: var(--f-body);
-  font-size: 18px;
-  line-height: 30px;
-  color: var(--text-2);
-  max-width: 100%;
-  margin-bottom: 2rem;
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--text-1);
+  margin: 2.5rem 0 2rem;
+  padding-bottom: 2rem;
 }
 
-/* Hero meta row — chips */
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
@@ -76,55 +77,7 @@
   margin-bottom: 0;
 }
 
-/* ── HERO COVER IMAGE ─────────────────────────────────────
-   Optional. Place a <figure class="hero-cover"> between
-   <header class="hero"> and the outcome-banner.
-
-   With image:
-     <figure class="hero-cover">
-       <img src="your-image.jpg" alt="..."/>
-     </figure>
-
-   Without image (placeholder while you don't have one):
-     <figure class="hero-cover hero-cover--placeholder">
-       <span>Cover image — add when ready</span>
-     </figure>
-
-   To skip entirely: just omit the <figure> tag.            */
-.hero-cover {
-  margin: 2rem 0 3rem;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-
-.hero-cover img {
-  width: 100%;
-  height: auto;
-  display: block;
-  /* aspect-ratio enforces consistent height until you have a real image */
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
-}
-
-/* Placeholder state — shows when no image is available */
-.hero-cover--placeholder {
-  background: var(--bg-muted);
-  aspect-ratio: 16 / 7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-cover--placeholder span {
-  font-family: var(--f-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
-
-/* ── HERO AUTHOR / ROLE ROW (optional) ───────────────────
-   For a doc.cc-style "Written by" attribution line         */
+/* ── HERO BYLINE ────────────────────────────────────────── */
 .hero-byline {
   display: flex;
   align-items: center;
@@ -133,22 +86,56 @@
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
 }
-.hero-byline-label {
-  font-family: var(--f-ui);
-  font-size: 0.78rem;
-  color: var(--text-3);
+.hero-byline-label { font-family: var(--f-ui); font-size: 0.78rem; color: var(--text-3); }
+.hero-byline-name  { font-family: var(--f-ui); font-weight: 600; font-size: 0.875rem; color: var(--text); }
+.hero-byline-role  { font-family: var(--f-ui); font-size: 0.78rem; color: var(--text-3); margin-left: auto; }
+
+/* ── HERO COVER IMAGE ───────────────────────────────────────
+   Full-width within the hero band — no side padding.
+   Place as last child of .hero, outside .hero-inner.
+
+   With image:
+     <figure class="hero-cover">
+       <img src="cover.jpg" alt="..."/>
+     </figure>
+
+   Placeholder while you don't have an image:
+     <figure class="hero-cover hero-cover--placeholder">
+       <span>Cover image — add when ready</span>
+     </figure>
+
+   To skip entirely: omit the <figure>.                      */
+.hero-cover {
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  display: block;
 }
-.hero-byline-name {
-  font-family: var(--f-ui);
-  font-weight: 600;
-  font-size: 0.875rem;
-  color: var(--text);
+
+.hero-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
 }
-.hero-byline-role {
-  font-family: var(--f-ui);
-  font-size: 0.78rem;
+
+.hero-cover--placeholder {
+  background: var(--bg);
+  aspect-ratio: 21 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--border);
+}
+.hero-cover--placeholder span {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--text-3);
-  margin-left: auto;
 }
 
 /* ── OUTCOME BANNER ─────────────────────────────────────── */
