@@ -6,20 +6,26 @@
  * ─────────────────────────────────────────────────────────
  */
 
-/* ── LAYOUT ─────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   CASE STUDY HERO — updated to match doc.cc editorial style
+   Single centered column · no full-width breakout
+   Optional cover image flows between hero and first section
+   ══════════════════════════════════════════════════════════ */
+
+/* ── PAGE WRAP ────────────────────────────────────────────
+   Reading column — matches doc.cc narrow prose width        */
 .page-wrap {
-  max-width: 760px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 1.5rem 6rem;
 }
 
-.container       { max-width: 820px;  margin: 0 auto; padding: 0 2rem; }
-.container-wide  { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
-
-/* ── CASE STUDY HERO ─────────────────────────────────────── */
+/* ── HERO ─────────────────────────────────────────────────
+   No background, no image, no decoration.
+   Just the article opener — editorial and clean.            */
 .hero {
-  padding: 5rem 0 3rem;
-  border-bottom: 1px solid var(--border);
+  padding: 4rem 0 2.5rem;
+  border-bottom: none;         /* removed — cover image or section divider handles this */
 }
 
 /* Mono eyebrow pill */
@@ -34,77 +40,116 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
-  background: var(--bg-muted);
-  border: 1px solid var(--border);
-  border-radius: var(--r-pill);
-  padding: 0.3rem 0.9rem;
-  margin-bottom: 1.5rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 1.25rem;
 }
 
-/* Display/LG — Space Grotesk Bold 40px/48px tracking -1px */
+/* Display/LG — Space Grotesk Bold · case study title */
 .hero h1 {
   font-family: var(--f-display);
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 40px);
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -1px;
   color: var(--text);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.25rem;
 }
 .hero h1 em { font-style: italic; }
 
-/* Body/LG — Lora Regular 18px/30px */
+/* Body/LG — Lora Regular · hero subtitle */
 .hero-sub {
   font-family: var(--f-body);
-  font-size: 1.5rem;
-  line-height: 1.4;
+  font-size: 18px;
+  line-height: 30px;
   color: var(--text-2);
+  max-width: 100%;
   margin-bottom: 2rem;
 }
 
-.hero-subtitle { /* alias used in cs3 */
-  font-family: var(--f-body);
-  font-size: 1.5rem;
-  line-height: 1.4;
-  color: var(--text-2);
-  margin-bottom: 2rem;
-}
-
-.hero-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-
-/* ── HERO STATS (cs3 style) ─────────────────────────────── */
-.hero-stats {
-  display: inline-flex;
-  gap: 3rem;
+/* Hero meta row — chips */
+.hero-meta {
+  display: flex;
   flex-wrap: wrap;
-  padding: 1.75rem 2rem;
-  background: var(--surface-card);
-  border: 1px solid var(--border);
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* ── HERO COVER IMAGE ─────────────────────────────────────
+   Optional. Place a <figure class="hero-cover"> between
+   <header class="hero"> and the outcome-banner.
+
+   With image:
+     <figure class="hero-cover">
+       <img src="your-image.jpg" alt="..."/>
+     </figure>
+
+   Without image (placeholder while you don't have one):
+     <figure class="hero-cover hero-cover--placeholder">
+       <span>Cover image — add when ready</span>
+     </figure>
+
+   To skip entirely: just omit the <figure> tag.            */
+.hero-cover {
+  margin: 2rem 0 3rem;
   border-radius: var(--r-lg);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-  margin-top: 2rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
 }
-.stat-item { text-align: center; }
-/* Display/LG adapted */
-.stat-value {
-  font-family: var(--f-display);
-  font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: -1px;
-  color: var(--text);
+
+.hero-cover img {
+  width: 100%;
+  height: auto;
   display: block;
-  line-height: 1;
+  /* aspect-ratio enforces consistent height until you have a real image */
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
 }
-.stat-label {
+
+/* Placeholder state — shows when no image is available */
+.hero-cover--placeholder {
+  background: var(--bg-muted);
+  aspect-ratio: 16 / 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-cover--placeholder span {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ── HERO AUTHOR / ROLE ROW (optional) ───────────────────
+   For a doc.cc-style "Written by" attribution line         */
+.hero-byline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.hero-byline-label {
   font-family: var(--f-ui);
   font-size: 0.78rem;
   color: var(--text-3);
-  margin-top: 0.3rem;
-  line-height: 1.4;
 }
-
-/* Tags row in cs3 hero */
-.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+.hero-byline-name {
+  font-family: var(--f-ui);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text);
+}
+.hero-byline-role {
+  font-family: var(--f-ui);
+  font-size: 0.78rem;
+  color: var(--text-3);
+  margin-left: auto;
+}
 
 /* ── OUTCOME BANNER ─────────────────────────────────────── */
 .outcome-banner {
