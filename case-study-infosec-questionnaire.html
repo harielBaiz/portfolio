@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/tokens.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/case-study.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Questionnaire Redesign — Ariel's Portfolio</title>
+  
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-name" href="portfolio-landing.html" data-i18n="nav.brand">Ariel Ortiz</a>
+  <ul class="nav-links">
+    <li><a href="portfolio-landing.html#work" data-i18n="nav.work">Work</a></li>
+    <li><a href="portfolio-landing.html#about" data-i18n="nav.about">About</a></li>
+    <li><a href="#" data-i18n="nav.resume">Resume</a></li>
+  </ul>
+  <a href="#" class="nav-cta" data-i18n="nav.contact" data-email-href>Contact ↗</a>
+  <div class="nav-controls">
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <span class="icon-moon">☾</span>
+      <span class="icon-sun">☀</span>
+    </button>
+    <button class="lang-toggle" aria-label="Toggle language">
+      <span class="lang-active">EN</span>
+      <span class="lang-label">ES</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MAIN ── -->
+<main class="page-wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-tag">Case Study · Product Design</div>
+    <h1>Redesigning the tool that <em>holds vendors accountable</em></h1>
+    <p class="hero-sub">
+      After Bitsight acquired ThirdPartyTrust, the questionnaire feature needed more than a visual refresh — it needed a new foundation. I led the UI redesign and research plan for a complex, high-stakes workflow used by security teams every day.
+    </p>
+    <div class="hero-meta">
+      <span class="chip">Product Design</span>
+      <span class="chip">User Research</span>
+      <span class="chip">Design Systems</span>
+      <span class="chip">Accessibility</span>
+      <span class="chip outline">Bitsight · B2B SaaS</span>
+      <span class="chip outline">Lead Designer</span>
+    </div>
+  </header>
+
+  <!-- OUTCOME BANNER -->
+  <div class="outcome-banner" aria-label="Key outcomes">
+    <div class="outcome-stat">
+      <div class="number">100%</div>
+      <div class="label">Task success rate in usability testing with existing users</div>
+    </div>
+    <div class="outcome-stat">
+      <div class="number">2</div>
+      <div class="label">Research studies — usability test + expert PURE evaluation</div>
+    </div>
+    <div class="outcome-stat">
+      <div class="number">2</div>
+      <div class="label">Themes supported — light and dark, ready at launch</div>
+    </div>
+    <div class="outcome-stat">
+      <div class="number">+1</div>
+      <div class="label">AI product born from a hackathon during this project</div>
+    </div>
+  </div>
+
+  <!-- CONTEXT -->
+  <section id="context">
+    <div class="section-label">01 — Context</div>
+    <h2>A feature inherited from an acquisition</h2>
+    <p>
+      In 2023, Bitsight acquired ThirdPartyTrust — a vendor risk management platform with its own established product and user base. As part of the integration, the Questionnaires feature needed to be rebuilt inside Bitsight's product ecosystem: redesigned from scratch using the Bitsight Design System, with better accessibility, clearer usability, and feature parity with the original.
+    </p>
+    <p>
+      Questionnaires are central to how security teams manage vendor risk. They come in three forms: <strong>custom questionnaires</strong> built by the team for specific assessments, <strong>internal questionnaires</strong> used for scoping during vendor intake and reassessment cycles, and <strong>industry-standard templates</strong> like CAIQ v4, ISO 27001:2022, and SIG Core.
+    </p>
+    <div class="callout">
+      <p>This wasn't a greenfield project — it was a <em>migration with real users watching.</em> The design had to earn trust from people who already had a workflow, muscle memory, and strong opinions about how the tool should behave.</p>
+    </div>
+
+    <h3>The team</h3>
+    <div class="team-row">
+      <div class="team-chip highlight">
+        <span class="tc-role">Product Designer</span>
+        <span class="tc-count">Ariel — UI + Research</span>
+      </div>
+      <div class="team-chip">
+        <span class="tc-role">Front-end Engineers</span>
+        <span class="tc-count">2</span>
+      </div>
+      <div class="team-chip">
+        <span class="tc-role">Back-end Engineer</span>
+        <span class="tc-count">1</span>
+      </div>
+      <div class="team-chip">
+        <span class="tc-role">Product Manager</span>
+        <span class="tc-count">1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section id="problem">
+    <div class="section-label">02 — Problem</div>
+    <h2>Feature parity isn't enough — it has to be better</h2>
+    <p>
+      The original platform had been built before Bitsight's design system existed. Visual inconsistencies were everywhere, accessibility was not a priority, and some workflows required too many steps to accomplish basic tasks. At the same time, users had deep familiarity with the old interface — which meant every change needed a reason strong enough to justify the disruption.
+    </p>
+    <p>
+      The challenge had three parts. First, <strong>align the interface</strong> with Bitsight's design system without losing the features users depended on. Second, <strong>improve usability and accessibility</strong> across a complex, multi-part workflow. Third, <strong>do it iteratively</strong> — delivering features in planned cycles while the product was already in use.
+    </p>
+
+    <h3>What the redesign had to cover</h3>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="fc-title">Question design</div>
+        <div class="fc-desc">Question + description, multiple answer types (select, multiselect, values), vendor comments, uploaded documents, audit trail of changes.</div>
+      </div>
+      <div class="feature-card">
+        <div class="fc-title">Scoring &amp; progress</div>
+        <div class="fc-desc">Overall score calculated from answer and priority weighting. Progress tracking across the questionnaire lifecycle.</div>
+      </div>
+      <div class="feature-card">
+        <div class="fc-title">Bitsight integrations</div>
+        <div class="fc-desc">Risk Vectors added to individual questions. Vulnerability Evidence added at the questionnaire level.</div>
+      </div>
+      <div class="feature-card">
+        <div class="fc-title">Question tools</div>
+        <div class="fc-desc">Per-question tools: review (approve/flag), bookmark, finding creation, messaging with vendors, internal notes.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-label">03 — Research</div>
+    <h2>Two studies, two different angles</h2>
+    <p>
+      Before committing to a direction, I designed a two-study research plan. The goal was to validate usability with real users while also getting structured expert feedback on our design decisions early — before reaching users.
+    </p>
+
+    <div class="method-row">
+      <div class="method-card qualitative">
+        <div class="mc-label">Study 1 · External</div>
+        <div class="mc-title">Moderated Usability Test</div>
+        <p>Sessions with existing users of the ThirdPartyTrust platform. Participants completed representative tasks using the new design and verbalized their reactions. Primary metrics: task success rate, time on task, error patterns, and qualitative feedback.</p>
+      </div>
+      <div class="method-card expert">
+        <div class="mc-label">Study 2 · Internal</div>
+        <div class="mc-title">PURE Expert Evaluation</div>
+        <p>A structured heuristic review with internal company stakeholders. PURE (Practical Usability Rating by Experts) uses a defined set of criteria to surface usability issues before external testing — faster and cheaper than waiting for real users to find them.</p>
+      </div>
+    </div>
+
+    <h3>What we found</h3>
+    <p>
+      The usability test results were encouraging: participants completed all tasks successfully and responded positively to the new interface. One of the most common reactions was around the question tools — the actions were clearer and easier to reach than in the original product.
+    </p>
+
+    <ul class="insight-list">
+      <li class="win">
+        <span class="insight-icon">✓</span>
+        <span><strong>All tasks completed successfully.</strong> Existing users navigated the redesigned interface without significant errors. The general reaction was that actions felt "more clear and easy to use."</span>
+      </li>
+      <li class="pain">
+        <span class="insight-icon">↓</span>
+        <span><strong>Bulk document download.</strong> Users needed to download all documents from a questionnaire at once — but the system required them to do it one by one, per question. A recurring and painful friction point.</span>
+      </li>
+      <li class="pain">
+        <span class="insight-icon">↓</span>
+        <span><strong>Cross-category filtering.</strong> Categories were rendered client-side, which limited filtering to within each category. Users expected to filter across the full questionnaire — a structural constraint from engineering, not design.</span>
+      </li>
+      <li class="pain">
+        <span class="insight-icon">↓</span>
+        <span><strong>User-built questionnaires.</strong> Users wanted to build questionnaires themselves. In the current state, questionnaires were created on demand by the Customer Success team — a bottleneck users found frustrating.</span>
+      </li>
+    </ul>
+
+    <div class="callout">
+      <p>The last two pain points were highly requested — but low feasibility for engineering at that stage. They went into the backlog with clear rationale. <em>Honest prioritization is part of good research communication.</em></p>
+    </div>
+
+    <!-- PRIORITIZATION MATRIX PLACEHOLDER -->
+    <div class="media-block">
+      <div class="media-placeholder short">
+        <div class="media-label">Image: Prioritization matrix — impact vs. feasibility</div>
+        <div class="media-hint">Add your matrix image here</div>
+      </div>
+    </div>
+
+    <div class="matrix-note">
+      <div class="matrix-card shipped">
+        <div class="mx-label">Shipped ↗ High impact · High feasibility</div>
+        <p>Bulk document download workaround, improved flag filtering, clearer question tools, review flow redesign.</p>
+      </div>
+      <div class="matrix-card deferred">
+        <div class="mx-label">Deferred ↘ High impact · Low feasibility</div>
+        <p>Cross-category filtering, user-built questionnaire creation — added to product backlog with documented rationale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN DECISIONS -->
+  <section id="design">
+    <div class="section-label">04 — Design Decisions</div>
+    <h2>Iterating toward the right answer</h2>
+    <p>
+      The design process was structured around planned delivery cycles — each iteration scoped to a set of features that could be shipped independently. This meant making decisions about what to finalize early and what to keep flexible as we learned more.
+    </p>
+
+    <h3>Feature inventory first</h3>
+    <p>
+      Before starting any new designs, I ran a complete inventory of the existing platform: every feature, every interaction state, every edge case. This gave the team a shared map of what existed and what had to be accounted for — and revealed several features that had no clear home in the new layout.
+    </p>
+
+    <!-- INVENTORY PLACEHOLDER -->
+    <div class="media-block">
+      <div class="media-placeholder">
+        <div class="media-icon">📋</div>
+        <div class="media-label">Image: feature inventory audit — old platform</div>
+        <div class="media-hint">Add your audit spreadsheet or annotated screenshot here</div>
+      </div>
+    </div>
+
+    <h3>Question tools: the hardest interaction design problem</h3>
+    <p>
+      Each question in a questionnaire can have up to five independent tools associated with it: review (approve or flag), bookmark, finding creation, messaging, and internal notes. In the old platform, these were scattered and inconsistently placed. Users had to hunt for them.
+    </p>
+    <p>
+      I explored several layout approaches before landing on a solution. The key tension was between <strong>discoverability</strong> — making tools visible enough that users knew they existed — and <strong>density</strong> — keeping the question interface readable when dozens of questions are stacked in sequence.
+    </p>
+
+    <!-- ITERATION PLACEHOLDERS -->
+    <div class="iteration-row">
+      <div class="iteration-card">
+        <div class="iter-label">Proposal A</div>
+        <div class="media-placeholder">
+          <div class="media-label">Inline toolbar variant</div>
+        </div>
+      </div>
+      <div class="iteration-card">
+        <div class="iter-label">Proposal B</div>
+        <div class="media-placeholder">
+          <div class="media-label">Hover-revealed panel</div>
+        </div>
+      </div>
+      <div class="iteration-card">
+        <div class="iter-label">Chosen →</div>
+        <div class="media-placeholder">
+          <div class="media-label">Vertical action rail</div>
+        </div>
+      </div>
+    </div>
+    <p class="media-caption">Three layout proposals for question-level tools. The vertical rail balanced visibility with density and became the foundation for the final design.</p>
+
+    <div class="callout">
+      <p>The chosen solution — a vertical action rail anchored to each question — kept tools consistently reachable without competing with question content. <em>Actions are always in the same place, regardless of question length or answer type.</em></p>
+    </div>
+
+    <!-- FINAL DESIGN PLACEHOLDER -->
+    <div class="media-block">
+      <div class="media-placeholder tall">
+        <div class="media-icon">✦</div>
+        <div class="media-label">Image: final question design with tool rail</div>
+        <div class="media-hint">Add your final Figma screenshot or prototype here</div>
+      </div>
+    </div>
+
+    <h3>Light and dark themes, ready at launch</h3>
+    <p>
+      Because this project ran in parallel with the design token adoption work, the questionnaire became one of the first features to be fully tokenized. Every component in the redesign referenced semantic tokens — which meant both light and dark mode were supported from the start, with no separate design files and no duplication.
+    </p>
+
+    <!-- LIGHT/DARK PLACEHOLDER -->
+    <div class="media-block">
+      <div class="media-placeholder">
+        <div class="media-label">Image: questionnaire UI — light and dark mode side by side</div>
+        <div class="media-hint">Add your mode comparison here</div>
+      </div>
+    </div>
+
+    <h3>Collaboration with the vendor-side team</h3>
+    <p>
+      The questionnaire feature has two sides: the reviewer experience (what security teams see) and the respondent experience (what vendors see). I was responsible for the reviewer UI, and collaborated closely with the TMH team who owned the vendor-facing design. Keeping both sides consistent required ongoing alignment — shared components, shared tokens, and regular cross-team reviews.
+    </p>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section id="outcomes">
+    <div class="section-label">05 — Outcomes</div>
+    <h2>A complex feature, delivered in pieces that held together</h2>
+    <p>
+      The redesign shipped progressively across planned delivery cycles. Each iteration was tested or reviewed before the next began — which meant problems were caught early, not after everything was built. At the end of the process, two research studies, a complete feature redesign, and a set of reusable components were delivered.
+    </p>
+    <p>
+      The usability test results validated the core direction: all tasks were completed successfully, and participants responded positively to the new tool layout. The pain points surfaced in research were documented, triaged, and communicated to the product team with clear feasibility context.
+    </p>
+
+    <!-- FULL REDESIGN PLACEHOLDER -->
+    <div class="media-block">
+      <div class="media-placeholder tall">
+        <div class="media-icon">✦</div>
+        <div class="media-label">Image: full questionnaire redesign — key screens</div>
+        <div class="media-hint">Add your final deliverable screenshots here</div>
+      </div>
+    </div>
+
+    <!-- AI BONUS -->
+    <div class="ai-banner">
+      <div class="ai-banner-tag">Bonus · Hackathon Project</div>
+      <h3>From questionnaire review to AI-powered SOC2 analysis</h3>
+      <p>
+        During this project, I participated in an internal hackathon exploring generative AI within the Bitsight product. The idea: instead of manually reviewing SOC2 Type II reports — a process that could take hours — use AI to extract, analyze, and summarize the contents into actionable insights. The hackathon prototype was compelling enough to become a real product: Instant Insights in the Vendor Risk Management application. Manual review time went from hours to minutes.
+      </p>
+    </div>
+  </section>
+
+  <!-- LESSONS -->
+  <section id="lessons">
+    <div class="section-label">06 — Lessons Learned</div>
+    <h2>What this project taught me</h2>
+    <ul class="lesson-list">
+      <li>
+        <span class="lesson-num">1</span>
+        <div class="lesson-body">
+          <strong>Inventory before ideation</strong>
+          <p>Starting with a complete feature audit prevented redesign blind spots. Every edge case we documented in the inventory saved a conversation later when a developer asked "what about this state?"</p>
+        </div>
+      </li>
+      <li>
+        <span class="lesson-num">2</span>
+        <div class="lesson-body">
+          <strong>Two research methods are better than one</strong>
+          <p>The PURE evaluation caught issues before users ever saw the design. The usability test validated what survived. Running both gave a fuller picture than either study would have provided alone.</p>
+        </div>
+      </li>
+      <li>
+        <span class="lesson-num">3</span>
+        <div class="lesson-body">
+          <strong>Prioritization is a design skill too</strong>
+          <p>Not every pain point can be solved in the same release. Communicating clearly which problems were deprioritized — and why — kept stakeholder expectations realistic and gave the backlog real shape.</p>
+        </div>
+      </li>
+      <li>
+        <span class="lesson-num">4</span>
+        <div class="lesson-body">
+          <strong>Token-first design pays off fast</strong>
+          <p>Building on the design token system meant light and dark mode were never separate design tasks. That decision, made early, saved real time during delivery and kept both themes consistent without extra effort.</p>
+        </div>
+      </li>
+      <li>
+        <span class="lesson-num">5</span>
+        <div class="lesson-body">
+          <strong>Cross-team alignment needs structure</strong>
+          <p>Collaborating with the TMH team on the vendor side required intentional touchpoints. Without regular cross-team reviews, components would have diverged silently. Consistency doesn't happen by accident — it needs a process.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>← <a href="portfolio-landing.html">Back to all work</a> &nbsp;·&nbsp; Ariel · Product Designer &nbsp;·&nbsp; <a href="#" data-email-href>Contact</a></p>
+</footer>
+  <script src="js/site.js" defer></script>
+</body>
+</html>
