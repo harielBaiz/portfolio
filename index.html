@@ -6,16 +6,16 @@
   <link rel="stylesheet" href="css/base.css"/>
   <link rel="stylesheet" href="css/landing.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ariel Ortiz — Product Designer</title>
+  <title>Héctor Ariel Baiz — Product Designer</title>
 </head>
 <body>
 
 <nav>
-  <a class="nav-name" href="#" data-i18n="nav.brand">Ariel Ortiz</a>
+  <a class="nav-name" href="#" data-i18n="nav.brand">Héctor Ariel Baiz</a>
   <ul class="nav-links">
     <li><a href="#work" aria-current="page" data-i18n="nav.work">Work</a></li>
-    <li><a href="#about" data-i18n="nav.about">About</a></li>
-    <li><a href="#" data-i18n="nav.resume">Resume</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About</a></li>
+    <li><a href="downloads/Hector-Ariel-Baiz-Resume-EN.pdf" target="_blank" data-i18n="nav.resume">Resume</a></li>
   </ul>
   <a href="#" class="nav-cta" data-i18n="nav.contact" data-email-href>Contact ↗</a>
   <div class="nav-controls">
@@ -30,78 +30,98 @@
   </div>
 </nav>
 
+<!-- ── HERO — single column, no stack ── -->
 <section class="hero">
   <div>
-    <span class="hero-eyebrow fade-in">Product Designer · Design Systems</span>
+    <span class="hero-eyebrow fade-in" data-i18n="hero.eyebrow">Product Designer · Design Systems</span>
     <h1 class="fade-in">I design products that <em>scale</em> — and systems that hold them together.</h1>
-    <p class="hero-sub fade-in">5+ years building B2B SaaS at Bitsight. I bridge design and engineering through token-based systems, research-driven decisions, and interfaces that make sense.</p>
+    <p class="hero-sub fade-in" data-i18n="hero.sub">5+ years building B2B SaaS at Bitsight. I bridge design and engineering through token-based systems, research-driven decisions, and interfaces that make sense.</p>
     <div class="hero-actions fade-in">
-      <a href="#work" class="btn-primary">See my work ↓</a>
-      <a href="#about" class="btn-secondary">About me</a>
+      <a href="#work" class="btn-primary" data-i18n="hero.cta.work">See my work ↓</a>
+      <a href="about.html" class="btn-secondary" data-i18n="hero.cta.about">About me</a>
     </div>
   </div>
-  <div class="hero-stack">
-    <a href="case-study-infosec-questionnaire.html" class="preview-card fade-in">
-      <div class="pc-icon">🔐</div>
-      <div><div class="pc-title">InfoSec Questionnaire</div><div class="pc-meta">Lead Designer · Bitsight</div></div>
-      <span class="pc-stat">−40% review time</span>
-    </a>
-    <a href="case-study-design-tokens.html" class="preview-card fade-in">
-      <div class="pc-icon">🪙</div>
-      <div><div class="pc-title">Design Token System</div><div class="pc-meta">Design Systems · Bitsight DS</div></div>
-      <span class="pc-stat">160+ tokens</span>
-    </a>
-    <a href="case-study-personas-ia.html" class="preview-card fade-in">
-      <div class="pc-icon">🗂</div>
-      <div><div class="pc-title">Personas & IA Redesign</div><div class="pc-meta">UX Strategy · Bitsight</div></div>
-      <span class="pc-stat">15→2 days</span>
-    </a>
-  </div>
 </section>
 
 <div class="divider"></div>
 
+<!-- ── WORK — one row per case study ── -->
 <section id="work" class="section">
-  <span class="section-label reveal">Featured Work</span>
-  <h2 class="section-title reveal">Three projects. One consistent thread.</h2>
-  <p class="section-sub reveal">Research-backed decisions, systems thinking, and a focus on outcomes — not just deliverables.</p>
-  <div class="cards-grid reveal">
-    <a href="case-study-infosec-questionnaire.html" class="project-card">
-      <div class="card-thumb"><span class="card-thumb-emoji">🔐</span><span class="card-thumb-label">Case Study 01</span></div>
-      <div class="card-body">
-        <div class="card-tags"><span class="card-tag">Design Systems</span><span class="card-tag">User Research</span><span class="card-tag">B2B SaaS</span></div>
-        <div class="card-title">InfoSec Questionnaire Redesign</div>
-        <div class="card-desc">Redesigned the security review workflow at Bitsight — review time dropped 40%, clarification requests fell 60%.</div>
-        <span class="card-cta">Read Case Study →</span>
+  <span class="section-label reveal" data-i18n="work.label">Featured Work</span>
+  <h2 class="section-title reveal" data-i18n="work.title">Three projects. One consistent thread.</h2>
+
+  <div class="case-list">
+
+    <!-- Case Study 01 -->
+    <a href="case-study-infosec-questionnaire.html" class="case-row reveal">
+      <figure class="case-row__image">
+        <img src="images/cs-infosec-cover.jpg"
+             alt="InfoSec Questionnaire redesign"
+             onerror="this.parentElement.classList.add('case-row__image--placeholder'); this.style.display='none'"/>
+      </figure>
+      <div class="case-row__body">
+        <div class="card-tags">
+          <span class="card-tag">Product Design</span>
+          <span class="card-tag">User Research</span>
+          <span class="card-tag">Design Systems</span>
+          <span class="card-tag">B2B SaaS</span>
+        </div>
+        <h3 class="case-row__title">InfoSec Questionnaire Redesign</h3>
+        <p class="case-row__desc">After Bitsight acquired ThirdPartyTrust, the questionnaire feature needed a new foundation. I led the UI redesign and research plan for a complex, high-stakes workflow. Review time dropped 40%, clarification requests fell 60%.</p>
+        <span class="case-row__cta" data-i18n="card.cta">Read Case Study →</span>
       </div>
     </a>
-    <a href="case-study-design-tokens.html" class="project-card">
-      <div class="card-thumb"><span class="card-thumb-emoji">🪙</span><span class="card-thumb-label">Case Study 02</span></div>
-      <div class="card-body">
-        <div class="card-tags"><span class="card-tag">Design Tokens</span><span class="card-tag">Design/Eng</span><span class="card-tag">Figma</span></div>
-        <div class="card-title">Design Token Adoption at Bitsight DS</div>
-        <div class="card-desc">Built a scalable token system enabling light, dark, and color-blind modes — one source of truth across the whole product.</div>
-        <span class="card-cta">Read Case Study →</span>
+
+    <!-- Case Study 02 -->
+    <a href="case-study-design-tokens.html" class="case-row case-row--reverse reveal">
+      <figure class="case-row__image">
+        <img src="images/cs-tokens-cover.jpg"
+             alt="Design token system"
+             onerror="this.parentElement.classList.add('case-row__image--placeholder'); this.style.display='none'"/>
+      </figure>
+      <div class="case-row__body">
+        <div class="card-tags">
+          <span class="card-tag">Design Systems</span>
+          <span class="card-tag">Design Tokens</span>
+          <span class="card-tag">Figma</span>
+          <span class="card-tag">Design/Eng Alignment</span>
+        </div>
+        <h3 class="case-row__title">Design Token Adoption at Bitsight DS</h3>
+        <p class="case-row__desc">Bitsight's design and engineering teams were out of sync. I built a semantic token system covering 160+ variables — enabling light, dark, and color-blind modes with a single source of truth.</p>
+        <span class="case-row__cta" data-i18n="card.cta">Read Case Study →</span>
       </div>
     </a>
-    <a href="case-study-personas-ia.html" class="project-card">
-      <div class="card-thumb"><span class="card-thumb-emoji">🗂</span><span class="card-thumb-label">Case Study 03</span></div>
-      <div class="card-body">
-        <div class="card-tags"><span class="card-tag">User Research</span><span class="card-tag">Personas</span><span class="card-tag">IA</span></div>
-        <div class="card-title">Personas & Information Architecture</div>
-        <div class="card-desc">Defined 4 research-backed personas that reshaped Bitsight's IA — assessment turnaround went from 15 days to 2.</div>
-        <span class="card-cta">Read Case Study →</span>
+
+    <!-- Case Study 03 -->
+    <a href="case-study-personas-ia.html" class="case-row reveal">
+      <figure class="case-row__image">
+        <img src="images/cs-personas-cover.jpg"
+             alt="Personas and IA redesign"
+             onerror="this.parentElement.classList.add('case-row__image--placeholder'); this.style.display='none'"/>
+      </figure>
+      <div class="case-row__body">
+        <div class="card-tags">
+          <span class="card-tag">User Research</span>
+          <span class="card-tag">Personas</span>
+          <span class="card-tag">Information Architecture</span>
+          <span class="card-tag">UX Strategy</span>
+        </div>
+        <h3 class="case-row__title">Personas & Information Architecture</h3>
+        <p class="case-row__desc">Bitsight's platform served two fundamentally different users in the same navigation. I defined 4 research-backed personas that drove the product split — assessment turnaround went from 15 days to 2.</p>
+        <span class="case-row__cta" data-i18n="card.cta">Read Case Study →</span>
       </div>
     </a>
+
   </div>
 </section>
 
 <div class="divider"></div>
 
+<!-- ── SKILLS ── -->
 <section class="skills-bg">
   <div class="section" style="padding-top:64px;padding-bottom:64px">
-    <span class="section-label reveal">Skills & Tools</span>
-    <h2 class="section-title reveal">What I bring to the table</h2>
+    <span class="section-label reveal" data-i18n="skills.label">Skills & Tools</span>
+    <h2 class="section-title reveal" data-i18n="skills.title">What I bring to the table</h2>
     <div class="skills-grid reveal">
       <div class="skill-item"><div class="skill-icon">🎨</div><div><div class="skill-name">Product Design</div><div class="skill-cat">End-to-end · B2B SaaS</div></div></div>
       <div class="skill-item"><div class="skill-icon">🪙</div><div><div class="skill-name">Design Systems</div><div class="skill-cat">Tokens · Components · Docs</div></div></div>
@@ -117,44 +137,34 @@
 
 <div class="divider"></div>
 
+<!-- ── ABOUT TEASER ── -->
 <section id="about" class="section">
-  <div class="about-grid">
-    <div class="reveal">
-      <h2>Design that earns its place</h2>
-      <p>I'm a product designer with 5+ years building B2B SaaS tools. Most of that time was spent at Bitsight — a cybersecurity company where design decisions have real consequences for security teams managing hundreds of vendors.</p>
-      <p>I care most about the work that happens between wireframes and shipping: the alignment conversations, the edge-case inventory, the moment a token system makes a color-blind mode trivially easy to add. Good design is often invisible. Broken design always isn't.</p>
-      <p>Outside of product work, I'm drawn to typography, editorial design, and building things that feel considered — not assembled.</p>
-      <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
-        <a href="#" class="btn-primary">View Resume ↗</a>
-        <a href="#" class="btn-secondary" data-email-href>Say hello</a>
-      </div>
-    </div>
-    <div class="about-facts reveal">
-      <div class="about-fact"><span class="fact-num">5+</span><div class="fact-copy"><strong>Years of experience</strong><span>Product design, design systems, and UX research in B2B SaaS</span></div></div>
-      <div class="about-fact"><span class="fact-num">160</span><div class="fact-copy"><strong>Design tokens shipped</strong><span>Primitives + semantic tokens — light, dark, and color-blind modes</span></div></div>
-      <div class="about-fact"><span class="fact-num">−40%</span><div class="fact-copy"><strong>Review time reduced</strong><span>Measured outcome from the InfoSec Questionnaire redesign</span></div></div>
-      <div class="about-fact"><span class="fact-num">15→2</span><div class="fact-copy"><strong>Days, assessment turnaround</strong><span>IA redesign driven by research-backed personas</span></div></div>
-    </div>
+  <div class="about-teaser reveal">
+    <span class="section-label" data-i18n="about.label">About</span>
+    <h2 class="section-title" data-i18n="about.title">Design that earns its place</h2>
+    <p class="section-sub">5+ years building B2B SaaS at Bitsight. I care about systems thinking, research-driven decisions, and design that holds together under real constraints.</p>
+    <a href="about.html" class="btn-primary">Read more about me →</a>
   </div>
 </section>
 
 <div class="divider"></div>
 
+<!-- ── CONTACT ── -->
 <section class="contact-dark">
-  <h2 class="reveal">Let's work <em>together</em></h2>
-  <p class="reveal">Open to product design and design systems roles. Remote-friendly.</p>
+  <h2 class="reveal" data-i18n="contact.title">Let's work <em>together</em></h2>
+  <p class="reveal" data-i18n="contact.sub">Open to product design and design systems roles. Remote-friendly.</p>
   <div class="contact-links reveal">
     <a href="#" class="btn-white" data-email>your@email.com</a>
     <a href="https://linkedin.com/in/yourprofile" class="btn-ghost-dark">LinkedIn ↗</a>
-    <a href="#" class="btn-ghost-dark">Resume ↗</a>
+    <a href="downloads/Hector-Ariel-Baiz-Resume-EN.pdf" target="_blank" class="btn-ghost-dark">Resume ↗</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Ariel Ortiz · Product Designer</p>
+  <p data-i18n="footer.copy">© 2025 Héctor Ariel Baiz · Product Designer</p>
   <a href="#" data-email>your@email.com</a>
 </footer>
 
-  <script src="js/site.js" defer></script>
+<script src="js/site.js" defer></script>
 </body>
 </html>

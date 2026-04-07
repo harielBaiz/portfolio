@@ -4,7 +4,7 @@ document.documentElement.classList.add('js');
 /**
  * site.js
  * ─────────────────────────────────────────────────────────
- * Ariel Ortiz · Portfolio
+ * Héctor Ariel Baiz · Portfolio
  *
  * Features:
  *   1. Theme toggle   (light ↔ dark)  — persisted to localStorage
@@ -85,7 +85,7 @@ const i18n = {
     'contact.sub':   'Open to product design and design systems roles. Remote-friendly.',
 
     /* Footer */
-    'footer.copy': '© 2025 Ariel Ortiz · Product Designer',
+    'footer.copy': '© 2025 Héctor Ariel Baiz · Product Designer',
   },
 
   es: {
@@ -96,7 +96,7 @@ const i18n = {
     'nav.contact': 'Contacto ↗',
 
     /* Landing — hero */
-    'hero.eyebrow': 'Diseñadora de Producto · Design Systems',
+    'hero.eyebrow': 'Diseñador de Producto · Design Systems',
     'hero.title':   'Diseño productos que escalan — y los sistemas que los sostienen.',
     'hero.sub':     'Más de 5 años construyendo SaaS B2B en Bitsight. Conecto diseño e ingeniería a través de sistemas de tokens, decisiones basadas en investigación e interfaces que realmente tienen sentido.',
     'hero.cta.work':  'Ver proyectos ↓',
@@ -117,18 +117,18 @@ const i18n = {
     /* Landing — about */
     'about.label': 'Sobre mí',
     'about.title': 'Diseño que se justifica solo',
-    'about.p1': 'Soy diseñadora de producto con más de 5 años construyendo herramientas SaaS B2B. La mayor parte de ese tiempo lo pasé en Bitsight — una empresa de ciberseguridad donde las decisiones de diseño tienen consecuencias reales para los equipos de seguridad.',
+    'about.p1': 'Soy diseñador de producto con más de 5 años construyendo herramientas SaaS B2B. La mayor parte de ese tiempo lo pasé en Bitsight — una empresa de ciberseguridad donde las decisiones de diseño tienen consecuencias reales para los equipos de seguridad.',
     'about.p2': 'Me importa el trabajo que ocurre entre los wireframes y el lanzamiento: las conversaciones de alineación, el inventario de edge cases, el momento en que un sistema de tokens hace que el modo daltónico sea trivialmente fácil de implementar.',
     'about.p3': 'Fuera del trabajo de producto, me atrae la tipografía, el diseño editorial y construir cosas que se sientan pensadas — no ensambladas.',
     'about.cta.resume': 'Ver CV ↗',
     'about.cta.hello':  'Hola',
 
     /* Landing — contact */
-    'contact.title': 'Trabajemos juntas',
-    'contact.sub':   'Abierta a roles de diseño de producto y design systems. Trabajo remoto.',
+    'contact.title': 'Trabajemos juntos',
+    'contact.sub':   'Abierto a roles de diseño de producto y design systems. Trabajo remoto.',
 
     /* Footer */
-    'footer.copy': '© 2025 Ariel Ortiz · Diseñadora de Producto',
+    'footer.copy': '© 2025 Héctor Ariel Baiz · Diseñador de Producto',
   },
 };
 
