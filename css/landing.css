@@ -28,7 +28,7 @@
 /* Heading/XL — DM Sans ExtraBold 32px/40px */
 .section-title {
   font-family: var(--f-ui);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 32px;
   line-height: 40px;
   letter-spacing: -0.5px;
@@ -233,7 +233,7 @@
 /* Heading/SM ExtraBold — card title (from Figma card component) */
 .card-title {
   font-family: var(--f-ui);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 20px;
   line-height: 26px;
   color: var(--text);
@@ -322,7 +322,7 @@
 /* Heading/LG — DM Sans ExtraBold 24px/32px */
 .about-grid h2 {
   font-family: var(--f-ui);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.25px;

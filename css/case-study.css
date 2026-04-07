@@ -154,7 +154,7 @@
 /* Display/LG — Space Grotesk Bold for numbers */
 .outcome-stat .number {
   font-family: var(--f-display);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 2.4rem;
   letter-spacing: -1px;
   color: var(--text-on-inverse);
@@ -230,7 +230,7 @@ section:last-child { border-bottom: none; }
 /* Heading/XL — DM Sans ExtraBold 32px/40px */
 h2 {
   font-family: var(--f-ui);
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(1.5rem, 3vw, 32px);
   line-height: 1.25;
   letter-spacing: -0.5px;
@@ -241,7 +241,7 @@ h2 {
 /* Heading/MD — DM Sans Medium 20px/28px */
 h3 {
   font-family: var(--f-ui);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 24px;
   line-height: 32px;
   color: var(--text);
@@ -551,7 +551,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 /* Display — Space Grotesk Bold for lesson number */
 .lesson-num {
   font-family: var(--f-display);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.4rem;
   letter-spacing: -0.5px;
   color: var(--text-1);
@@ -820,7 +820,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 /* ── THEME CARDS (cs3) ──────────────────────────────────── */
 .themes-grid { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: var(--r-md); overflow: hidden; margin: 2rem 0; }
 .theme-card { background: var(--surface-card); padding: 1.5rem; }
-.theme-number { font-family: var(--f-display); font-weight: 700; font-size: 1.6rem; letter-spacing: -0.5px; color: var(--text-3); margin-bottom: 0.25rem; }
+.theme-number { font-family: var(--f-display); font-weight: 800; font-size: 1.6rem; letter-spacing: -0.5px; color: var(--text-3); margin-bottom: 0.25rem; }
 .theme-title { font-family: var(--f-ui); font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 0.5rem; }
 .theme-implication { font-family: var(--f-ui); font-size: 0.82rem; color: var(--brand); margin-top: 0.75rem; font-weight: 500; }
 
@@ -885,7 +885,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 /* ── OUTCOME STAT (inside .outcome-banner) ──────────────── */
 .outcome-stat .number {
   font-family: var(--f-display);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 2.4rem;
   letter-spacing: -1px;
   color: var(--text-on-inverse);

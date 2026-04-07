@@ -151,7 +151,7 @@
 
 /* ── 5. TYPOGRAPHY TOKENS ───────────────────────────────── */
 :root {
-  --f-display: 'Space Grotesk', sans-serif;
+  --f-display: 'DM Sans', sans-serif;
   --f-ui:      'DM Sans', system-ui, sans-serif;
   --f-body:    'Lora', Georgia, serif;
   --f-mono:    'DM Mono', monospace;
@@ -162,8 +162,8 @@
   --t-display-lg:  700 40px/48px var(--f-display);
 
   /* Heading — DM Sans */
-  --t-heading-xl: 800 32px/40px var(--f-ui);   /* letter-spacing: -0.5px */
-  --t-heading-lg: 800 24px/32px var(--f-ui);   /* letter-spacing: -0.25px */
+  --t-heading-xl: 700 32px/40px var(--f-ui);   /* letter-spacing: -0.5px */
+  --t-heading-lg: 700 24px/32px var(--f-ui);   /* letter-spacing: -0.25px */
   --t-heading-md: 500 20px/28px var(--f-ui);
   --t-heading-sm: 500 18px/26px var(--f-ui);
 
