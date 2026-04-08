@@ -8,10 +8,10 @@
 
 ## Who I am
 
-- **Name:** Ariel Ortiz
+- **Name:** Héctpr Ariel Baiz
 - **Role targeting:** Product Designer / Design Systems Designer
 - **Experience:** 5–8 years
-- **Domain:** B2B SaaS (Bitsight)
+- **Domain:** 
 - **Native language:** Spanish (English is secondary)
 - **Tools:** Figma, Design Tokens, Prototyping, WCAG/A11y
 
@@ -84,7 +84,7 @@ portfolio/
 
 | Token | Font | Size / Line-height | Weight | Usage |
 |-------|------|--------------------|--------|-------|
-| Display | Space Grotesk | 40–72px / tight | Bold | Hero h1, big headings |
+| Display | DM Sans | 40–72px / tight | Bold | Hero h1, big headings |
 | Heading/XL | DM Sans | 32px / 40px · −0.5px | ExtraBold | Section h2 |
 | Heading/LG | DM Sans | 24px / 32px · −0.25px | ExtraBold | Sub-section h2 |
 | Heading/MD | DM Sans | 20px / 28px | Medium | h3 |
@@ -93,7 +93,7 @@ portfolio/
 | Label/MD | DM Sans | 14px / 20px | Medium | Buttons, CTAs, labels |
 | Nav | DM Sans | 14px / 20px | Regular / Medium active | Navigation |
 | Caption | DM Sans | 12px / 16px | Regular | Meta, footer |
-| Logo | Space Grotesk | 18px | Bold | Nav name |
+| Logo | DM Sans | 18px | Bold | Nav name |
 
 ### Theme Toggle
 - Toggle button is in every page nav (`☾ / ☀` icon swap)
@@ -117,7 +117,16 @@ const domain = 'email.com'; // ← your email domain
 
 ---
 
-## Case Study 1 — InfoSec Questionnaire
+## Case Study 1 — Design Tokens
+
+- **Role:** Led adoption of design tokens for Bitsight Design System
+- **Key outcomes:** 160+ tokens shipped, light + dark + color-blind modes, one source of truth
+- **Key themes:** design/engineering alignment, scalability, semantic naming
+- **Memorable detail:** users were my teammates — I saw the reactions in real time
+
+---
+
+## Case Study 2 — InfoSec Questionnaire
 
 - **Role:** Lead designer · reviewer UI (read-only). Collaborated on respondent components.
 - **Design System:** Bitsight DS
@@ -125,15 +134,6 @@ const domain = 'email.com'; // ← your email domain
 - **Pain points solved:** flag filtering, bulk document download
 - **Outcomes:** −40% review time, −60% clarification requests, +40% satisfaction
 - **Bonus:** AI hackathon → became SOC2 Instant Insights product
-
----
-
-## Case Study 2 — Design Tokens
-
-- **Role:** Led adoption of design tokens for Bitsight Design System
-- **Key outcomes:** 160+ tokens shipped, light + dark + color-blind modes, one source of truth
-- **Key themes:** design/engineering alignment, scalability, semantic naming
-- **Memorable detail:** users were my teammates — I saw the reactions in real time
 
 ---
 
