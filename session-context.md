@@ -1,4 +1,4 @@
-# HAriel Baiz · Portfolio — Session Context
+# Héctor Ariel Baiz · Portfolio — Session Context
 
 > Keep this file in the root of the repo.
 > Start each Claude session with:
@@ -8,10 +8,10 @@
 
 ## Who I am
 
-- **Name:** Héctpr Ariel Baiz
+- **Name:** Héctor Ariel Baiz
 - **Role targeting:** Product Designer / Design Systems Designer
 - **Experience:** 5–8 years
-- **Domain:** 
+- **Domain:** B2B SaaS · Last company: Bitsight (cybersecurity) — [add current/target domain if different]
 - **Native language:** Spanish (English is secondary)
 - **Tools:** Figma, Design Tokens, Prototyping, WCAG/A11y
 
@@ -28,17 +28,27 @@
 
 ```
 portfolio/
-├── index.html                              ← Landing page (renamed from portfolio-landing.html)
-├── case-study-infosec-questionnaire.html   ← Case Study 1 · InfoSec Questionnaire
-├── case-study-design-tokens.html           ← Case Study 2 · Design Tokens
+├── index.html                              ← Landing page
+├── about.html                              ← About Me page
+├── case-study-design-tokens.html           ← Case Study 1 · Design Tokens
+├── case-study-infosec-questionnaire.html   ← Case Study 2 · InfoSec Questionnaire
 ├── case-study-personas-ia.html             ← Case Study 3 · Personas & IA
 ├── css/
 │   ├── tokens.css      ← DS tokens: colors, type scale, spacing (EDIT HERE for global changes)
 │   ├── base.css        ← Reset, nav, footer, buttons, chips, animations
 │   ├── landing.css     ← Landing page specific styles
-│   └── case-study.css  ← All case study shared styles + hero cover pattern
-└── js/
-    └── site.js         ← Theme toggle, language switcher, scroll reveal, progress bar
+│   ├── case-study.css  ← All case study shared styles + hero cover pattern
+│   └── about.css       ← About page specific styles
+├── js/
+│   └── site.js         ← Theme toggle, language switcher, scroll reveal, progress bar
+├── images/
+│   ├── cs-tokens-cover.jpg
+│   ├── elevation.png
+│   ├── token-naming-structure.jpg
+│   └── token-reference-chain.png
+└── downloads/
+    ├── resumeCV-EN.pdf
+    └── resumeCV-ES.pdf
 ```
 
 ---
@@ -47,40 +57,43 @@ portfolio/
 
 | File | Status | Notes |
 |------|--------|-------|
-| `index.html` | ✅ Done | Landing page · nav, hero, 3 cards, skills, about, contact |
-| `case-study-infosec-questionnaire.html` | ✅ Structure done | Needs real images in placeholders |
+| `index.html` | ✅ Done | Nav, hero, 3 project cards, skills, about, contact |
+| `about.html` | ✅ Done | Bio, PVP, personal section, contact |
 | `case-study-design-tokens.html` | ✅ Structure done | Needs real images in placeholders |
+| `case-study-infosec-questionnaire.html` | ✅ Structure done | Needs real images in placeholders |
 | `case-study-personas-ia.html` | ✅ Structure done | Needs real images in placeholders |
 | `css/tokens.css` | ✅ Done | Light + dark mode tokens |
 | `css/base.css` | ✅ Done | Shared components |
 | `css/landing.css` | ✅ Done | Landing-specific styles |
 | `css/case-study.css` | ✅ Done | Case study styles + hero cover |
-| `js/site.js` | ✅ Done | Theme toggle · lang scaffold · scroll reveal |
+| `css/about.css` | ✅ Done | About page styles |
+| `js/site.js` | ✅ Done | Theme toggle · lang scaffold · scroll reveal · progress bar |
+| `downloads/resumeCV-EN.pdf` | ✅ In repo | Linked from `about.html` nav |
+| `downloads/resumeCV-ES.pdf` | ✅ In repo | Available |
 
 ### Pending
 
-- [ ] Add real email address (search for `data-email` in HTML, set `user` + `domain` in `site.js`)
-- [ ] Add LinkedIn URL (search for `linkedin.com/in/yourprofile`)
-- [ ] Add resume/CV file and link it
-- [ ] Replace placeholder images (`<figure class="hero-cover hero-cover--placeholder">`) with real screenshots
-- [ ] Fill in Spanish translations in `site.js` → `es: {}` object
-- [ ] About page (`about.html`)
+- [ ] Add real email address — edit `js/site.js`: set `user` and `domain` variables
+- [ ] Add LinkedIn URL — search `linkedin.com/in/yourprofile` across all HTML files
+- [ ] Replace placeholder images (`<figure class="hero-cover hero-cover--placeholder">`) with real screenshots in all 3 case studies
+- [ ] Fill in Spanish translations in `js/site.js` → `es: {}` object
+- [ ] Rename CV files to match `about.html` nav link: `downloads/Hector-Ariel-Baiz-Resume-EN.pdf` (or update the href to match current filenames)
 
 ---
 
 ## Design System
 
-### Design References
+### References
 - **Figma DS:** https://www.figma.com/design/NrZReZOBki85NDzJlQKQrg/portfolio-DS
 - **Visual reference:** https://www.doc.cc/articles/craft-crisis — editorial layout, narrow column, neutral color system
 
 ### Color Rules
 - **Neutral scale only** for all UI: backgrounds, borders, text, surfaces
-- **`--brand` (#4B1EBA purple)** = interactive elements ONLY: buttons, links, active nav, tags text, focus ring
+- **`--brand` (`#4B1EBA` purple)** = interactive elements ONLY: buttons, links, active nav, tag text, focus ring
 - **Illustration palette** (magenta, purple tints) = NOT for UI — illustration only
-- Dark mode is handled by `[data-theme="dark"]` in `tokens.css` — all colors flip automatically
+- Dark mode handled by `[data-theme="dark"]` in `tokens.css` — all colors flip automatically
 
-### Typography System (from Figma Typography page)
+### Typography System
 
 | Token | Font | Size / Line-height | Weight | Usage |
 |-------|------|--------------------|--------|-------|
@@ -96,20 +109,19 @@ portfolio/
 | Logo | DM Sans | 18px | Bold | Nav name |
 
 ### Theme Toggle
-- Toggle button is in every page nav (`☾ / ☀` icon swap)
+- Button in every page nav (`☾ / ☀` icon swap)
 - Persisted in `localStorage` under key `portfolio-theme`
 - OS preference detected on first visit
-- To test dark mode in browser console: `document.documentElement.setAttribute('data-theme', 'dark')`
+- Test in console: `document.documentElement.setAttribute('data-theme', 'dark')`
 
 ### Language Switcher
-- `EN / ES` toggle button in every page nav
+- `EN / ES` toggle in every page nav
 - Add `data-i18n="key"` to translatable elements in HTML
 - Fill Spanish strings in `js/site.js` → `es: { }` object
 - Persisted in `localStorage` under key `portfolio-lang`
 
 ### Email (anti-Cloudflare obfuscation)
-Emails are injected by JS at runtime to prevent Cloudflare from mangling them.
-Edit these two lines in `js/site.js`:
+Injected by JS at runtime. Edit in `js/site.js`:
 ```js
 const user   = 'your';      // ← your email username
 const domain = 'email.com'; // ← your email domain
@@ -119,15 +131,18 @@ const domain = 'email.com'; // ← your email domain
 
 ## Case Study 1 — Design Tokens
 
+- **File:** `case-study-design-tokens.html`
 - **Role:** Led adoption of design tokens for Bitsight Design System
 - **Key outcomes:** 160+ tokens shipped, light + dark + color-blind modes, one source of truth
 - **Key themes:** design/engineering alignment, scalability, semantic naming
-- **Memorable detail:** users were my teammates — I saw the reactions in real time
+- **Memorable detail:** users were my teammates — I saw their reactions in real time
+- **Images in repo:** `cs-tokens-cover.jpg`, `token-naming-structure.jpg`, `token-reference-chain.png`, `elevation.png`
 
 ---
 
 ## Case Study 2 — InfoSec Questionnaire
 
+- **File:** `case-study-infosec-questionnaire.html`
 - **Role:** Lead designer · reviewer UI (read-only). Collaborated on respondent components.
 - **Design System:** Bitsight DS
 - **Key design:** 3 toolbar proposals → vertical action rail (review, flag, bookmark)
@@ -139,6 +154,7 @@ const domain = 'email.com'; // ← your email domain
 
 ## Case Study 3 — Personas & IA
 
+- **File:** `case-study-personas-ia.html`
 - **Role:** Lead designer · user research + IA strategy
 - **Key outcomes:** 4 research-backed personas, product split (VRM / TMH), 15→2 day assessment turnaround
 - **Key themes:** object-oriented IA, mental models, feedback pattern design
@@ -160,12 +176,15 @@ The current [filename] is at https://github.com/harielBaiz/portfolio/blob/main/[
 Please [do X].
 ```
 
-### After Claude edits a file
-1. Claude outputs the updated file in the chat (or as a downloadable file)
-2. Copy the content → save to your local repo
+### Claude's GitHub access
+Claude can clone the repo and read all files directly via `git`. It cannot push commits.
+
+**Workflow after Claude edits a file:**
+1. Claude outputs the updated file as a download
+2. Save it to your local repo (replace the existing file)
 3. `git add [file] && git commit -m "your message" && git push`
 4. GitHub Pages updates in ~30 seconds
 
 ### CSS-only changes
-For changes only in CSS files, Claude can output just the changed rule block.
-You paste it into the right file locally — no need to download the whole file.
+Claude can output just the changed rule block — no need to re-download the whole file.
+Paste it into the right place in the local file, then push.
