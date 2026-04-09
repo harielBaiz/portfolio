@@ -559,10 +559,6 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
   flex-direction: column;
   gap: 0.35rem;
 }
-.seg-def-card.sd-class      { border-left: 3px solid var(--n-400); }
-.seg-def-card.sd-foundation { border-left: 3px solid var(--n-300); }
-.seg-def-card.sd-property   { border-left: 3px solid var(--brand); }
-.seg-def-card.sd-modifier   { border-left: 3px solid var(--n-500); }
 
 .sd-seg-label {
   font-family: var(--f-mono);
@@ -658,4 +654,83 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 @media (max-width: 600px) {
   .elevation-row { grid-template-columns: 1fr; }
   .elevation-token { border-right: none; border-bottom: 1px solid var(--border); }
+}
+
+/* ══════════════════════════════════════════════════════════
+   CASE STUDY INDEX — sticky left sidebar
+   ══════════════════════════════════════════════════════════ */
+
+.cs-layout {
+  display: grid;
+  grid-template-columns: 152px minmax(0, 720px);
+  gap: 0 2.5rem;
+  max-width: calc(152px + 2.5rem + 720px + 3rem);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  align-items: start;
+}
+
+/* Override page-wrap centering when inside the grid */
+.cs-layout .page-wrap {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.cs-index {
+  position: sticky;
+  top: 8rem;
+  padding-top: 2rem;
+  height: auto;
+  background: none;
+  border-bottom: none;
+  padding:0;
+}
+
+.cs-index ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.cs-index a {
+  display: block;
+  font-family: var(--f-sans);
+  font-size: 12px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--text-3);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.35rem 0.625rem;
+  border-left: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cs-index a:hover {
+  color: var(--text-1);
+}
+
+.cs-index a.is-active {
+  color: var(--text-1);
+  font-weight: 600;
+}
+
+/* Hide on small screens — not enough room */
+@media (max-width: 960px) {
+  .cs-layout {
+    display: block;
+    padding: 0 1.5rem;
+  }
+  .cs-index { display: none; }
+  .cs-layout .page-wrap {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

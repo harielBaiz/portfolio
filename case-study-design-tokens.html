@@ -56,6 +56,20 @@
   </figure>
 </header>
 
+<div class="cs-layout">
+
+<nav class="cs-index" aria-label="Case study sections">
+  <ol>
+    <li><a href="#context">01 — Context</a></li>
+    <li><a href="#problem">02 — Problem</a></li>
+    <li><a href="#research">03 — Research</a></li>
+    <li><a href="#system">04 — System</a></li>
+    <li><a href="#tension">05 — Tension</a></li>
+    <li><a href="#outcomes">06 — Outcomes</a></li>
+    <li><a href="#lessons">07 — Lessons</a></li>
+  </ol>
+</nav>
+
 <main class="page-wrap">
 
   <p class="hero-sub">
@@ -310,19 +324,18 @@
     <p>
       The final system uses five tokens. Four surface levels cover the full range of depth in our UI. One blanket token handles the overlay state used by dialogs, drawers, and modals.
     </p>
-    <!-- TOKEN STRUCTURE IMAGE -->
+    <!-- TOKEN LEVELS IMAGE -->
     <div class="media-block">
-      <img src="images/elevation.png" alt="Diagram showing the four named parts of a semantic token: class, foundation, property, and modifier" />
+      <img src="images/elevation.png" alt="Diagram showing the four levels a elevation token" />
     </div>
-
-    <ul class="lesson-list">
-      <li><div class="lesson-body"><strong><code>bs.elevation.surface.level0</code> — Base</strong><p>The default page background. No depth, no shadow.</p></div></li>
-      <li><div class="lesson-body"><strong><code>bs.elevation.surface.level1</code> — Raised</strong><p>Cards, panels, and contained UI regions sitting above the base.</p></div></li>
-      <li><div class="lesson-body"><strong><code>bs.elevation.surface.level2</code> — Floating</strong><p>Dropdowns, popovers, and tooltips layering above page content.</p></div></li>
-      <li><div class="lesson-body"><strong><code>bs.elevation.surface.level3</code> — Sticky</strong><p>Persistent elements like sticky headers or fixed navigation overlapping scrolling content.</p></div></li>
-      <li><div class="lesson-body"><strong><code>bs.elevation.blanket</code> — Blanket</strong><p>The scrim behind dialogs, drawers, and modals. Signals that the rest of the UI is temporarily unreachable.</p></div></li>
-    </ul>
-
+    <!-- TOKEN BLANKET IMAGE -->
+    <div class="media-block">
+      <img src="images/blanket.png" alt="Diagram showing the blanket element of a elevation token" />
+    </div>
+    <!-- TOKEN BLANKET IMAGE -->
+    <div class="media-block">
+      <img src="images/elevation-table.jpg" alt="Definition of elevation tokens" />
+    </div>
     <div class="callout">
       <p>Having these tokens in place means that any new component that introduces depth doesn't have to invent its own answer. It picks a level. The system does the rest.</p>
     </div>
@@ -479,6 +492,8 @@
     </p>
   </section>
 </main>
+
+</div><!-- /cs-layout -->
 
 <!-- ── FOOTER ── -->
 <footer>

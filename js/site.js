@@ -255,3 +255,33 @@ document.addEventListener('DOMContentLoaded', () => {
     el.href = mailto;
   });
 })();
+
+
+/* ─────────────────────────────────────────────────────────
+   6. CASE STUDY INDEX — active section highlight
+   Watches each section with an id and marks the matching
+   .cs-index link as .is-active while it's in view.
+───────────────────────────────────────────────────────── */
+(function initCsIndex() {
+  const indexLinks = document.querySelectorAll('.cs-index a');
+  if (!indexLinks.length) return;
+
+  const sections = [...indexLinks].map(a =>
+    document.querySelector(a.getAttribute('href'))
+  ).filter(Boolean);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      indexLinks.forEach(a => a.classList.remove('is-active'));
+      const active = document.querySelector(
+        `.cs-index a[href="#${entry.target.id}"]`
+      );
+      if (active) active.classList.add('is-active');
+    });
+  }, {
+    rootMargin: '-15% 0px -75% 0px'  /* fires when section top is ~15% from viewport top */
+  });
+
+  sections.forEach(s => observer.observe(s));
+})();
