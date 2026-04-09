@@ -88,8 +88,8 @@
   /* Nav */
   --nav-bg:      var(--surface-overlay);
   --nav-border:  var(--border);
-  --nav-text:    var(--text);
-  --nav-link:   var(--purple-500);
+  --nav-text:    var(--text-3);
+  --nav-link:   var(--text);
 
   /* Callout / feature card backgrounds */
   --surface-feature: var(--n-100);
