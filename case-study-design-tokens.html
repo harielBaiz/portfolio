@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="css/tokens.css"/>
-  <link rel="stylesheet" href="css/base.css"/>
-  <link rel="stylesheet" href="css/case-study.css"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Design Tokens — Ariel's Portfolio</title>
-  
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="css/tokens.css"/>
+<link rel="stylesheet" href="css/base.css"/>
+<link rel="stylesheet" href="css/case-study.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Design Tokens — Ariel's Portfolio</title>
 </head>
 <body>
 
@@ -57,130 +56,130 @@
 </header>
 
 <div class="cs-layout">
+  <nav class="cs-index" aria-label="Case study sections">
+    <ol>
+      <li><a href="#context">01 — Context</a></li>
+      <li><a href="#problem">02 — Problem</a></li>
+      <li><a href="#research">03 — Research</a></li>
+      <li><a href="#system">04 — System</a></li>
+      <li><a href="#tension">05 — Tension</a></li>
+      <li><a href="#outcomes">06 — Outcomes</a></li>
+      <li><a href="#lessons">07 — Lessons</a></li>
+    </ol>
+  </nav>
 
-<nav class="cs-index" aria-label="Case study sections">
-  <ol>
-    <li><a href="#context">01 — Context</a></li>
-    <li><a href="#problem">02 — Problem</a></li>
-    <li><a href="#research">03 — Research</a></li>
-    <li><a href="#system">04 — System</a></li>
-    <li><a href="#tension">05 — Tension</a></li>
-    <li><a href="#outcomes">06 — Outcomes</a></li>
-    <li><a href="#lessons">07 — Lessons</a></li>
-  </ol>
-</nav>
+  <main class="page-wrap">
 
-<main class="page-wrap">
+    <p class="hero-sub">
+      Bitsight's design and engineering teams were out of sync. Colors were hardcoded, dark mode required double the work, and every theme change was a manual effort. I led the adoption of a semantic token system that changed all of that.
+    </p>
 
-  <p class="hero-sub">
-    Bitsight's design and engineering teams were out of sync. Colors were hardcoded, dark mode required double the work, and every theme change was a manual effort. I led the adoption of a semantic token system that changed all of that.
-  </p>
-
-  <!-- OUTCOME BANNER -->
-  <div class="outcome-banner" aria-label="Key outcomes">
-    <div class="outcome-stat">
-      <div class="number">160+</div>
-      <div class="label">Primitive variables — raw values, no opinion attached</div>
-    </div>
-    <div class="outcome-stat">
-      <div class="number">100+</div>
-      <div class="label">Semantic tokens mapping meaning across the system</div>
-    </div>
-    <div class="outcome-stat">
-      <div class="number">3</div>
-      <div class="label">Modes supported — light, dark, and color blind</div>
-    </div>
-    <div class="outcome-stat">
-      <div class="number">~mins</div>
-      <div class="label">To switch modes or test a new visual direction — no redesign needed</div>
-    </div>
-  </div>
-
-  <!-- CONTEXT -->
-  <section id="context">
-    <div class="section-label">01 — Context</div>
-    <h2>A Figma announcement, a rebrand, and a window of opportunity</h2>
-    <p>
-      In mid-2023, Figma announced Variables at their annual Config event. I watched the presentation and felt something click. This wasn't just a new feature — it was a real answer to a problem I had been sitting with for a long time: how do you make visual decisions consistent across a growing product without relying on manual discipline?
-    </p>
-    <div class="callout">
-      <p><em>The timing couldn't have been better.</em> Bitsight was undergoing a company-wide rebrand. Every product interface would need to reflect new visual standards — across multiple platforms, simultaneously. Without a scalable solution, that rebrand risked becoming a slow, error-prone process that would stretch for months.</p>
-    </div>
-    <p>
-      I saw the rebrand as a forcing function, not a burden. If we were going to update everything anyway, this was the moment to build the system underneath it properly — so the next rebrand, or the next product acquisition, wouldn't cost us the same amount of effort all over again.
-    </p>
-    <p>
-      I proposed starting with a proof of concept. The InfoSec Questionnaire project — which I was already leading as a designer — became the first real test ground. It was a complex, high-visibility feature with a lot of UI surface area, which made it the right place to validate whether a token-based approach could actually work in practice. The POC was successful enough that I got the green light to bring it to the design system properly.
-    </p>
-  </section>
-
-  <!-- THE PROBLEM -->
-  <section id="problem">
-    <div class="section-label">02 — Problem</div>
-    <h2>Replacing wheels on a moving train</h2>
-    <p>
-      The product suite was growing through acquisitions and new features. But our visual foundation wasn't growing with it — it was fracturing. Hardcoded color values lived in component files. Spacing decisions were made locally. A "refresh" request from leadership could ripple into weeks of manual updates across dozens of screens.
-    </p>
-    <p>
-      The challenge wasn't creating a consistent UI once. It was <strong>maintaining consistency while everything around it kept changing.</strong>
-    </p>
-    <div class="callout">
-      <p>Products were added and acquired regularly. Legacy interfaces couldn't be replaced overnight. Visual updates were often driven by perception — "make it feel more modern." Changes needed to scale across many surfaces at once. <em>We needed a system that could absorb change, not resist it.</em></p>
-    </div>
-    <p>
-      My goal became this: make the visual direction testable without rebuilding the UI. We needed to change themes, not components. We needed updates to cascade instead of rippling chaotically. We needed consistency to be the default outcome — not the result of a manual review cycle.
-    </p>
-  </section>
-
-  <!-- RESEARCH -->
-  <section id="research">
-    <div class="section-label">03 — Research &amp; Discovery</div>
-    <h2>Learning from what already existed</h2>
-    <p>
-      Before designing anything, I audited our current state. I mapped which values were hardcoded, which were shared, and where inconsistencies were most painful. The answer: everywhere colors touched components — which was everywhere.
-    </p>
-    <p>
-      I also studied three mature design systems as reference points:
-    </p>
-    <div class="ref-row">
-      <div class="ref-card">
-        <strong>Carbon DS (IBM)</strong>
-        <span>Deep token hierarchy, well-structured semantic layer. Too large in nomenclature for our scale.</span>
+    <!-- OUTCOME BANNER -->
+    <div class="outcome-banner" aria-label="Key outcomes">
+      <div class="outcome-stat">
+        <div class="number">160+</div>
+        <div class="label">Primitive variables — raw values, no opinion attached</div>
       </div>
-      <div class="ref-card">
-        <strong>Material Design</strong>
-        <span>Google's token system introduced a clear semantic layer with role-based naming. Strong reference for how to separate raw values from purposeful ones.</span>
+      <div class="outcome-stat">
+        <div class="number">100+</div>
+        <div class="label">Semantic tokens mapping meaning across the system</div>
       </div>
-      <div class="ref-card">
-        <strong>Atlassian DS</strong>
-        <span>Strong engineering integration. Their contextual token approach influenced our data table work.</span>
+      <div class="outcome-stat">
+        <div class="number">3</div>
+        <div class="label">Modes supported — light, dark, and color blind</div>
+      </div>
+      <div class="outcome-stat">
+        <div class="number">~mins</div>
+        <div class="label">To switch modes or test a new visual direction — no redesign needed</div>
       </div>
     </div>
-    <p>
-      All three were deeply considered and well-designed. But their scale and nomenclature were overkill for Bitsight's context. When I tried mapping their structures directly onto our products, the cost of adapting them outweighed the benefit of adopting them. I had to let that go — but I kept what was useful from each and left the rest behind.
-    </p>
-    <div class="callout">
-      <p><em>Key insight: adopt ideas, not structures.</em> Mature systems offer insight into how to think about tokens — not blueprints to copy. Fitting your environment saves more time than modeling someone else's.</p>
-    </div>
-  </section>
 
-  <!-- THE SYSTEM -->
-  <section id="system">
-    <div class="section-label">04 — Design Decisions</div>
-    <h2>The token architecture</h2>
-    <!-- TOKEN → PRIMITIVE → RAW VALUE IMAGE -->
-    <div class="media-block">
-      <img src="images/token-reference-chain.png" alt="Diagram showing how a semantic token references a primitive variable, which holds the raw value" />
-    </div>
-    <p>
-      The system is built on two layers: <strong>Primitive</strong> tokens that hold raw values with no opinion, and <strong>Semantic</strong> tokens that carry meaning, context, and purpose. Every semantic token follows a consistent naming convention — and that convention became the real foundation of the system.
-    </p>
+    <!-- CONTEXT -->
+    <section id="context">
+      <div class="section-label">01 — Context</div>
+      <h2>A Figma announcement, a rebrand, and a window of opportunity</h2>
+      <p>
+        In mid-2023, Figma announced Variables at their annual Config event. I watched the presentation and felt something click. This wasn't just a new feature — it was a real answer to a problem I had been sitting with for a long time: how do you make visual decisions consistent across a growing product without relying on manual discipline?
+      </p>
+      <div class="callout">
+        <p><em>The timing couldn't have been better.</em> Bitsight was undergoing a company-wide rebrand. Every product interface would need to reflect new visual standards — across multiple platforms, simultaneously. Without a scalable solution, that rebrand risked becoming a slow, error-prone process that would stretch for months.</p>
+      </div>
+      <p>
+        I saw the rebrand as a forcing function, not a burden. If we were going to update everything anyway, this was the moment to build the system underneath it properly — so the next rebrand, or the next product acquisition, wouldn't cost us the same amount of effort all over again.
+      </p>
+      <p>
+        I proposed starting with a proof of concept. The InfoSec Questionnaire project — which I was already leading as a designer — became the first real test ground. It was a complex, high-visibility feature with a lot of UI surface area, which made it the right place to validate whether a token-based approach could actually work in practice. The POC was successful enough that I got the green light to bring it to the design system properly.
+      </p>
+    </section>
 
-    <div class="layer-stack">
-      <div class="layer-row">
-        <div class="layer-name primitive">Primitive</div>
-        <div class="layer-desc">
-          Raw values with no interpretation. These tokens name a value but don't assign it any meaning or context. They're the foundation everything else references — never consumed directly by components.
+    <!-- THE PROBLEM -->
+    <section id="problem">
+      <div class="section-label">02 — Problem</div>
+      <h2>Replacing wheels on a moving train</h2>
+      <p>
+        The product suite was growing through acquisitions and new features. But our visual foundation wasn't growing with it — it was fracturing. Hardcoded color values lived in component files. Spacing decisions were made locally. A "refresh" request from leadership could ripple into weeks of manual updates across dozens of screens.
+      </p>
+      <p>
+        The challenge wasn't creating a consistent UI once. It was <strong>maintaining consistency while everything around it kept changing.</strong>
+      </p>
+      <div class="callout">
+        <p>Products were added and acquired regularly. Legacy interfaces couldn't be replaced overnight. Visual updates were often driven by perception — "make it feel more modern." Changes needed to scale across many surfaces at once. <em>We needed a system that could absorb change, not resist it.</em></p>
+      </div>
+      <p>
+        My goal became this: make the visual direction testable without rebuilding the UI. We needed to change themes, not components. We needed updates to cascade instead of rippling chaotically. We needed consistency to be the default outcome — not the result of a manual review cycle.
+      </p>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
+      <div class="section-label">03 — Research &amp; Discovery</div>
+      <h2>Learning from what already existed</h2>
+      <p>
+        Before designing anything, I audited our current state. I mapped which values were hardcoded, which were shared, and where inconsistencies were most painful. The answer: everywhere colors touched components — which was everywhere.
+      </p>
+      <p>
+        I also studied three mature design systems as reference points:
+      </p>
+      <div class="ref-row">
+        <div class="cs-card">
+          <div class="card-title">Carbon DS (IBM)</div>
+          <p>Deep token hierarchy, well-structured semantic layer. Too large in nomenclature for our scale.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Material Design</div>
+          <p>Google's token system introduced a clear semantic layer with role-based naming. Strong reference for how to separate raw values from purposeful ones.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Atlassian DS</div>
+          <p>Strong engineering integration. Their contextual token approach influenced our data table work.</p>
+        </div>
+      </div>
+      <p>
+        All three were deeply considered and well-designed. But their scale and nomenclature were overkill for Bitsight's context. When I tried mapping their structures directly onto our products, the cost of adapting them outweighed the benefit of adopting them. I had to let that go — but I kept what was useful from each and left the rest behind.
+      </p>
+      <div class="callout">
+        <p><em>Key insight: adopt ideas, not structures.</em> Mature systems offer insight into how to think about tokens — not blueprints to copy. Fitting your environment saves more time than modeling someone else's.</p>
+      </div>
+    </section>
+
+    <!-- THE SYSTEM -->
+    <section id="system">
+      <div class="section-label">04 — Design Decisions</div>
+      <h2>The token architecture</h2>
+
+      <!-- TOKEN → PRIMITIVE → RAW VALUE IMAGE -->
+      <div class="media-block">
+        <img src="images/token-reference-chain.png" alt="Diagram showing how a semantic token references a primitive variable, which holds the raw value" />
+      </div>
+
+      <p>
+        The system is built on two layers: <strong>Primitive</strong> tokens that hold raw values with no opinion, and <strong>Semantic</strong> tokens that carry meaning, context, and purpose. Every semantic token follows a consistent naming convention — and that convention became the real foundation of the system.
+      </p>
+
+      <div class="seg-defs">
+        <div class="cs-card">
+          <div class="card-title">Primitive</div>
+          <p>Raw values with no interpretation. These tokens name a value but don't assign it any meaning or context. They're the foundation everything else references — never consumed directly by components.</p>
           <div class="layer-examples">
             <span class="token-tag">blue.500</span>
             <span class="token-tag">grey.100</span>
@@ -188,317 +187,287 @@
             <span class="token-tag">radius.md</span>
           </div>
         </div>
-      </div>
-
-      <div class="layer-row">
-        <div class="layer-name semantic">Semantic</div>
-        <div class="layer-desc">
-          Tokens with purpose and context. Named using a four-part convention — each segment answers a specific question. See the full breakdown below.
+        <div class="cs-card">
+          <div class="card-title">Semantic</div>
+          <p>Tokens with purpose and context. Named using a four-part convention — each segment answers a specific question. See the full breakdown below.</p>
           <div class="layer-examples">
             <span class="token-tag">BS.color.background.primary</span>
             <span class="token-tag">riskVector.color.fill.low</span>
             <span class="token-tag">nav.color.background</span>
             <span class="token-tag">table.color.border.subtle</span>
           </div>
+          
         </div>
       </div>
-    </div>
 
-    <h3>The naming convention:</h3>
-    <p>A design token's name describes how it should be used, and each part communicates one piece of its usage. Every semantic token follows the same four-part structure — making tokens predictable. Any designer or engineer could infer what a token did just by reading its name.</p>
-    
-    <!-- TOKEN STRUCTURE IMAGE -->
-    <div class="media-block">
-      <img src="images/token-naming-structure.jpg" alt="Diagram showing the four named parts of a semantic token: class, foundation, property, and modifier" />
-    </div>
+      <h3>The naming convention:</h3>
+      <p>A design token's name describes how it should be used, and each part communicates one piece of its usage. Every semantic token follows the same four-part structure — making tokens predictable. Any designer or engineer could infer what a token did just by reading its name.</p>
 
-    <!-- SEGMENT DEFINITIONS -->
-    <div class="seg-defs">
-      <div class="seg-def-card sd-class">
-        <div class="sd-seg-label">1 · Class</div>
-        <div class="sd-title">The context namespace</div>
-        <p>Groups tokens that belong to a specific UI context or product concept. Class makes it clear <em>where</em> a token lives — whether that's the default design system, a navigation surface, or a domain-specific scale like risk ratings.</p>
-        <div class="layer-examples">
-          <span class="token-tag">bs</span>
-          <span class="token-tag">riskVector</span>
-          <span class="token-tag">nav</span>
-          <span class="token-tag">table</span>
-        </div>
+      <!-- TOKEN STRUCTURE IMAGE -->
+      <div class="media-block">
+        <img src="images/token-naming-structure.jpg" alt="Diagram showing the four named parts of a semantic token: class, foundation, property, and modifier" />
       </div>
-      <div class="seg-def-card sd-foundation">
-        <div class="sd-seg-label">2 · Foundation</div>
-        <div class="sd-title">The visual attribute type</div>
-        <p>The type of visual design attribute or foundational style the token controls — such as color, elevation, or space. It answers <em>what kind of style</em> this token is about.</p>
-        <div class="layer-examples">
-          <span class="token-tag">color</span>
-          <span class="token-tag">elevation</span>
-          <span class="token-tag">space</span>
-          <span class="token-tag">radius</span>
-        </div>
-      </div>
-      <div class="seg-def-card sd-property">
-        <div class="sd-seg-label">3 · Property</div>
-        <div class="sd-title">The UI element being styled</div>
-        <p>The UI element the token is applied to — such as a border, background, shadow, or other property. It answers <em>what gets styled</em>.</p>
-        <div class="layer-examples">
-          <span class="token-tag">background</span>
-          <span class="token-tag">text</span>
-          <span class="token-tag">border</span>
-          <span class="token-tag">fill</span>
-          <span class="token-tag">shadow</span>
-        </div>
-      </div>
-      <div class="seg-def-card sd-modifier">
-        <div class="sd-seg-label">4 · Modifier <span class="sd-optional-badge">optional</span></div>
-        <div class="sd-title">The role, state, or emphasis</div>
-        <p>Additional details about the token's purpose — its color role, emphasis level, or interaction state. Not every token has a modifier. For example, <code>color.text</code> is our default body text color — no modifier needed.</p>
-        <div class="layer-examples">
-          <span class="token-tag">primary</span>
-          <span class="token-tag">subtle</span>
-          <span class="token-tag">low</span>
-          <span class="token-tag">critical</span>
-          <span class="token-tag">hover</span>
-        </div>
-      </div>
-    </div>
-    <h3>Token class: the namespace that earns its place</h3>
-    <p>The <strong>class</strong> segment is the first part of every semantic token name. It defines the namespace — a grouping that signals which UI context or domain the token belongs to. Not every context needs its own class. We only created one when a group of tokens was genuinely different enough that sharing a namespace with the default system would create confusion or conflict.</p>
 
-    <ul class="lesson-list">
-      <li>
-        <div class="lesson-body">
-          <strong><code>bs</code> — the default</strong>
-          <p>The baseline namespace for all general-purpose design system tokens. Everything that doesn't belong to a specific context lives here — typography, spacing, core UI colors. Example: <code>bs.color.text.primary</code>.</p>
-        </div>
-      </li>
-      <li>
-        <div class="lesson-body">
-          <strong>Scales — <code>riskVector</code>, <code>rating</code>, <code>finding</code></strong>
-          <p>Domain-specific color systems for Bitsight's cybersecurity grades, risk scores, and security findings. These values have no equivalent in general-purpose tokens — they carry product-specific meaning that would be lost inside the <code>bs</code> namespace. Each gets its own class so the intent is explicit at a glance.</p>
-        </div>
-      </li>
-      <li>
-        <div class="lesson-body">
-          <strong><code>nav</code> — the exception to mode switching</strong>
-          <p>Navigation elements don't switch between light and dark mode — they stay fixed regardless of the active theme. Isolating them in their own class makes that behavior clear and prevents accidental overrides. Example: <code>nav.color.background.logo</code>.</p>
-        </div>
-      </li>
-    </ul>
-
-    <div class="callout">
-      <p>The <strong>class</strong> segment was the key decision. Rather than trying to make one universal token set cover everything, we accepted that some contexts — like our cybersecurity rating scales — were genuinely different and deserved their own namespace. <em>Specificity where it earns its place. Defaults everywhere else.</em></p>
-    </div>
-
-    <h3>Sizing tokens: changing personality without changing components</h3>
-    <p>
-      One of the most satisfying demos I ran for the team was showing what sizing tokens could do. Swap radius values, adjust density, change component height — and the entire product shifts its personality. Compact and sharp vs. spacious and soft. No component was rebuilt. Only the tokens changed.
-    </p>
-
-    <!-- VIDEO PLACEHOLDER — replace src with your actual video file -->
-    <div class="media-block video-block">
-      <div class="media-placeholder">
-        <div class="media-icon">▶</div>
-        <div class="media-label">Video: sizing token demo</div>
-        <div class="media-hint">Replace this block with your screen recording</div>
-      </div>
-      <!-- Uncomment when you have the file:
-      <video controls loop muted playsinline>
-        <source src="assets/sizing-token-demo.mp4" type="video/mp4" />
-      </video>
-      -->
-    </div>
-
-    <h3>Documenting what never existed before</h3>
-    <p>
-      Before the token system, elevation and surface had no documentation at all. Colors and sizes were inconsistent enough to cause pain — but at least they existed somewhere. Elevation was just a judgment call made component by component, with no shared reference, no rules, and no way to enforce consistency.
-    </p>
-    <p>
-      Defining elevation tokens forced something valuable: it made us stop and actually decide what the system should be. You can't name something you haven't defined. The token work became the documentation work.
-    </p>
-
-    <div class="callout">
-      <p><em>Tokens as forcing function.</em> We didn't set out to design an elevation system — we set out to name one. But naming required decisions, decisions required alignment, and alignment produced something we'd never had: a shared, documented model for how surfaces stack in our UI.</p>
-    </div>
-
-    <h3>The elevation token set</h3>
-    <p>
-      The final system uses five tokens. Four surface levels cover the full range of depth in our UI. One blanket token handles the overlay state used by dialogs, drawers, and modals.
-    </p>
-    <!-- TOKEN LEVELS IMAGE -->
-    <div class="media-block">
-      <img src="images/elevation.png" alt="Diagram showing the four levels a elevation token" />
-    </div>
-    <!-- TOKEN BLANKET IMAGE -->
-    <div class="media-block">
-      <img src="images/blanket.png" alt="Diagram showing the blanket element of a elevation token" />
-    </div>
-    <!-- TOKEN BLANKET IMAGE -->
-    <div class="media-block">
-      <img src="images/elevation-table.jpg" alt="Definition of elevation tokens" />
-    </div>
-    <div class="callout">
-      <p>Having these tokens in place means that any new component that introduces depth doesn't have to invent its own answer. It picks a level. The system does the rest.</p>
-    </div>
-  </section>
-  <section id="tension">
-    <div class="section-label">05 — Collaboration</div>
-    <h2>Design and engineering don't always want the same thing</h2>
-    <p>
-      One of the most honest parts of this project was navigating the gap between what design needed and what engineering wanted. These aren't wrong goals — they're just pulling in different directions.
-    </p>
-    <div class="tension-grid">
-      <div class="tension-card design">
-        <div class="tc-label">Design priority</div>
-        <p>A small number of changes propagating safely through many tokens. Scale changes everything — a token system that works at 50 tokens breaks at 500. If maintaining it became manual labor, the system had already failed.</p>
-      </div>
-      <div class="tension-card eng">
-        <div class="tc-label">Engineering priority</div>
-        <p>Specificity. Tokens tied tightly to components. Clear, explicit control over each UI surface. That approach makes behavior predictable — but makes large changes harder and multiplies maintenance cost.</p>
-      </div>
-    </div>
-    <p>
-      That tension shaped every decision: naming conventions, how much abstraction each layer was allowed to have, when to add a contextual token vs. push back and use semantic ones. It still comes up in conversations today — and I think that's healthy. The system shouldn't belong to only one side.
-    </p>
-  </section>
-
-  <!-- OUTCOMES -->
-  <section id="outcomes">
-    <div class="section-label">06 — Outcomes</div>
-    <h2>Consistency as the default, not the exception</h2>
-    <p>
-      The token system shipped progressively — starting with color tokens, then sizing and typography. At launch it covered <strong>160+ primitive variables</strong> and <strong>100+ semantic tokens</strong>. As it rolled out, the effect was visible immediately: updating a primitive value cascaded automatically to every semantic token that referenced it, across the whole product.
-    </p>
-    <p>
-      What used to take days — designing two versions of every component for light and dark mode, hunting for the right hex value, manually keeping everything in sync — was reduced to minutes. Three modes supported out of the box: light, dark, and color blind. No redesign. No duplication. Just a token switch.
-    </p>
-    <h3>Before tokens: two components, one purpose</h3>
-    <p>
-      Before the token system, supporting light and dark modes meant designing two separate versions of every component. Two sets of color values, two frames in Figma, double the maintenance overhead. When a color changed, it changed in two places — or inconsistently, because someone missed one.
-    </p>
-    
-    <p>
-      After tokens, that duplication was gone. Components referenced semantic tokens. Switching modes meant switching the token set, not rebuilding the component. One source of truth.
-    </p>
-
-    <!-- BEFORE/AFTER IMAGE PLACEHOLDER -->
-    <div class="media-block before-after-block">
-      <div class="ba-row">
-        <div class="ba-side">
-          <div class="ba-label before-label">Before</div>
-          <div class="media-placeholder">
-            <div class="media-label">Image: two component versions<br/>(light + dark, hardcoded)</div>
+      <!-- SEGMENT DEFINITIONS -->
+      <div class="seg-defs">
+        <div class="cs-card">
+          <div class="card-label">1 · Class</div>
+          <div class="card-title">The context namespace</div>
+          <p>Groups tokens that belong to a specific UI context or product concept. Class makes it clear <em>where</em> a token lives — whether that's the default design system, a navigation surface, or a domain-specific scale like risk ratings.</p>
+          <div class="layer-examples">
+            <span class="token-tag">bs</span>
+            <span class="token-tag">riskVector</span>
+            <span class="token-tag">nav</span>
           </div>
         </div>
-        <div class="ba-side">
-          <div class="ba-label after-label">After</div>
-          <div class="media-placeholder">
-            <div class="media-label">Image: one component,<br/>mode switched via tokens</div>
+        <div class="cs-card">
+          <div class="card-label">2 · Foundation</div>
+          <div class="card-title">The visual attribute type</div>
+          <p>The type of visual design attribute or foundational style the token controls — such as color, elevation, or space. It answers <em>what kind of style</em> this token is about.</p>
+          <div class="layer-examples">
+            <span class="token-tag">color</span>
+            <span class="token-tag">elevation</span>
+            <span class="token-tag">space</span>
+            <span class="token-tag">radius</span>
+          </div>
+        </div>
+        <div class="cs-card">
+          <div class="card-label">3 · Property</div>
+          <div class="card-title">The UI element being styled</div>
+          <p>The UI element the token is applied to — such as a border, background, shadow, or other property. It answers <em>what gets styled</em>.</p>
+          <div class="layer-examples">
+            <span class="token-tag">background</span>
+            <span class="token-tag">text</span>
+            <span class="token-tag">border</span>
+            <span class="token-tag">fill</span>
+            <span class="token-tag">shadow</span>
+          </div>
+        </div>
+        <div class="cs-card">
+          <div class="card-label">4 · Modifier <span class="sd-optional-badge">optional</span></div>
+          <div class="card-title">The role, state, or emphasis</div>
+          <p>Additional details about the token's purpose — its color role, emphasis level, or interaction state. Not every token has a modifier. For example, <code>color.text</code> is our default body text color — no modifier needed.</p>
+          <div class="layer-examples">
+            <span class="token-tag">primary</span>
+            <span class="token-tag">subtle</span>
+            <span class="token-tag">low</span>
+            <span class="token-tag">critical</span>
+            <span class="token-tag">hover</span>
           </div>
         </div>
       </div>
-      <!-- Uncomment when you have the images:
-      <div class="ba-row">
-        <div class="ba-side">
-          <div class="ba-label before-label">Before</div>
-          <img src="assets/before-two-components.png" alt="Before: two separate component versions for light and dark mode" />
-        </div>
-        <div class="ba-side">
-          <div class="ba-label after-label">After</div>
-          <img src="assets/after-token-mode-switch.png" alt="After: one component with mode controlled by tokens" />
+
+      <h3>Token class: the namespace that earns its place</h3>
+      <p>The <strong>class</strong> segment is the first part of every semantic token name. It defines the namespace — a grouping that signals which UI context or domain the token belongs to. Not every context needs its own class. We only created one when a group of tokens was genuinely different enough that sharing a namespace with the default system would create confusion or conflict.</p>
+
+      <div class="seg-defs">
+          <div class="cs-card">
+            <div class="card-title">bs — the default</div>
+            <p>The baseline namespace for all general-purpose design system tokens. Everything that doesn't belong to a specific context lives here — typography, spacing, core UI colors. Example: <code>bs.color.text.primary</code>.</p>
+          </div>
+          <div class="cs-card">
+            <div class="card-title">Scales — riskVector, rating, finding</div>
+            <p>Domain-specific color systems for Bitsight's cybersecurity grades, risk scores, and security findings. These values have no equivalent in general-purpose tokens — they carry product-specific meaning that would be lost inside the <code>bs</code> namespace. Each gets its own class so the intent is explicit at a glance. Example: <code>riskVector.color.background.gradeA</code>.</p>
+          </div>
+          <div class="cs-card">
+            <div class="card-title">nav — the exception to mode switching</div>
+            <p>Navigation elements don't switch between light and dark mode — they stay fixed regardless of the active theme. Isolating them in their own class makes that behavior clear and prevents accidental overrides. Example: <code>nav.color.background.logo</code>.</p>
+          </div>
+      </div>
+
+      <div class="callout">
+        <p>The <strong>class</strong> segment was the key decision. Rather than trying to make one universal token set cover everything, we accepted that some contexts — like our cybersecurity rating scales — were genuinely different and deserved their own namespace. <em>Specificity where it earns its place. Defaults everywhere else.</em></p>
+      </div>
+
+      <h3>Sizing tokens: changing personality without changing components</h3>
+      <p>
+        One of the most satisfying demos I ran for the team was showing what sizing tokens could do. Swap radius values, adjust density, change component height — and the entire product shifts its personality. Compact and sharp vs. spacious and soft. No component was rebuilt. Only the tokens changed.
+      </p>
+
+      <!-- VIDEO PLACEHOLDER -->
+      <div class="media-block video-block">
+        <div class="media-placeholder">
+          <div class="media-icon">▶</div>
+          <div class="media-label">Video: sizing token demo</div>
+          <div class="media-hint">Replace this block with your screen recording</div>
         </div>
       </div>
-      -->
-    </div>
 
-    <h3>Color blind mode: a new use for the token system</h3>
-    <p>
-      One of the most significant pain points in our product was the scale color system. Bitsight uses color-coded grades and risk vectors extensively — and for color blind users, the default palette was inaccessible. Distinguishing a "low" from a "medium" risk level by color alone was a real problem.
-    </p>
-    <p>
-      Because the token system separated visual values from their semantic meaning, adding a color blind mode became a tractable problem. We defined an alternative set of primitive tokens — accessible color combinations that preserved meaning — and mapped them to the same semantic tokens. Switching to the color blind mode required no changes to components. Only the tokens changed.
-    </p>
+      <h3>Documenting what never existed before</h3>
+      <p>
+        Before the token system, elevation and surface had no documentation at all. Colors and sizes were inconsistent enough to cause pain — but at least they existed somewhere. Elevation was just a judgment call made component by component, with no shared reference, no rules, and no way to enforce consistency.
+      </p>
+      <p>
+        Defining elevation tokens forced something valuable: it made us stop and actually decide what the system should be. You can't name something you haven't defined. The token work became the documentation work.
+      </p>
 
-    <!-- COLORBLIND MODE IMAGE PLACEHOLDERS -->
-    <div class="media-block">
-      <div class="media-placeholder tall">
-        <div class="media-label">Image: default scale colors vs. color blind mode<br/>— side by side comparison</div>
-        <div class="media-hint">Add your screenshots here</div>
+      <div class="callout">
+        <p><em>Tokens as forcing function.</em> We didn't set out to design an elevation system — we set out to name one. But naming required decisions, decisions required alignment, and alignment produced something we'd never had: a shared, documented model for how surfaces stack in our UI.</p>
       </div>
-      <!-- Uncomment when you have images:
-      <img src="assets/colorblind-mode-comparison.png" alt="Scale colors in default mode vs. color blind accessible mode" />
-      -->
-    </div>
 
-    <div class="callout">
-      <p>This was a direct result of the token architecture. If colors had been hardcoded in components, adding an accessible mode would have required touching every component that used those colors. Tokens made it a configuration change, not a redesign.</p>
-    </div>
+      <h3>The elevation token set</h3>
+      <p>
+        The final system uses five tokens. Four surface levels cover the full range of depth in our UI. One blanket token handles the overlay state used by dialogs, drawers, and modals.
+      </p>
 
-    <h3>The users were my teammates</h3>
-    <p>
-      This project stands apart from others in my career — not because of its technical scope, but because of who benefited from it first. The users of this system were the people sitting next to me. My teammates. Myself.
-    </p>
-    <p>
-      I got to see the reactions in real time. In weekly syncs. In Figma comments. There's something different about designing a tool that your colleagues use every day, and then watching it make their work easier — or seeing their face light up the first time they switch a mode and the whole interface updates in one click.
-    </p>
-    <p>
-      That feedback loop — live, immediate, personal — gave this project a kind of satisfaction that user research can't fully replicate.
-    </p>
-
-    <!-- TESTIMONIALS -->
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-quote">
-          "Wait — I just changed the mode and everything updated? I've been doing this manually for two years."
-        </div>
-        <div class="testimonial-meta">
-          <span class="t-role">Designer</span>
-          <span class="t-moment">First mode switch in a weekly design review</span>
-        </div>
+      <div class="media-block">
+        <img src="images/elevation.png" alt="Diagram showing the four levels of elevation token" />
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">
-          "I used to search for the hex. Now I search for the meaning. It sounds small but it changes everything about how I think."
+      <div class="media-block">
+        <img src="images/blanket.png" alt="Diagram showing the blanket element of an elevation token" />
+      </div>
+      <div class="media-block">
+        <img src="images/elevation-table.jpg" alt="Definition of elevation tokens" />
+      </div>
+
+      <div class="callout">
+        <p>Having these tokens in place means that any new component that introduces depth doesn't have to invent its own answer. It picks a level. The system does the rest.</p>
+      </div>
+    </section>
+
+    <section id="tension">
+      <div class="section-label">05 — Collaboration</div>
+      <h2>Design and engineering don't always want the same thing</h2>
+      <p>
+        One of the most honest parts of this project was navigating the gap between what design needed and what engineering wanted. These aren't wrong goals — they're just pulling in different directions.
+      </p>
+      <div class="tension-grid">
+        <div class="cs-card">
+          <div class="card-label">Design priority</div>
+          <p>A small number of changes propagating safely through many tokens. Scale changes everything — a token system that works at 50 tokens breaks at 500. If maintaining it became manual labor, the system had already failed.</p>
         </div>
-        <div class="testimonial-meta">
-          <span class="t-role">Designer</span>
-          <span class="t-moment">On switching from value-hunting to intent-based naming</span>
+        <div class="cs-card">
+          <div class="card-label">Engineering priority</div>
+          <p>Specificity. Tokens tied tightly to components. Clear, explicit control over each UI surface. That approach makes behavior predictable — but makes large changes harder and multiplies maintenance cost.</p>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">
-          "Which color do I use for a Grade A? Before I had to check the spec every time. Now I just type <code>rating.color.fill.a</code> and I know it's right."
-        </div>
-        <div class="testimonial-meta">
-          <span class="t-role">Front-end engineer</span>
-          <span class="t-moment">On the rating scale tokens</span>
+      <p>
+        That tension shaped every decision: naming conventions, how much abstraction each layer was allowed to have, when to add a contextual token vs. push back and use semantic ones. It still comes up in conversations today — and I think that's healthy. The system shouldn't belong to only one side.
+      </p>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section id="outcomes">
+      <div class="section-label">06 — Outcomes</div>
+      <h2>Consistency as the default, not the exception</h2>
+      <p>
+        The token system shipped progressively — starting with color tokens, then sizing and typography. At launch it covered <strong>160+ primitive variables</strong> and <strong>100+ semantic tokens</strong>. As it rolled out, the effect was visible immediately: updating a primitive value cascaded automatically to every semantic token that referenced it, across the whole product.
+      </p>
+      <p>
+        What used to take days — designing two versions of every component for light and dark mode, hunting for the right hex value, manually keeping everything in sync — was reduced to minutes. Three modes supported out of the box: light, dark, and color blind. No redesign. No duplication. Just a token switch.
+      </p>
+
+      <h3>Before tokens: two components, one purpose</h3>
+      <p>
+        Before the token system, supporting light and dark modes meant designing two separate versions of every component. Two sets of color values, two frames in Figma, double the maintenance overhead. When a color changed, it changed in two places — or inconsistently, because someone missed one.
+      </p>
+      <p>
+        After tokens, that duplication was gone. Components referenced semantic tokens. Switching modes meant switching the token set, not rebuilding the component. One source of truth.
+      </p>
+
+      <div class="media-block before-after-block">
+        <div class="ba-row">
+          <div class="ba-side">
+            <div class="ba-label before-label">Before</div>
+            <div class="media-placeholder">
+              <div class="media-label">Image: two component versions<br/>(light + dark, hardcoded)</div>
+            </div>
+          </div>
+          <div class="ba-side">
+            <div class="ba-label after-label">After</div>
+            <div class="media-placeholder">
+              <div class="media-label">Image: one component,<br/>mode switched via tokens</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="callout">
-      <p>The result is not a finished system — it's a <em>controllable one.</em> Components continue to be added and evolved. But now there are building blocks in place to make scalable changes without structural rewrites.</p>
-    </div>
-  </section>
+      <h3>Color blind mode: a new use for the token system</h3>
+      <p>
+        One of the most significant pain points in our product was the scale color system. Bitsight uses color-coded grades and risk vectors extensively — and for color blind users, the default palette was inaccessible. Distinguishing a "low" from a "medium" risk level by color alone was a real problem.
+      </p>
+      <p>
+        Because the token system separated visual values from their semantic meaning, adding a color blind mode became a tractable problem. We defined an alternative set of primitive tokens — accessible color combinations that preserved meaning — and mapped them to the same semantic tokens. Switching to the color blind mode required no changes to components. Only the tokens changed.
+      </p>
 
-  <!-- LESSONS -->
-  <section id="lessons">
-    <div class="section-label">07 — Lessons Learned</div>
-    <h3>What I'd tell myself at the start</h3>
-    <p>Design for change, not perfection. The system that survives is the one that absorbs new themes, products, and opinions without structural rewrites. Every layer should exist for one reason: to reduce future edits. If it doesn't lower change cost, it doesn't belong — no matter how clever it sounds.
-    </p>
-    <p>Specificity has a real cost. Granular control is valuable, but unchecked it multiplies tokens and slows global updates. Design wants propagation; engineering wants explicit control. Holding that line — and keeping both sides honest — was one of the hardest parts of the job.
-    </p>
-    <p>Study mature systems, but don't copy them. Carbon, Material, and Atlassian gave me a vocabulary to think with. And get engineering aligned before the naming is done, not after. Some of the hardest conversations happened because I had already committed to structures before they weighed in. Earlier collaboration would have saved real rework.
-    </p>
-  </section>
-</main>
+      <div class="media-block">
+        <div class="media-placeholder tall">
+          <div class="media-label">Image: default scale colors vs. color blind mode<br/>— side by side comparison</div>
+          <div class="media-hint">Add your screenshots here</div>
+        </div>
+      </div>
 
+      <div class="callout">
+        <p>This was a direct result of the token architecture. If colors had been hardcoded in components, adding an accessible mode would have required touching every component that used those colors. Tokens made it a configuration change, not a redesign.</p>
+      </div>
+
+      <h3>The users were my teammates</h3>
+      <p>
+        This project stands apart from others in my career — not because of its technical scope, but because of who benefited from it first. The users of this system were the people sitting next to me. My teammates. Myself.
+      </p>
+      <p>
+        I got to see the reactions in real time. In weekly syncs. In Figma comments. There's something different about designing a tool that your colleagues use every day, and then watching it make their work easier — or seeing their face light up the first time they switch a mode and the whole interface updates in one click.
+      </p>
+      <p>
+        That feedback loop — live, immediate, personal — gave this project a kind of satisfaction that user research can't fully replicate.
+      </p>
+
+      <!-- TESTIMONIALS -->
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "Wait — I just changed the mode and everything updated? I've been doing this manually for two years."
+          </div>
+          <div class="testimonial-meta">
+            <span class="t-role">Designer</span>
+            <span class="t-moment">First mode switch in a weekly design review</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "I used to search for the hex. Now I search for the meaning. It sounds small but it changes everything about how I think."
+          </div>
+          <div class="testimonial-meta">
+            <span class="t-role">Designer</span>
+            <span class="t-moment">On switching from value-hunting to intent-based naming</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "Which color do I use for a Grade A? Before I had to check the spec every time. Now I just type <code>rating.color.fill.a</code> and I know it's right."
+          </div>
+          <div class="testimonial-meta">
+            <span class="t-role">Front-end engineer</span>
+            <span class="t-moment">On the rating scale tokens</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>The result is not a finished system — it's a <em>controllable one.</em> Components continue to be added and evolved. But now there are building blocks in place to make scalable changes without structural rewrites.</p>
+      </div>
+    </section>
+
+    <!-- LESSONS -->
+    <section id="lessons">
+      <div class="section-label">07 — Lessons Learned</div>
+      <h3>What I'd tell myself at the start</h3>
+      <p>Design for change, not perfection. The system that survives is the one that absorbs new themes, products, and opinions without structural rewrites. Every layer should exist for one reason: to reduce future edits. If it doesn't lower change cost, it doesn't belong — no matter how clever it sounds.
+      </p>
+      <p>Specificity has a real cost. Granular control is valuable, but unchecked it multiplies tokens and slows global updates. Design wants propagation; engineering wants explicit control. Holding that line — and keeping both sides honest — was one of the hardest parts of the job.
+      </p>
+      <p>Study mature systems, but don't copy them. Carbon, Material, and Atlassian gave me a vocabulary to think with. And get engineering aligned before the naming is done, not after. Some of the hardest conversations happened because I had already committed to structures before they weighed in. Earlier collaboration would have saved real rework.
+      </p>
+    </section>
+
+  </main>
 </div><!-- /cs-layout -->
 
 <!-- ── FOOTER ── -->
 <footer>
   <p>← <a href="index.html">Back to all work</a> &nbsp;·&nbsp; Ariel · Product Designer &nbsp;·&nbsp; <a href="#" data-email-href>Contact</a></p>
 </footer>
-  <script src="js/site.js" defer></script>
+
+<script src="js/site.js" defer></script>
 </body>
 </html>

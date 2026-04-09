@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="css/tokens.css"/>
   <link rel="stylesheet" href="css/base.css"/>
   <link rel="stylesheet" href="css/case-study.css"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Study 3 — Personas & IA · Ariel's Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personas & IA — Ariel's Portfolio</title>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ── NAV ── -->
 <nav>
   <a class="nav-name" href="index.html" data-i18n="nav.brand">Ariel Ortiz</a>
   <ul class="nav-links">
@@ -33,9 +30,8 @@
     </button>
   </div>
 </nav>
-<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
-<!-- HERO -->
+<!-- ── HERO ── -->
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-tag">Case Study · UX Research &amp; Strategy</div>
@@ -60,61 +56,77 @@
 </header>
 
 <div class="cs-layout">
+  <nav class="cs-index" aria-label="Case study sections">
+    <ol>
+      <li><a href="#problem">01 — Problem</a></li>
+      <li><a href="#research">02 — Research</a></li>
+      <li><a href="#personas">03 — Personas</a></li>
+      <li><a href="#journey">04 — Journey</a></li>
+      <li><a href="#insights">05 — Insights</a></li>
+      <li><a href="#architecture">06 — Architecture</a></li>
+      <li><a href="#patterns">07 — Patterns</a></li>
+      <li><a href="#outcomes">08 — Outcomes</a></li>
+      <li><a href="#reflection">09 — Reflection</a></li>
+    </ol>
+  </nav>
 
-<nav class="cs-index" aria-label="Case study sections">
-  <ol>
-    <li><a href="#problem">01 — Problem</a></li>
-    <li><a href="#research">02 — Research</a></li>
-    <li><a href="#personas">03 — Personas</a></li>
-    <li><a href="#journey">04 — Journey</a></li>
-    <li><a href="#insights">05 — Insights</a></li>
-    <li><a href="#architecture">06 — Architecture</a></li>
-    <li><a href="#patterns">07 — Patterns</a></li>
-    <li><a href="#outcomes">08 — Outcomes</a></li>
-    <li><a href="#reflection">09 — Reflection</a></li>
-  </ol>
-</nav>
+  <main class="page-wrap">
 
-<main class="page-wrap">
-<p class="hero-sub">Bitsight's platform served two fundamentally different user types in the same navigation. I led the user research that defined 4 personas and drove the decision to split the product into two dedicated experiences.</p>
+    <p class="hero-sub">Bitsight's platform served two fundamentally different user types in the same navigation. I led the user research that defined 4 personas and drove the decision to split the product into two dedicated experiences.</p>
 
-<!-- THE PROBLEM -->
-
-<section id="problem" class="reveal">
-<span class="section-label">The Problem</span>
-    <h2>Built by engineers, for no one in particular</h2>
-    <p>ThirdPartyTrust had been running for years before a UX/UI team existed. It was built by engineers — solid technically, but without a user-centered design process. Two fundamentally different users — <strong>customers</strong> (companies managing third-party risk) and <strong>vendors</strong> (companies being assessed) — were navigating the same interface, even though their goals, workflows, and mental models had almost nothing in common.</p>
-    <p>Without a UX team, there was no user feedback infrastructure in place. Companies without a subscription were generating a high volume of support tickets with no clear signal about what was actually failing. There was no customer success support for them either — just noise, and no way to make sense of it.</p>
-    <blockquote>
-      <p>Companies with no subscription had a significant amount of issues and tickets, with no clear user feedback.</p>
-    </blockquote>
-    <p>When I joined ThirdPartyTrust, the signal was already there. The job was to build the process to read it — and then act on it.</p>
-</section>
-
-<!-- RESEARCH -->
-
-<section id="research" class="reveal">
-<span class="section-label">Research Approach</span>
-    <h2>Mixed methods, deliberate choices</h2>
-    <p>The core challenge was understanding two very different user populations with different goals, contexts, and levels of platform access.</p>
-    <div class="methods-grid">
-      <div class="method-card">
-        <h3>Persona Research + Interviews</h3>
-        <p>To understand motivations, mental models, and workflows for each user type. The goal was exploratory — we didn't know what we didn't know.</p>
+    <!-- OUTCOME BANNER -->
+    <div class="outcome-banner" aria-label="Key outcomes">
+      <div class="outcome-stat">
+        <div class="number">4</div>
+        <div class="label">Research-backed personas — 2 primary, 2 secondary</div>
       </div>
-      <div class="method-card">
-        <h3>Affinity Diagramming</h3>
-        <p>To synthesize observations across participants and give VRM and TMH teams a shared space to build common understanding — not defend assumptions.</p>
+      <div class="outcome-stat">
+        <div class="number">15→2</div>
+        <div class="label">Average assessment turnaround in days</div>
       </div>
-      <div class="method-card">
-        <h3>Usability Studies</h3>
-        <p>To validate new workflows once the proposed IA was defined — testing whether the new structure matched how users actually wanted to navigate.</p>
+      <div class="outcome-stat">
+        <div class="number">2</div>
+        <div class="label">Dedicated products split from one shared UI — VRM and TMH</div>
+      </div>
+      <div class="outcome-stat">
+        <div class="number">3</div>
+        <div class="label">Research methods — interviews, affinity mapping, usability studies</div>
       </div>
     </div>
 
-    <div style="margin-top: 3rem;">
-      <h3 style="margin-bottom: 0.5rem;">Participant Strategy: Primary vs. Secondary</h3>
-      <p style="margin-bottom: 1rem;">Not all users had equal weight. Personas give focus rather than coverage — so I defined 2 primary and 2 secondary personas based on subscription status, engagement level, and research signal strength.</p>
+    <!-- THE PROBLEM -->
+    <section id="problem">
+      <div class="section-label">01 — Problem</div>
+      <h2>Built by engineers, for no one in particular</h2>
+      <p>ThirdPartyTrust had been running for years before a UX/UI team existed. It was built by engineers — solid technically, but without a user-centered design process. Two fundamentally different users — <strong>customers</strong> (companies managing third-party risk) and <strong>vendors</strong> (companies being assessed) — were navigating the same interface, even though their goals, workflows, and mental models had almost nothing in common.</p>
+      <p>Without a UX team, there was no user feedback infrastructure in place. Companies without a subscription were generating a high volume of support tickets with no clear signal about what was actually failing. There was no customer success support for them either — just noise, and no way to make sense of it.</p>
+      <div class="callout">
+        <p>Companies with no subscription had a significant amount of issues and tickets, with no clear user feedback. When I joined ThirdPartyTrust, the signal was already there. The job was to build the process to read it — and then act on it.</p>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
+      <div class="section-label">02 — Research Approach</div>
+      <h2>Mixed methods, deliberate choices</h2>
+      <p>The core challenge was understanding two very different user populations with different goals, contexts, and levels of platform access.</p>
+      <div class="methods-grid">
+        <div class="cs-card">
+          <h3>Persona Research + Interviews</h3>
+          <p>To understand motivations, mental models, and workflows for each user type. The goal was exploratory — we didn't know what we didn't know.</p>
+        </div>
+        <div class="cs-card">
+          <h3>Affinity Diagramming</h3>
+          <p>To synthesize observations across participants and give VRM and TMH teams a shared space to build common understanding — not defend assumptions.</p>
+        </div>
+        <div class="cs-card">
+          <h3>Usability Studies</h3>
+          <p>To validate new workflows once the proposed IA was defined — testing whether the new structure matched how users actually wanted to navigate.</p>
+        </div>
+      </div>
+
+      <h3>Participant Strategy: Primary vs. Secondary</h3>
+      <p>Not all users had equal weight. Personas give focus rather than coverage — so I defined 2 primary and 2 secondary personas based on subscription status, engagement level, and research signal strength.</p>
       <table class="participant-table">
         <thead>
           <tr>
@@ -156,625 +168,559 @@
           </tr>
         </tbody>
       </table>
-    </div>
-</section>
+    </section>
 
-<!-- PERSONAS -->
-
-<section id="personas" class="reveal">
-<span class="section-label">User Personas</span>
+    <!-- PERSONAS -->
+    <section id="personas">
+      <div class="section-label">03 — User Personas</div>
       <h2>Four people. Two sides of the same platform.</h2>
       <p>Primary personas drove design decisions. Secondary personas shaped onboarding requirements and feedback pattern design. Both were necessary — subscribed users showed the potential; unsubscribed users showed the failure.</p>
-    
 
-    <div class="personas-grid" style="margin-top: 2rem;">
+      <div class="personas-grid">
 
-      <!-- SARAH -->
-      <div class="persona-card primary fade-in">
-        <div class="persona-header">
-          <div class="persona-avatar">👩</div>
-          <div class="persona-meta">
-            <div class="persona-type">Primary · Customer with Subscription</div>
-            <div class="persona-name">Sarah Chen</div>
-            <div class="persona-role">Third-Party Risk Manager · New York, USA</div>
+        <!-- SARAH -->
+        <div class="persona-card primary">
+          <div class="persona-header">
+            <div class="persona-avatar">👩</div>
+            <div class="persona-meta">
+              <div class="persona-type">Primary · Customer with Subscription</div>
+              <div class="persona-name">Sarah Chen</div>
+              <div class="persona-role">Third-Party Risk Manager · New York, USA</div>
+            </div>
+          </div>
+          <div class="persona-quote">I need to know the risk status of all my vendors at a glance — without chasing anyone by email.</div>
+          <div class="persona-body">
+            <div class="persona-row">
+              <div class="persona-field"><label>Age</label><span>38</span></div>
+              <div class="persona-field"><label>Occupation</label><span>TPRM Manager</span></div>
+              <div class="persona-field"><label>Company</label><span>Financial services, 2,000+</span></div>
+              <div class="persona-field"><label>Credentials</label><span>CISA · 8+ yrs GRC</span></div>
+            </div>
+            <div class="persona-section-title">Roles</div>
+            <ul class="persona-list">
+              <li>Risk program owner</li>
+              <li>Assessment sender and reviewer</li>
+              <li>Vendor relationship manager</li>
+              <li>Compliance reporter to CISO</li>
+            </ul>
+            <div class="persona-section-title">Context &amp; Obstacles</div>
+            <p>Manages 100–200 vendors. Ran TPRM from Excel and email before ThirdPartyTrust. The shared UI mixed customer and vendor content — no bulk actions, no automated reminders, no audit-ready export.</p>
+            <div class="persona-section-title">Questions She Asks</div>
+            <ul class="persona-list">
+              <li>"Which vendors are overdue right now?"</li>
+              <li>"Can I send a reminder to all overdue vendors at once?"</li>
+              <li>"How do I track when a vendor's SOC 2 certificate expires?"</li>
+            </ul>
+            <div class="persona-section-title">Goals</div>
+            <ul class="persona-list">
+              <li>Track all vendor requirements (questionnaires, certifications, insurance) in one place</li>
+              <li>Know in real time which vendors are compliant, in progress, or overdue</li>
+              <li>Generate audit-ready reports without manual formatting</li>
+            </ul>
+            <div class="persona-section-title">Motivations</div>
+            <ul class="persona-list">
+              <li>Prevent a compliance gap that leads to an audit failure</li>
+              <li>Demonstrate TPRM program value to the CISO</li>
+              <li>Reduce manual work to focus on high-risk vendors</li>
+            </ul>
+            <div class="persona-section-title">Story of Use</div>
+            <div class="persona-story">
+              <span class="story-label before">Before</span>
+              Sarah sees 3 overdue assessments. She manually copies emails into her calendar and sends individual follow-ups. 45 minutes.
+            </div>
+            <div class="story-after">
+              <span class="story-label after">After redesign</span>
+              Sarah filters by "Overdue," selects all three vendors, sends a bulk reminder. 2 minutes.
+            </div>
           </div>
         </div>
-        <div class="persona-quote">I need to know the risk status of all my vendors at a glance — without chasing anyone by email.</div>
-        <div class="persona-body">
-          <div class="persona-row">
-            <div class="persona-field"><label>Age</label><span>38</span></div>
-            <div class="persona-field"><label>Occupation</label><span>TPRM Manager</span></div>
-            <div class="persona-field"><label>Company</label><span>Financial services, 2,000+</span></div>
-            <div class="persona-field"><label>Credentials</label><span>CISA · 8+ yrs GRC</span></div>
+
+        <!-- MARCO -->
+        <div class="persona-card primary">
+          <div class="persona-header">
+            <div class="persona-avatar">👨</div>
+            <div class="persona-meta">
+              <div class="persona-type">Primary · Vendor with Subscription</div>
+              <div class="persona-name">Marco Rossi</div>
+              <div class="persona-role">Security Compliance Manager · Milan, Italy</div>
+            </div>
           </div>
-
-          <div class="persona-section-title">Roles</div>
-          <ul class="persona-list">
-            <li>Risk program owner</li>
-            <li>Assessment sender and reviewer</li>
-            <li>Vendor relationship manager</li>
-            <li>Compliance reporter to CISO</li>
-          </ul>
-
-          <div class="persona-section-title">Context & Obstacles</div>
-          <p style="font-size:0.82rem; color:var(--grey-700); margin:0;">Manages 100–200 vendors. Ran TPRM from Excel and email before ThirdPartyTrust. The shared UI mixed customer and vendor content — no bulk actions, no automated reminders, no audit-ready export.</p>
-
-          <div class="persona-section-title">Questions She Asks</div>
-          <ul class="persona-list">
-            <li>"Which vendors are overdue right now?"</li>
-            <li>"Can I send a reminder to all overdue vendors at once?"</li>
-            <li>"How do I track when a vendor's SOC 2 certificate expires?"</li>
-          </ul>
-
-          <div class="persona-section-title">Goals</div>
-          <ul class="persona-list">
-            <li>Track all vendor requirements (questionnaires, certifications, insurance) in one place</li>
-            <li>Know in real time which vendors are compliant, in progress, or overdue</li>
-            <li>Generate audit-ready reports without manual formatting</li>
-          </ul>
-
-          <div class="persona-section-title">Motivations</div>
-          <ul class="persona-list">
-            <li>Prevent a compliance gap that leads to an audit failure</li>
-            <li>Demonstrate TPRM program value to the CISO</li>
-            <li>Reduce manual work to focus on high-risk vendors</li>
-          </ul>
-
-          <div class="persona-section-title">Influences</div>
-          <ul class="persona-list">
-            <li>CISO directives · SOC 2 · ISO 27001 · NIST CSF · DORA</li>
-            <li>ISACA community · Audit outcomes · Procurement timelines</li>
-          </ul>
-
-          <div class="persona-section-title">Story of Use</div>
-          <div class="persona-story">
-            <span class="story-label before">Before</span>
-            Sarah sees 3 overdue assessments. She manually copies emails into her calendar and sends individual follow-ups. 45 minutes.
-          </div>
-          <div class="story-after">
-            <span class="story-label after">After redesign</span>
-            Sarah filters by "Overdue," selects all three vendors, sends a bulk reminder. 2 minutes.
-          </div>
-        </div>
-      </div>
-
-      <!-- MARCO -->
-      <div class="persona-card primary fade-in">
-        <div class="persona-header">
-          <div class="persona-avatar">👨</div>
-          <div class="persona-meta">
-            <div class="persona-type">Primary · Vendor with Subscription</div>
-            <div class="persona-name">Marco Rossi</div>
-            <div class="persona-role">Security Compliance Manager · Milan, Italy</div>
+          <div class="persona-quote">I answer the same questionnaire 20 times a year. I need to do it once and share it everywhere.</div>
+          <div class="persona-body">
+            <div class="persona-row">
+              <div class="persona-field"><label>Age</label><span>44</span></div>
+              <div class="persona-field"><label>Occupation</label><span>Compliance Manager</span></div>
+              <div class="persona-field"><label>Company</label><span>B2B SaaS, 300 employees</span></div>
+              <div class="persona-field"><label>Credentials</label><span>ISO 27001 Lead Impl.</span></div>
+            </div>
+            <div class="persona-section-title">Roles</div>
+            <ul class="persona-list">
+              <li>Trust Profile owner</li>
+              <li>Assessment respondent (questionnaires, certifications, insurance)</li>
+              <li>Internal coordination hub — legal, engineering, finance</li>
+              <li>Security document custodian</li>
+            </ul>
+            <div class="persona-section-title">Context &amp; Obstacles</div>
+            <p>Receives 25–40 requests/year — questionnaires, SOC 2 requests, cyber insurance verifications. Each from a different customer in a different format. No way to delegate in-platform, no renewal tracking, no submission confirmation.</p>
+            <div class="persona-section-title">Questions He Asks</div>
+            <ul class="persona-list">
+              <li>"Has the customer reviewed my submitted response?"</li>
+              <li>"Where do I upload our SOC 2 so all customers see it?"</li>
+              <li>"Can I assign the technical section to my engineer in-platform?"</li>
+            </ul>
+            <div class="persona-section-title">Goals</div>
+            <ul class="persona-list">
+              <li>Live Trust Profile — questionnaire answers, certifications, and insurance in one place</li>
+              <li>Reuse previous answers and re-attach valid documents</li>
+              <li>Track certificate and insurance renewals without a calendar</li>
+            </ul>
+            <div class="persona-section-title">Motivations</div>
+            <ul class="persona-list">
+              <li>Support sales velocity — slow responses cost deals</li>
+              <li>Protect reputation as a trustworthy, compliant vendor</li>
+              <li>Reduce coordination overhead across engineering, legal, finance</li>
+            </ul>
+            <div class="persona-section-title">Story of Use</div>
+            <div class="persona-story">
+              <span class="story-label before">Before</span>
+              New 80-question assessment. Marco emails his engineer a copy of the questions. Three weeks of follow-ups later, all sections are complete. He submits — no confirmation.
+            </div>
+            <div class="story-after">
+              <span class="story-label after">After redesign</span>
+              Marco opens TMH, assigns the technical section to his engineer in two clicks. He submits in 5 days and receives confirmation the customer started reviewing.
+            </div>
           </div>
         </div>
-        <div class="persona-quote">I answer the same questionnaire 20 times a year. I need to do it once and share it everywhere.</div>
-        <div class="persona-body">
-          <div class="persona-row">
-            <div class="persona-field"><label>Age</label><span>44</span></div>
-            <div class="persona-field"><label>Occupation</label><span>Compliance Manager</span></div>
-            <div class="persona-field"><label>Company</label><span>B2B SaaS, 300 employees</span></div>
-            <div class="persona-field"><label>Credentials</label><span>ISO 27001 Lead Impl.</span></div>
+
+        <!-- DIANA -->
+        <div class="persona-card secondary">
+          <div class="persona-header">
+            <div class="persona-avatar">👩</div>
+            <div class="persona-meta">
+              <div class="persona-type">Secondary · Customer without Subscription</div>
+              <div class="persona-name">Diana Morales</div>
+              <div class="persona-role">IT Security Analyst · Austin, Texas</div>
+            </div>
           </div>
-
-          <div class="persona-section-title">Roles</div>
-          <ul class="persona-list">
-            <li>Trust Profile owner</li>
-            <li>Assessment respondent (questionnaires, certifications, insurance)</li>
-            <li>Internal coordination hub — legal, engineering, finance</li>
-            <li>Security document custodian</li>
-          </ul>
-
-          <div class="persona-section-title">Context & Obstacles</div>
-          <p style="font-size:0.82rem; color:var(--grey-700); margin:0;">Receives 25–40 requests/year — questionnaires, SOC 2 requests, cyber insurance verifications. Each from a different customer in a different format. No way to delegate in-platform, no renewal tracking, no submission confirmation.</p>
-
-          <div class="persona-section-title">Questions He Asks</div>
-          <ul class="persona-list">
-            <li>"Has the customer reviewed my submitted response?"</li>
-            <li>"Where do I upload our SOC 2 so all customers see it?"</li>
-            <li>"Can I assign the technical section to my engineer in-platform?"</li>
-          </ul>
-
-          <div class="persona-section-title">Goals</div>
-          <ul class="persona-list">
-            <li>Live Trust Profile — questionnaire answers, certifications, and insurance in one place</li>
-            <li>Reuse previous answers and re-attach valid documents</li>
-            <li>Track certificate and insurance renewals without a calendar</li>
-          </ul>
-
-          <div class="persona-section-title">Motivations</div>
-          <ul class="persona-list">
-            <li>Support sales velocity — slow responses cost deals</li>
-            <li>Protect reputation as a trustworthy, compliant vendor</li>
-            <li>Reduce coordination overhead across engineering, legal, finance</li>
-          </ul>
-
-          <div class="persona-section-title">Influences</div>
-          <ul class="persona-list">
-            <li>Client contract requirements · Sales team timelines</li>
-            <li>ISO/SOC auditors · Annual certification schedules · GDPR</li>
-          </ul>
-
-          <div class="persona-section-title">Story of Use</div>
-          <div class="persona-story">
-            <span class="story-label before">Before</span>
-            New 80-question assessment. Marco emails his engineer a copy of the questions. Three weeks of follow-ups later, all sections are complete. He submits — no confirmation.
-          </div>
-          <div class="story-after">
-            <span class="story-label after">After redesign</span>
-            Marco opens TMH, assigns the technical section to his engineer in two clicks. He submits in 5 days and receives confirmation the customer started reviewing.
+          <div class="persona-quote">I just need to send one questionnaire to a vendor. I've been trying to figure this out for an hour.</div>
+          <div class="persona-body">
+            <div class="persona-row">
+              <div class="persona-field"><label>Age</label><span>31</span></div>
+              <div class="persona-field"><label>Occupation</label><span>IT Security Analyst</span></div>
+              <div class="persona-field"><label>Company</label><span>Tech startup, 80 employees</span></div>
+              <div class="persona-field"><label>Credentials</label><span>CompTIA Security+</span></div>
+            </div>
+            <div class="persona-section-title">Roles</div>
+            <ul class="persona-list">
+              <li>Ad-hoc vendor assessor</li>
+              <li>IT security generalist (solo)</li>
+              <li>Compliance reporter to management</li>
+            </ul>
+            <div class="persona-section-title">Context &amp; Obstacles</div>
+            <p>Given access to ThirdPartyTrust with no onboarding, no support contact, no training. Logs in a few times per year, always starting from scratch. Empty dashboard, generic errors, no confirmation — her workaround: PDF by email.</p>
+            <div class="persona-section-title">Questions She Asks</div>
+            <ul class="persona-list">
+              <li>"Did my questionnaire actually send?"</li>
+              <li>"Why did I get an error — what do I do?"</li>
+              <li>"Which features do I have without a subscription?"</li>
+            </ul>
+            <div class="persona-section-title">Goals &amp; Motivations</div>
+            <ul class="persona-list">
+              <li>Send a questionnaire to a specific vendor and know when they reply</li>
+              <li>Produce basic due diligence evidence for leadership</li>
+              <li>Complete a specific task assigned by her manager — quickly</li>
+            </ul>
+            <div class="persona-section-title">Story of Use</div>
+            <div class="persona-story">
+              <span class="story-label before">Before</span>
+              Blank dashboard, generic error, one hour of trial and error. Sends questionnaire as a PDF by email.
+            </div>
+            <div class="story-after">
+              <span class="story-label after">After redesign</span>
+              Guided empty state walks her through the first step. Completes task in 10 minutes. Gets an email when the vendor responds.
+            </div>
+            <div class="callout">
+              <p><strong>Design impact:</strong> Primary driver for the feedback pattern redesign — empty states, inline errors, success confirmation, and notification emails.</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- DIANA -->
-      <div class="persona-card secondary fade-in">
-        <div class="persona-header">
-          <div class="persona-avatar secondary-bg">👩</div>
-          <div class="persona-meta">
-            <div class="persona-type">Secondary · Customer without Subscription</div>
-            <div class="persona-name">Diana Morales</div>
-            <div class="persona-role">IT Security Analyst · Austin, Texas</div>
+        <!-- JAMES -->
+        <div class="persona-card secondary">
+          <div class="persona-header">
+            <div class="persona-avatar">👨</div>
+            <div class="persona-meta">
+              <div class="persona-type">Secondary · Vendor without Subscription</div>
+              <div class="persona-name">James Park</div>
+              <div class="persona-role">Junior Security Engineer · Toronto, Canada</div>
+            </div>
+          </div>
+          <div class="persona-quote">A client sent me a link to fill in a security questionnaire. I've never heard of this platform.</div>
+          <div class="persona-body">
+            <div class="persona-row">
+              <div class="persona-field"><label>Age</label><span>27</span></div>
+              <div class="persona-field"><label>Occupation</label><span>Junior Security Eng.</span></div>
+              <div class="persona-field"><label>Company</label><span>Software consultancy, 40</span></div>
+              <div class="persona-field"><label>Background</label><span>CS grad · 2 yrs exp.</span></div>
+            </div>
+            <div class="persona-section-title">Roles</div>
+            <ul class="persona-list">
+              <li>One-time assessment respondent</li>
+              <li>Internal coordinator — CFO (insurance), engineering lead (DR plan), legal (data processing)</li>
+            </ul>
+            <div class="persona-section-title">Context &amp; Obstacles</div>
+            <p>Arrived via invitation email into a shared inbox. Signed up and landed on a dashboard with no questionnaire in sight. 90 questions, no progress bar, no delegation, no confirmation. Emailed the client to verify submission.</p>
+            <div class="persona-section-title">Questions He Asks</div>
+            <ul class="persona-list">
+              <li>"Where is the questionnaire I was invited to fill in?"</li>
+              <li>"How many questions are there? How long will this take?"</li>
+              <li>"Did my submission go through?"</li>
+            </ul>
+            <div class="persona-section-title">Goals &amp; Motivations</div>
+            <ul class="persona-list">
+              <li>Find and complete the questionnaire without confusion</li>
+              <li>Confirm the client received it without having to email them</li>
+              <li>Avoid delaying the client's procurement process</li>
+            </ul>
+            <div class="persona-section-title">Story of Use</div>
+            <div class="persona-story">
+              <span class="story-label before">Before</span>
+              10 minutes finding the questionnaire. Screenshots sent to colleagues on Teams. No progress bar, no confirmation. Emails client to check. Repeats everything on next visit.
+            </div>
+            <div class="story-after">
+              <span class="story-label after">After redesign</span>
+              Invitation link goes directly to questionnaire. Progress bar: "6 sections · ~30 minutes." Section delegation in-platform. Confirmation screen and email on submit.
+            </div>
+            <div class="callout">
+              <p><strong>Design impact:</strong> Direct-link invitation flow, progress indicator, section delegation, and submission confirmation — all standardized in the Bitsight Design System.</p>
+            </div>
           </div>
         </div>
-        <div class="persona-quote">I just need to send one questionnaire to a vendor. I've been trying to figure this out for an hour.</div>
-        <div class="persona-body">
-          <div class="persona-row">
-            <div class="persona-field"><label>Age</label><span>31</span></div>
-            <div class="persona-field"><label>Occupation</label><span>IT Security Analyst</span></div>
-            <div class="persona-field"><label>Company</label><span>Tech startup, 80 employees</span></div>
-            <div class="persona-field"><label>Credentials</label><span>CompTIA Security+</span></div>
-          </div>
 
-          <div class="persona-section-title">Roles</div>
-          <ul class="persona-list">
-            <li>Ad-hoc vendor assessor</li>
-            <li>IT security generalist (solo)</li>
-            <li>Compliance reporter to management</li>
-          </ul>
+      </div><!-- /personas-grid -->
+    </section>
 
-          <div class="persona-section-title">Context & Obstacles</div>
-          <p style="font-size:0.82rem; color:var(--grey-700); margin:0;">Given access to ThirdPartyTrust with no onboarding, no support contact, no training. Logs in a few times per year, always starting from scratch. Empty dashboard, generic errors, no confirmation — her workaround: PDF by email.</p>
+    <!-- JOURNEY MAP -->
+    <section id="journey" class="journey-section">
+      <div class="section-label">04 — Journey Map · VRM Subscribed Customer</div>
+      <h2>Sarah's full vendor lifecycle — before and after</h2>
+      <p>A current-state / future-state hybrid map tracing the end-to-end experience of a subscribed customer running an annual assessment cycle. This format was chosen because the case study spans both the research phase (ThirdPartyTrust) and the implementation phase (Bitsight).</p>
+      <p class="media-caption">Persona: Sarah Chen · Scenario: Annual vendor assessment cycle · Scope: Full vendor lifecycle in VRM</p>
 
-          <div class="persona-section-title">Questions She Asks</div>
-          <ul class="persona-list">
-            <li>"Did my questionnaire actually send?"</li>
-            <li>"Why did I get an error — what do I do?"</li>
-            <li>"Which features do I have without a subscription?"</li>
-          </ul>
-
-          <div class="persona-section-title">Goals & Motivations</div>
-          <ul class="persona-list">
-            <li>Send a questionnaire to a specific vendor and know when they reply</li>
-            <li>Produce basic due diligence evidence for leadership</li>
-            <li>Complete a specific task assigned by her manager — quickly</li>
-          </ul>
-
-          <div class="persona-section-title">Story of Use</div>
-          <div class="persona-story">
-            <span class="story-label before">Before</span>
-            Blank dashboard, generic error, one hour of trial and error. Sends questionnaire as a PDF by email.
-          </div>
-          <div class="story-after">
-            <span class="story-label after">After redesign</span>
-            Guided empty state walks her through the first step. Completes task in 10 minutes. Gets an email when the vendor responds.
-          </div>
-          <div style="margin-top:0.75rem; padding:0.75rem; background:var(--n-100); border-radius:6px; font-size:0.78rem; color:var(--purple);">
-            <strong>Design impact:</strong> Primary driver for the feedback pattern redesign — empty states, inline errors, success confirmation, and notification emails.
-          </div>
+      <div class="journey-stages">
+        <div class="journey-stage">
+          <div class="stage-number">Stage 1</div>
+          <div class="stage-name">Vendor Onboarding</div>
+          <div class="stage-goal">Add new vendor to the program</div>
+        </div>
+        <div class="journey-stage">
+          <div class="stage-number">Stage 2</div>
+          <div class="stage-name">Requirement Setup</div>
+          <div class="stage-goal">Define what this vendor needs to complete</div>
+        </div>
+        <div class="journey-stage">
+          <div class="stage-number">Stage 3</div>
+          <div class="stage-name">Assignment &amp; Sending</div>
+          <div class="stage-goal">Send requirements to the right contacts</div>
+        </div>
+        <div class="journey-stage">
+          <div class="stage-number">Stage 4</div>
+          <div class="stage-name">Tracking &amp; Follow-up</div>
+          <div class="stage-goal">Know where each vendor stands</div>
+        </div>
+        <div class="journey-stage">
+          <div class="stage-number">Stage 5</div>
+          <div class="stage-name">Review &amp; Closure</div>
+          <div class="stage-goal">Review responses, log findings, close cycle</div>
+        </div>
+        <div class="journey-stage">
+          <div class="stage-number">Stage 6</div>
+          <div class="stage-name">Reporting</div>
+          <div class="stage-goal">Share results with CISO and procurement</div>
         </div>
       </div>
 
-      <!-- JAMES -->
-      <div class="persona-card secondary fade-in">
-        <div class="persona-header">
-          <div class="persona-avatar secondary-bg">👨</div>
-          <div class="persona-meta">
-            <div class="persona-type">Secondary · Vendor without Subscription</div>
-            <div class="persona-name">James Park</div>
-            <div class="persona-role">Junior Security Engineer · Toronto, Canada</div>
+      <div class="journey-rows">
+        <div class="journey-row">
+          <div class="journey-row-header">Actions</div>
+          <div class="journey-cells">
+            <div class="journey-cell">Searches vendor by domain · Adds profile · Assigns to analyst · Tags by risk tier</div>
+            <div class="journey-cell">Selects requirement types: questionnaire, certification, or insurance · Sets deadlines and expiry dates</div>
+            <div class="journey-cell">Invites vendor contacts per requirement type · Sends in bulk · Adds internal notes</div>
+            <div class="journey-cell">Checks dashboard weekly · Filters by status · Sends reminders to unresponsive vendors</div>
+            <div class="journey-cell">Opens submitted responses · Flags items · Logs findings · Marks as accepted/remediated/escalated</div>
+            <div class="journey-cell">Exports compliance summary · Generates portfolio risk report · Shares with CISO · Archives for audit</div>
           </div>
         </div>
-        <div class="persona-quote">A client sent me a link to fill in a security questionnaire. I've never heard of this platform.</div>
-        <div class="persona-body">
-          <div class="persona-row">
-            <div class="persona-field"><label>Age</label><span>27</span></div>
-            <div class="persona-field"><label>Occupation</label><span>Junior Security Eng.</span></div>
-            <div class="persona-field"><label>Company</label><span>Software consultancy, 40</span></div>
-            <div class="persona-field"><label>Background</label><span>CS grad · 2 yrs exp.</span></div>
+        <div class="journey-row">
+          <div class="journey-row-header thoughts">Thoughts &amp; Feelings</div>
+          <div class="journey-cells">
+            <div class="journey-cell emotion">"I need to set this up correctly so nothing gets lost later." — <em>Focused</em></div>
+            <div class="journey-cell emotion">"Do I need a questionnaire, a certificate, or both?" — <em>Uncertain</em></div>
+            <div class="journey-cell emotion">"I hope the right person sees this. I'm not always sure who to invite." — <em>Cautious</em></div>
+            <div class="journey-cell emotion">"I shouldn't have to log in every day just to check if someone responded." — <em>Frustrated ⚡</em></div>
+            <div class="journey-cell emotion">"I need to log this finding somewhere — but where?" — <em>Overwhelmed</em></div>
+            <div class="journey-cell emotion">"I'm going to spend two hours formatting this before I can share it." — <em>Resigned ⚡</em></div>
           </div>
-
-          <div class="persona-section-title">Roles</div>
-          <ul class="persona-list">
-            <li>One-time assessment respondent</li>
-            <li>Internal coordinator — CFO (insurance), engineering lead (DR plan), legal (data processing)</li>
-          </ul>
-
-          <div class="persona-section-title">Context & Obstacles</div>
-          <p style="font-size:0.82rem; color:var(--grey-700); margin:0;">Arrived via invitation email into a shared inbox. Signed up and landed on a dashboard with no questionnaire in sight. 90 questions, no progress bar, no delegation, no confirmation. Emailed the client to verify submission.</p>
-
-          <div class="persona-section-title">Questions He Asks</div>
-          <ul class="persona-list">
-            <li>"Where is the questionnaire I was invited to fill in?"</li>
-            <li>"How many questions are there? How long will this take?"</li>
-            <li>"Did my submission go through?"</li>
-          </ul>
-
-          <div class="persona-section-title">Goals & Motivations</div>
-          <ul class="persona-list">
-            <li>Find and complete the questionnaire without confusion</li>
-            <li>Confirm the client received it without having to email them</li>
-            <li>Avoid delaying the client's procurement process</li>
-          </ul>
-
-          <div class="persona-section-title">Story of Use</div>
-          <div class="persona-story">
-            <span class="story-label before">Before</span>
-            10 minutes finding the questionnaire. Screenshots sent to colleagues on Teams. No progress bar, no confirmation. Emails client to check. Repeats everything on next visit.
+        </div>
+        <div class="journey-row">
+          <div class="journey-row-header pain">Pain Points — Before Redesign</div>
+          <div class="journey-cells">
+            <div class="journey-cell pain-cell">No risk tier tagging · All vendors in one undifferentiated list · No team assignment</div>
+            <div class="journey-cell pain-cell">Could only send questionnaires — certifications and insurance required separate emails</div>
+            <div class="journey-cell pain-cell">One vendor contact at a time · No way to route different requirements to different contacts</div>
+            <div class="journey-cell pain-cell">No automated reminders · No status filter · No notification on vendor submission</div>
+            <div class="journey-cell pain-cell">Findings tracked in a separate spreadsheet · No link between finding and questionnaire answer</div>
+            <div class="journey-cell pain-cell">Raw data exports requiring manual formatting · No portfolio-level summary for leadership</div>
           </div>
-          <div class="story-after">
-            <span class="story-label after">After redesign</span>
-            Invitation link goes directly to questionnaire. Progress bar: "6 sections · ~30 minutes." Section delegation in-platform. Confirmation screen and email on submit.
-          </div>
-          <div style="margin-top:0.75rem; padding:0.75rem; background:var(--n-100); border-radius:6px; font-size:0.78rem; color:var(--purple);">
-            <strong>Design impact:</strong> Direct-link invitation flow, progress indicator, section delegation, and submission confirmation — all standardized in the Bitsight Design System.
+        </div>
+        <div class="journey-row">
+          <div class="journey-row-header opportunity">Design Decisions — After Redesign</div>
+          <div class="journey-cells">
+            <div class="journey-cell opp-cell">Risk tier tagging · Team assignment and analyst transfer · Vendor grouping</div>
+            <div class="journey-cell opp-cell">Bundled requirements — one assignment can include questionnaire + certification + insurance</div>
+            <div class="journey-cell opp-cell">Contact role mapping per requirement type · Bulk send with per-vendor customisation</div>
+            <div class="journey-cell opp-cell">Real-time status dashboard with filter · Automated overdue reminders · Email on submission</div>
+            <div class="journey-cell opp-cell">In-platform findings log linked to responses · Finding status tracking (open/accepted/remediated)</div>
+            <div class="journey-cell opp-cell">Pre-formatted compliance export · Portfolio-level risk dashboard · Archived audit trail</div>
           </div>
         </div>
       </div>
 
-    </div><!-- /personas-grid -->
-</section>
+      <!-- Emotional arc SVG -->
+      <div class="emotional-arc">
+        <div class="arc-title">Emotional Arc</div>
+        <div class="arc-chart">
+          <svg class="arc-svg" viewBox="0 0 700 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="40" x2="700" y2="40" stroke="#e8e8e8" stroke-width="1"/>
+            <line x1="0" y1="80" x2="700" y2="80" stroke="#e8e8e8" stroke-width="1"/>
+            <line x1="0" y1="120" x2="700" y2="120" stroke="#e8e8e8" stroke-width="1"/>
+            <text x="4" y="36" font-size="9" fill="#a3a3a3" font-family="DM Sans, sans-serif">High</text>
+            <text x="4" y="116" font-size="9" fill="#a3a3a3" font-family="DM Sans, sans-serif">Low</text>
+            <path d="M 58 50 C 115 50, 148 70, 175 75 C 232 82, 290 60, 350 55 C 408 50, 460 105, 524 115 C 580 122, 610 110, 641 120" stroke="#a3a3a3" stroke-width="2" stroke-dasharray="6 3" fill="none"/>
+            <path d="M 58 55 C 115 50, 148 48, 175 50 C 232 52, 290 46, 350 44 C 408 42, 460 46, 524 48 C 580 50, 610 46, 641 44" stroke="url(#arcGrad)" stroke-width="2.5" fill="none"/>
+            <defs>
+              <linearGradient id="arcGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#2b0c7d"/>
+                <stop offset="100%" stop-color="#f28afd"/>
+              </linearGradient>
+            </defs>
+            <text x="58"  y="148" font-size="9" fill="#525252" text-anchor="middle" font-family="DM Sans, sans-serif">Onboard</text>
+            <text x="175" y="148" font-size="9" fill="#525252" text-anchor="middle" font-family="DM Sans, sans-serif">Setup</text>
+            <text x="292" y="148" font-size="9" fill="#525252" text-anchor="middle" font-family="DM Sans, sans-serif">Send</text>
+            <text x="408" y="148" font-size="9" fill="#c0392b" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="700">Follow-up ⚡</text>
+            <text x="524" y="148" font-size="9" fill="#525252" text-anchor="middle" font-family="DM Sans, sans-serif">Review</text>
+            <text x="641" y="148" font-size="9" fill="#c0392b" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="700">Report ⚡</text>
+            <circle cx="58"  cy="50"  r="4" fill="#a3a3a3"/>
+            <circle cx="175" cy="75"  r="4" fill="#a3a3a3"/>
+            <circle cx="292" cy="55"  r="4" fill="#a3a3a3"/>
+            <circle cx="408" cy="105" r="5" fill="#c0392b"/>
+            <circle cx="524" cy="115" r="4" fill="#a3a3a3"/>
+            <circle cx="641" cy="120" r="5" fill="#c0392b"/>
+            <circle cx="58"  cy="55"  r="4" fill="#2b0c7d"/>
+            <circle cx="175" cy="50"  r="4" fill="#2b0c7d"/>
+            <circle cx="292" cy="44"  r="4" fill="#2b0c7d"/>
+            <circle cx="408" cy="46"  r="4" fill="#2b0c7d"/>
+            <circle cx="524" cy="48"  r="4" fill="#2b0c7d"/>
+            <circle cx="641" cy="44"  r="4" fill="#f28afd"/>
+            <line x1="540" y1="20" x2="560" y2="20" stroke="#a3a3a3" stroke-width="2" stroke-dasharray="4 2"/>
+            <text x="564" y="24" font-size="9" fill="#a3a3a3" font-family="DM Sans, sans-serif">Before redesign</text>
+            <line x1="540" y1="36" x2="560" y2="36" stroke="url(#arcGrad)" stroke-width="2.5"/>
+            <text x="564" y="40" font-size="9" fill="#2b0c7d" font-family="DM Sans, sans-serif">After redesign</text>
+          </svg>
+        </div>
+      </div>
+    </section>
 
-<!-- JOURNEY MAP -->
+    <!-- KEY TAKEAWAYS -->
+    <section id="insights">
+      <div class="section-label">05 — Key Insights</div>
+      <h2>Five themes. Five design principles.</h2>
+      <p>The affinity diagramming sessions consolidated findings into five core themes — each one became a design principle for the new IA and product experience.</p>
+      <div class="themes-grid">
+        <div class="cs-card">
+          <div class="theme-number">01</div>
+          <div class="theme-title">Time Saving</div>
+          <p>Customers were running risk programs manually — spreadsheets, email chains, follow-ups. Vendors were copy-pasting the same answers repeatedly.</p>
+          <div class="theme-implication">Workflows had to be fast, linear, and forgiving. No dead ends. No unnecessary steps.</div>
+        </div>
+        <div class="cs-card">
+          <div class="theme-number">02</div>
+          <div class="theme-title">Customization</div>
+          <p>Neither customers nor vendors experienced the platform as built for their specific context. Both needed control — customers over risk criteria, vendors over their profile.</p>
+          <div class="theme-implication">Customization had to be a first-class concept — not a buried settings page.</div>
+        </div>
+        <div class="cs-card">
+          <div class="theme-number">03</div>
+          <div class="theme-title">Collaboration</div>
+          <p>Both sides described their work as inherently collaborative — customers with internal security teams, vendors coordinating across legal, engineering, and finance.</p>
+          <div class="theme-implication">Contacts, roles, and permissions needed to be core navigation objects — not nested utilities.</div>
+        </div>
+        <div class="cs-card">
+          <div class="theme-number">04</div>
+          <div class="theme-title">Automation</div>
+          <p>Repetitive manual tasks — assigning questionnaires one by one, chasing vendors, tracking progress in external spreadsheets — were the biggest source of friction.</p>
+          <div class="theme-implication">Automation touchpoints needed to be integrated into primary flows, not hidden away.</div>
+        </div>
+        <div class="cs-card">
+          <div class="theme-number">05</div>
+          <div class="theme-title">Navigation</div>
+          <p>Users couldn't orient themselves. The shared UI meant a customer looking for their vendor list and a vendor looking for their active assessments ended up in the same place with no clear path. Navigation was the symptom of a deeper structural problem: the platform had no conceptual model that matched how either user type thought about their work.</p>
+          <div class="theme-implication">The IA itself needed to be rebuilt around user mental models — which is where the object-oriented design approach became critical.</div>
+        </div>
+      </div>
+    </section>
 
-<section id="journey" class="journey-section reveal">
-<span class="section-label">Journey Map · VRM Subscribed Customer</span>
-    <h2>Sarah's full vendor lifecycle — before and after</h2>
-    <p>A current-state / future-state hybrid map tracing the end-to-end experience of a subscribed customer running an annual assessment cycle. This format was chosen because the case study spans both the research phase (ThirdPartyTrust) and the implementation phase (Bitsight).</p>
-    <p style="font-size:0.82rem; color:var(--grey-400);">Persona: Sarah Chen · Scenario: Annual vendor assessment cycle · Scope: Full vendor lifecycle in VRM</p>
-  </div>
+    <!-- FROM RESEARCH TO ARCHITECTURE -->
+    <section id="architecture">
+      <div class="section-label">06 — From Research to Architecture</div>
+      <h2>Objects first, not features</h2>
+      <p>The research revealed that customers and vendors weren't just different personas — they were operating with fundamentally different conceptual objects. Putting them in the same navigation was the root cause of the confusion.</p>
+      <div class="objects-grid">
+        <div class="objects-col">
+          <h3>Customer (VRM) — Core Objects</h3>
+          <div class="object-item">
+            <div class="object-dot"></div>
+            <div><div class="object-name">Vendor</div><div class="object-desc">The company being assessed</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot"></div>
+            <div><div class="object-name">Requirement</div><div class="object-desc">A questionnaire, certification, or audit assigned to a vendor</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot"></div>
+            <div><div class="object-name">Assessment</div><div class="object-desc">The active evaluation lifecycle</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot"></div>
+            <div><div class="object-name">Finding</div><div class="object-desc">A risk identified during assessment</div></div>
+          </div>
+        </div>
+        <div class="objects-col">
+          <h3>Vendor (TMH) — Core Objects</h3>
+          <div class="object-item">
+            <div class="object-dot secondary"></div>
+            <div><div class="object-name">Profile</div><div class="object-desc">Their security posture, presented to customers</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot secondary"></div>
+            <div><div class="object-name">Request</div><div class="object-desc">An incoming requirement — questionnaire, certification, or insurance</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot secondary"></div>
+            <div><div class="object-name">Certificate</div><div class="object-desc">SOC 2, ISO 27001 — with expiry tracking</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot secondary"></div>
+            <div><div class="object-name">Insurance</div><div class="object-desc">Cyber liability policy with renewal date</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="callout">
+        <p>These object sets didn't overlap. Putting them in the same navigation was the root cause of the confusion. The IA decision followed directly: <strong>split the products</strong>. VRM for customers. TMH for vendors.</p>
+      </div>
+    </section>
 
-  
+    <!-- FEEDBACK PATTERNS -->
+    <section id="patterns">
+      <div class="section-label">07 — Feedback Patterns</div>
+      <h2>Designing for visibility</h2>
+      <p>Before the redesign, users had no reliable way to know where an assessment stood, what required their attention, or whether an action had succeeded. This generated support tickets — not because the feature was broken, but because users couldn't read the system.</p>
+      <div class="patterns-grid">
+        <div class="cs-card">
+          <div class="pattern-icon">📊</div>
+          <h3>Progress States</h3>
+          <p>Visible lifecycle tracking — assigned → in progress → completed → expired</p>
+        </div>
+        <div class="cs-card">
+          <div class="pattern-icon">🗂️</div>
+          <h3>Empty States</h3>
+          <p>Contextual guidance when a section has no content, with clear calls to action</p>
+        </div>
+        <div class="cs-card">
+          <div class="pattern-icon">✅</div>
+          <h3>Success Confirmation</h3>
+          <p>In-context confirmation for key actions — inviting a vendor, submitting a response</p>
+        </div>
+        <div class="cs-card">
+          <div class="pattern-icon">⚠️</div>
+          <h3>Inline Error Messages</h3>
+          <p>Specific, actionable error copy at the point of failure — not generic alerts</p>
+        </div>
+      </div>
+      <p>These patterns were built into the Bitsight Design System so they applied consistently across VRM and TMH.</p>
+    </section>
 
-    <!-- Stage headers -->
-    <div class="journey-stages">
-      <div class="journey-stage">
-        <div class="stage-number">Stage 1</div>
-        <div class="stage-name">Vendor Onboarding</div>
-        <div class="stage-goal">Add new vendor to the program</div>
-      </div>
-      <div class="journey-stage">
-        <div class="stage-number">Stage 2</div>
-        <div class="stage-name">Requirement Setup</div>
-        <div class="stage-goal">Define what this vendor needs to complete</div>
-      </div>
-      <div class="journey-stage">
-        <div class="stage-number">Stage 3</div>
-        <div class="stage-name">Assignment & Sending</div>
-        <div class="stage-goal">Send requirements to the right contacts</div>
-      </div>
-      <div class="journey-stage">
-        <div class="stage-number">Stage 4</div>
-        <div class="stage-name">Tracking & Follow-up</div>
-        <div class="stage-goal">Know where each vendor stands</div>
-      </div>
-      <div class="journey-stage">
-        <div class="stage-number">Stage 5</div>
-        <div class="stage-name">Review & Closure</div>
-        <div class="stage-goal">Review responses, log findings, close cycle</div>
-      </div>
-      <div class="journey-stage">
-        <div class="stage-number">Stage 6</div>
-        <div class="stage-name">Reporting</div>
-        <div class="stage-goal">Share results with CISO and procurement</div>
-      </div>
-    </div>
-
-    <!-- Actions row -->
-    <div class="journey-rows">
-      <div class="journey-row">
-        <div class="journey-row-header">Actions</div>
-        <div class="journey-cells">
-          <div class="journey-cell">Searches vendor by domain · Adds profile · Assigns to analyst · Tags by risk tier</div>
-          <div class="journey-cell">Selects requirement types: questionnaire, certification, or insurance · Sets deadlines and expiry dates</div>
-          <div class="journey-cell">Invites vendor contacts per requirement type · Sends in bulk · Adds internal notes</div>
-          <div class="journey-cell">Checks dashboard weekly · Filters by status · Sends reminders to unresponsive vendors</div>
-          <div class="journey-cell">Opens submitted responses · Flags items · Logs findings · Marks as accepted/remediated/escalated</div>
-          <div class="journey-cell">Exports compliance summary · Generates portfolio risk report · Shares with CISO · Archives for audit</div>
+    <!-- OUTCOMES -->
+    <section id="outcomes">
+      <div class="section-label">08 — Outcomes</div>
+      <h2>What shipped. What changed.</h2>
+      <div class="outcomes-grid">
+        <div class="cs-card">
+          <div class="outcome-area">Assessment Speed</div>
+          <span class="outcome-highlight">15→2</span>
+          <div class="outcome-result">Average assessment turnaround days</div>
+        </div>
+        <div class="cs-card">
+          <div class="outcome-area">Information Architecture</div>
+          <div class="outcome-result">New split menu in Bitsight — VRM and TMH as dedicated products, each built around their user's core objects</div>
+        </div>
+        <div class="cs-card">
+          <div class="outcome-area">Support Volume</div>
+          <div class="outcome-result">Customer success tickets reduced significantly — users could now read the system</div>
+        </div>
+        <div class="cs-card">
+          <div class="outcome-area">Personas</div>
+          <div class="outcome-result">4 research-backed personas (2 primary, 2 secondary) shared across VRM and TMH teams</div>
+        </div>
+        <div class="cs-card">
+          <div class="outcome-area">Design System</div>
+          <div class="outcome-result">New feedback pattern sections added to Bitsight DS — standardized across both products</div>
+        </div>
+        <div class="cs-card">
+          <div class="outcome-area">Cross-Team</div>
+          <div class="outcome-result">Personas became the common language between the ThirdPartyTrust team (VRM) and the Bitsight team (TMH)</div>
         </div>
       </div>
 
-      <div class="journey-row">
-        <div class="journey-row-header thoughts">Thoughts & Feelings</div>
-        <div class="journey-cells">
-          <div class="journey-cell emotion">"I need to set this up correctly so nothing gets lost later." — <em>Focused</em></div>
-          <div class="journey-cell emotion">"Do I need a questionnaire, a certificate, or both?" — <em>Uncertain</em></div>
-          <div class="journey-cell emotion">"I hope the right person sees this. I'm not always sure who to invite." — <em>Cautious</em></div>
-          <div class="journey-cell emotion">"I shouldn't have to log in every day just to check if someone responded." — <em>Frustrated ⚡</em></div>
-          <div class="journey-cell emotion">"I need to log this finding somewhere — but where?" — <em>Overwhelmed</em></div>
-          <div class="journey-cell emotion">"I'm going to spend two hours formatting this before I can share it." — <em>Resigned ⚡</em></div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">
+          "We were assessing our third-parties using Excel spreadsheets and it was hard to keep track of everything. With ThirdPartyTrust, our average assessment turnaround went from 15 days to 2 days."
+        </div>
+        <div class="testimonial-meta">
+          <span class="t-role">Thiago Ribeiro</span>
+          <span class="t-moment">Associate Director for Information Security Engineering, Charles River Laboratories</span>
         </div>
       </div>
+    </section>
 
-      <div class="journey-row">
-        <div class="journey-row-header pain">Pain Points — Before Redesign</div>
-        <div class="journey-cells">
-          <div class="journey-cell pain-cell">No risk tier tagging · All vendors in one undifferentiated list · No team assignment</div>
-          <div class="journey-cell pain-cell">Could only send questionnaires — certifications and insurance required separate emails</div>
-          <div class="journey-cell pain-cell">One vendor contact at a time · No way to route different requirements to different contacts</div>
-          <div class="journey-cell pain-cell">No automated reminders · No status filter · No notification on vendor submission</div>
-          <div class="journey-cell pain-cell">Findings tracked in a separate spreadsheet · No link between finding and questionnaire answer</div>
-          <div class="journey-cell pain-cell">Raw data exports requiring manual formatting · No portfolio-level summary for leadership</div>
+    <!-- REFLECTION -->
+    <section id="reflection">
+      <div class="section-label">09 — Reflection</div>
+      <h2>What I'd do differently</h2>
+      <div class="reflection-grid">
+        <div class="cs-card">
+          <h3>Run tree testing earlier</h3>
+          <p>I would have pushed to run tree testing on the proposed IA before finalizing the product split — to verify that users could find what they were looking for in the new structure before we committed to building it. We validated with usability studies later, but an earlier tree test would have given us structural confidence sooner and reduced risk at the critical decision point.</p>
+        </div>
+        <div class="cs-card">
+          <h3>Invest more in secondary personas earlier</h3>
+          <p>The unsubscribed users turned out to be the clearest signal of where the platform was failing — but because they had no support relationships, they were harder to reach for research. Their tickets were data; getting them into research sessions would have been more actionable and would have surfaced the feedback pattern gaps much earlier in the process.</p>
         </div>
       </div>
-
-      <div class="journey-row">
-        <div class="journey-row-header opportunity">Design Decisions — After Redesign</div>
-        <div class="journey-cells">
-          <div class="journey-cell opp-cell">Risk tier tagging · Team assignment and analyst transfer · Vendor grouping</div>
-          <div class="journey-cell opp-cell">Bundled requirements — one assignment can include questionnaire + certification + insurance</div>
-          <div class="journey-cell opp-cell">Contact role mapping per requirement type · Bulk send with per-vendor customisation</div>
-          <div class="journey-cell opp-cell">Real-time status dashboard with filter · Automated overdue reminders · Email on submission</div>
-          <div class="journey-cell opp-cell">In-platform findings log linked to responses · Finding status tracking (open/accepted/remediated)</div>
-          <div class="journey-cell opp-cell">Pre-formatted compliance export · Portfolio-level risk dashboard · Archived audit trail</div>
-        </div>
+      <div class="callout">
+        <p>📎 Affinity Diagrams from FigJam — to be added</p>
       </div>
-    </div>
+    </section>
 
-    <!-- Emotional arc SVG -->
-    <div class="emotional-arc fade-in" style="margin-top:2rem;">
-      <div class="arc-title">Emotional Arc</div>
-      <div class="arc-chart">
-        <svg class="arc-svg" viewBox="0 0 700 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Grid lines -->
-          <line x1="0" y1="40" x2="700" y2="40" stroke="#e8e8e8" stroke-width="1"/>
-          <line x1="0" y1="80" x2="700" y2="80" stroke="#e8e8e8" stroke-width="1"/>
-          <line x1="0" y1="120" x2="700" y2="120" stroke="#e8e8e8" stroke-width="1"/>
-          <!-- Labels -->
-          <text x="4" y="36" font-size="9" fill="#a3a3a3" font-family="DM Sans, sans-serif">High</text>
-          <text x="4" y="116" font-size="9" fill="#a3a3a3" font-family="DM Sans, sans-serif">Low</text>
-
-          <!-- BEFORE curve (frustrated path) -->
-          <path d="M 58 50 C 115 50, 148 70, 175 75 C 232 82, 290 60, 350 55 C 408 50, 460 105, 524 115 C 580 122, 610 110, 641 120" stroke="#a3a3a3" stroke-width="2" stroke-dasharray="6 3" fill="none"/>
-
-          <!-- AFTER curve (improving path) -->
-          <path d="M 58 55 C 115 50, 148 48, 175 50 C 232 52, 290 46, 350 44 C 408 42, 460 46, 524 48 C 580 50, 610 46, 641 44" stroke="#2b0c7d" stroke-width="2.5" fill="none"/>
-          <path d="M 58 55 C 115 50, 148 48, 175 50 C 232 52, 290 46, 350 44 C 408 42, 460 46, 524 48 C 580 50, 610 46, 641 44" stroke="url(#arcGrad)" stroke-width="2.5" fill="none"/>
-
-          <defs>
-            <linearGradient id="arcGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#2b0c7d"/>
-              <stop offset="100%" stop-color="#f28afd"/>
-            </linearGradient>
-          </defs>
-
-          <!-- Stage labels -->
-          <text x="58" y="148" font-size="9" fill="#525252" text-anchor="middle" font-family="DM Sans, sans-serif">Onboard</text>
-          <text x="175" y="148" font-size="9" fill="#525252" text-anchor="middle" font-family="DM Sans, sans-serif">Setup</text>
-          <text x="292" y="148" font-size="9" fill="#525252" text-anchor="middle" font-family="DM Sans, sans-serif">Send</text>
-          <text x="408" y="148" font-size="9" fill="#c0392b" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="700">Follow-up ⚡</text>
-          <text x="524" y="148" font-size="9" fill="#525252" text-anchor="middle" font-family="DM Sans, sans-serif">Review</text>
-          <text x="641" y="148" font-size="9" fill="#c0392b" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="700">Report ⚡</text>
-
-          <!-- Dots before -->
-          <circle cx="58" cy="50" r="4" fill="#a3a3a3"/>
-          <circle cx="175" cy="75" r="4" fill="#a3a3a3"/>
-          <circle cx="292" cy="55" r="4" fill="#a3a3a3"/>
-          <circle cx="408" cy="105" r="5" fill="#c0392b"/>
-          <circle cx="524" cy="115" r="4" fill="#a3a3a3"/>
-          <circle cx="641" cy="120" r="5" fill="#c0392b"/>
-
-          <!-- Dots after -->
-          <circle cx="58" cy="55" r="4" fill="#2b0c7d"/>
-          <circle cx="175" cy="50" r="4" fill="#2b0c7d"/>
-          <circle cx="292" cy="44" r="4" fill="#2b0c7d"/>
-          <circle cx="408" cy="46" r="4" fill="#2b0c7d"/>
-          <circle cx="524" cy="48" r="4" fill="#2b0c7d"/>
-          <circle cx="641" cy="44" r="4" fill="#f28afd"/>
-
-          <!-- Legend -->
-          <line x1="540" y1="20" x2="560" y2="20" stroke="#a3a3a3" stroke-width="2" stroke-dasharray="4 2"/>
-          <text x="564" y="24" font-size="9" fill="#a3a3a3" font-family="DM Sans, sans-serif">Before redesign</text>
-          <line x1="540" y1="36" x2="560" y2="36" stroke="url(#arcGrad)" stroke-width="2.5"/>
-          <text x="564" y="40" font-size="9" fill="#2b0c7d" font-family="DM Sans, sans-serif">After redesign</text>
-        </svg>
-      </div>
-    
-</section>
-
-<!-- KEY TAKEAWAYS -->
-
-<section id="insights" class="reveal">
-<span class="section-label">Key Takeaways From Research</span>
-    <h2>Five themes. Five design principles.</h2>
-    <p>The affinity diagramming sessions consolidated findings into five core themes — each one became a design principle for the new IA and product experience.</p>
-    <div class="themes-grid">
-      <div class="theme-card">
-        <div class="theme-number">01</div>
-        <div class="theme-title">Time Saving</div>
-        <p>Customers were running risk programs manually — spreadsheets, email chains, follow-ups. Vendors were copy-pasting the same answers repeatedly.</p>
-        <div class="theme-implication">Workflows had to be fast, linear, and forgiving. No dead ends. No unnecessary steps.</div>
-      </div>
-      <div class="theme-card">
-        <div class="theme-number">02</div>
-        <div class="theme-title">Customization</div>
-        <p>Neither customers nor vendors experienced the platform as built for their specific context. Both needed control — customers over risk criteria, vendors over their profile.</p>
-        <div class="theme-implication">Customization had to be a first-class concept — not a buried settings page.</div>
-      </div>
-      <div class="theme-card">
-        <div class="theme-number">03</div>
-        <div class="theme-title">Collaboration</div>
-        <p>Both sides described their work as inherently collaborative — customers with internal security teams, vendors coordinating across legal, engineering, and finance.</p>
-        <div class="theme-implication">Contacts, roles, and permissions needed to be core navigation objects — not nested utilities.</div>
-      </div>
-      <div class="theme-card">
-        <div class="theme-number">04</div>
-        <div class="theme-title">Automation</div>
-        <p>Repetitive manual tasks — assigning questionnaires one by one, chasing vendors, tracking progress in external spreadsheets — were the biggest source of friction.</p>
-        <div class="theme-implication">Automation touchpoints needed to be integrated into primary flows, not hidden away.</div>
-      </div>
-      <div class="theme-card" style="grid-column: 1 / -1; border-left-color: var(--brand);">
-        <div class="theme-number">05</div>
-        <div class="theme-title">Navigation</div>
-        <p>Users couldn't orient themselves. The shared UI meant a customer looking for their vendor list and a vendor looking for their active assessments ended up in the same place with no clear path. Navigation was the symptom of a deeper structural problem: the platform had no conceptual model that matched how either user type thought about their work.</p>
-        <div class="theme-implication">The IA itself needed to be rebuilt around user mental models — which is where the object-oriented design approach became critical.</div>
-      </div>
-    </div>
-</section>
-
-<!-- FROM RESEARCH TO ARCHITECTURE -->
-
-<section id="architecture" class="reveal">
-<span class="section-label">From Research to Architecture</span>
-    <h2>Objects first, not features</h2>
-    <p>The research revealed that customers and vendors weren't just different personas — they were operating with fundamentally different conceptual objects. Putting them in the same navigation was the root cause of the confusion.</p>
-
-    <div class="objects-grid">
-      <div class="objects-col">
-        <h3>Customer (VRM) — Core Objects</h3>
-        <div class="object-item">
-          <div class="object-dot"></div>
-          <div><div class="object-name">Vendor</div><div class="object-desc">The company being assessed</div></div>
-        </div>
-        <div class="object-item">
-          <div class="object-dot"></div>
-          <div><div class="object-name">Requirement</div><div class="object-desc">A questionnaire, certification, or audit assigned to a vendor</div></div>
-        </div>
-        <div class="object-item">
-          <div class="object-dot"></div>
-          <div><div class="object-name">Assessment</div><div class="object-desc">The active evaluation lifecycle</div></div>
-        </div>
-        <div class="object-item">
-          <div class="object-dot"></div>
-          <div><div class="object-name">Finding</div><div class="object-desc">A risk identified during assessment</div></div>
-        </div>
-      </div>
-      <div class="objects-col">
-        <h3>Vendor (TMH) — Core Objects</h3>
-        <div class="object-item">
-          <div class="object-dot" style="background:var(--grey-400);"></div>
-          <div><div class="object-name">Profile</div><div class="object-desc">Their security posture, presented to customers</div></div>
-        </div>
-        <div class="object-item">
-          <div class="object-dot" style="background:var(--grey-400);"></div>
-          <div><div class="object-name">Request</div><div class="object-desc">An incoming requirement — questionnaire, certification, or insurance</div></div>
-        </div>
-        <div class="object-item">
-          <div class="object-dot" style="background:var(--grey-400);"></div>
-          <div><div class="object-name">Certificate</div><div class="object-desc">SOC 2, ISO 27001 — with expiry tracking</div></div>
-        </div>
-        <div class="object-item">
-          <div class="object-dot" style="background:var(--grey-400);"></div>
-          <div><div class="object-name">Insurance</div><div class="object-desc">Cyber liability policy with renewal date</div></div>
-        </div>
-      </div>
-    </div>
-
-    <blockquote style="margin-top: 2rem;">
-      <p>These object sets didn't overlap. Putting them in the same navigation was the root cause of the confusion. The IA decision followed directly: <strong>split the products</strong>. VRM for customers. TMH for vendors.</p>
-    </blockquote>
-</section>
-
-<!-- FEEDBACK PATTERNS -->
-
-<section id="patterns" class="reveal">
-<span class="section-label">Feedback Patterns</span>
-    <h2>Designing for visibility</h2>
-    <p>Before the redesign, users had no reliable way to know where an assessment stood, what required their attention, or whether an action had succeeded. This generated support tickets — not because the feature was broken, but because users couldn't read the system.</p>
-    <div class="patterns-grid">
-      <div class="pattern-card">
-        <div class="pattern-icon">📊</div>
-        <h3>Progress States</h3>
-        <p>Visible lifecycle tracking — assigned → in progress → completed → expired</p>
-      </div>
-      <div class="pattern-card">
-        <div class="pattern-icon">🗂️</div>
-        <h3>Empty States</h3>
-        <p>Contextual guidance when a section has no content, with clear calls to action</p>
-      </div>
-      <div class="pattern-card">
-        <div class="pattern-icon">✅</div>
-        <h3>Success Confirmation</h3>
-        <p>In-context confirmation for key actions — inviting a vendor, submitting a response</p>
-      </div>
-      <div class="pattern-card">
-        <div class="pattern-icon">⚠️</div>
-        <h3>Inline Error Messages</h3>
-        <p>Specific, actionable error copy at the point of failure — not generic alerts</p>
-      </div>
-    </div>
-    <p style="margin-top:1.5rem; font-size:0.875rem;">These patterns were built into the Bitsight Design System so they applied consistently across VRM and TMH.</p>
-</section>
-
-<!-- OUTCOMES -->
-
-<section id="outcomes" class="outcomes-section reveal">
-<span class="section-label">Outcomes</span>
-    <h2>What shipped. What changed.</h2>
-    <div class="outcomes-grid">
-      <div class="outcome-card">
-        <div class="outcome-area">Assessment Speed</div>
-        <span class="outcome-highlight">15→2</span>
-        <div class="outcome-result">Average assessment turnaround days</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-area">Information Architecture</div>
-        <div class="outcome-result">New split menu in Bitsight — VRM and TMH as dedicated products, each built around their user's core objects</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-area">Support Volume</div>
-        <div class="outcome-result">Customer success tickets reduced significantly — users could now read the system</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-area">Personas</div>
-        <div class="outcome-result">4 research-backed personas (2 primary, 2 secondary) shared across VRM and TMH teams</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-area">Design System</div>
-        <div class="outcome-result">New feedback pattern sections added to Bitsight DS — standardized across both products</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-area">Cross-Team</div>
-        <div class="outcome-result">Personas became the common language between the ThirdPartyTrust team (VRM) and the Bitsight team (TMH)</div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <p>"We were assessing our third-parties using Excel spreadsheets and it was hard to keep track of everything. With ThirdPartyTrust, our average assessment turnaround went from 15 days to 2 days."</p>
-      <cite>— Thiago Ribeiro, Associate Director for Information Security Engineering, Charles River Laboratories</cite>
-    </div>
-</section>
-
-<!-- REFLECTION -->
-
-<section id="reflection" class="reveal">
-<span class="section-label">Reflection</span>
-    <h2>What I'd do differently</h2>
-    <div class="reflection-grid">
-      <div class="reflection-card">
-        <h3>Run tree testing earlier</h3>
-        <p>I would have pushed to run tree testing on the proposed IA before finalizing the product split — to verify that users could find what they were looking for in the new structure before we committed to building it. We validated with usability studies later, but an earlier tree test would have given us structural confidence sooner and reduced risk at the critical decision point.</p>
-      </div>
-      <div class="reflection-card">
-        <h3>Invest more in secondary personas earlier</h3>
-        <p>The unsubscribed users turned out to be the clearest signal of where the platform was failing — but because they had no support relationships, they were harder to reach for research. Their tickets were data; getting them into research sessions would have been more actionable and would have surfaced the feedback pattern gaps much earlier in the process.</p>
-      </div>
-    </div>
-
-    <div style="margin-top:3rem; padding:0.75rem 1rem; background:var(--grey-100); border-radius:var(--radius); font-size:0.82rem; color:var(--grey-400); text-align:center;">
-      📎 Affinity Diagrams from FigJam — to be added
-    </div>
-</section>
-
-<!-- FOOTER -->
-
-</main>
-
+  </main>
 </div><!-- /cs-layout -->
 
+<!-- ── FOOTER ── -->
 <footer>
-  <div class="container">
-    <p style="margin-bottom:0.5rem;">Ariel — Product Designer · <a href="index.html">Back to all work</a> &nbsp;·&nbsp; <a href="#" data-email-href><span clas
+  <p>← <a href="index.html">Back to all work</a> &nbsp;·&nbsp; Ariel · Product Designer &nbsp;·&nbsp; <a href="#" data-email-href>Contact</a></p>
 </footer>
-  <script src="js/site.js" defer></script>
+
+<script src="js/site.js" defer></script>
 </body>
 </html>

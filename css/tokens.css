@@ -64,7 +64,7 @@
   --bg-inverse: var(--n-900);  /* used for dark CTA / contact section */
 
   /* Surfaces */
-  --surface-card:    var(--n-0);
+  --surface-card:    var(--n-100);
   --surface-overlay: rgba(255,255,255,0.95);
 
   /* Text */
@@ -78,6 +78,7 @@
   --border:     var(--n-200);   /* default #e8e8e8 */
   --border-mid: var(--n-300);   /* medium  #d4d4d4 */
   --border-str: var(--n-400);   /* strong  #a3a3a3 */
+  --border-on-inverse: var(--n-600);
 
   /* Brand — interactive elements only */
   --brand:       var(--purple-500);  /* #2b0c7d */
