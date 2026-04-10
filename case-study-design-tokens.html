@@ -109,7 +109,7 @@
         I saw the rebrand as a forcing function, not a burden. If we were going to update everything anyway, this was the moment to build the system underneath it properly — so the next rebrand, or the next product acquisition, wouldn't cost us the same amount of effort all over again.
       </p>
       <p>
-        I proposed starting with a proof of concept. The InfoSec Questionnaire project — which I was already leading as a designer — became the first real test ground. It was a complex, high-visibility feature with a lot of UI surface area, which made it the right place to validate whether a token-based approach could actually work in practice. The POC was successful enough that I got the green light to bring it to the design system properly.
+        I proposed starting with a proof of concept. The Questionnaire feature — which I was already leading as a designer — became the first real test ground. It was a complex, high-visibility feature with a lot of UI surface area, which made it the right place to validate whether a token-based approach could actually work in practice. The POC was successful enough that I got the green light to bring it to the design system properly.
       </p>
     </section>
 
@@ -118,7 +118,7 @@
       <div class="section-label">02 — Problem</div>
       <h2>Replacing wheels on a moving train</h2>
       <p>
-        The product suite was growing through acquisitions and new features. But our visual foundation wasn't growing with it — it was fracturing. Hardcoded color values lived in component files. Spacing decisions were made locally. A "refresh" request from leadership could ripple into weeks of manual updates across dozens of screens.
+        The product suite was growing through acquisitions and new features. But our visual foundation wasn't growing with it — it was fracturing. Most colors were defined as Figma styles — which sounds organized, but styles are still hardcoded values with a name on them. Changing one meant hunting it down in every component that used it. Spacing decisions were made locally. A "refresh" request from leadership could ripple into weeks of manual updates across dozens of screens.
       </p>
       <p>
         The challenge wasn't creating a consistent UI once. It was <strong>maintaining consistency while everything around it kept changing.</strong>
@@ -143,16 +143,16 @@
       </p>
       <div class="ref-row">
         <div class="cs-card">
-          <div class="card-title">Carbon DS (IBM)</div>
-          <p>Deep token hierarchy, well-structured semantic layer. Too large in nomenclature for our scale.</p>
+          <div class="card-title">Atlassian DS</div>
+          <p>Strong engineering integration. Their contextual token approach — tokens scoped to specific UI surfaces — directly influenced how we structured tokens for our data tables and domain-specific scales.</p>
         </div>
         <div class="cs-card">
           <div class="card-title">Material Design</div>
-          <p>Google's token system introduced a clear semantic layer with role-based naming. Strong reference for how to separate raw values from purposeful ones.</p>
+          <p>Google's token system introduced a clear semantic layer with role-based naming. Their approach to grouping tokens by context informed the <em>class</em> segment of our naming convention — the namespace that signals where a token belongs.</p>
         </div>
         <div class="cs-card">
-          <div class="card-title">Atlassian DS</div>
-          <p>Strong engineering integration. Their contextual token approach influenced our data table work.</p>
+          <div class="card-title">Carbon DS (IBM)</div>
+          <p>Deep token hierarchy, well-structured semantic layer. Too large in nomenclature for our scale — but useful as a reference for how far a token system can go when the product demands it.</p>
         </div>
       </div>
       <p>
