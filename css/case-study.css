@@ -42,7 +42,7 @@
 .hero h1 {
   font-family: var(--f-display);
   font-weight: 500;
-  font-size: clamp(2rem, 5vw, 70px);
+  font-size: clamp(2rem, 5vw, 90px);
   line-height: 1.1;
   letter-spacing: -1px;
   color: var(--text);
@@ -51,11 +51,11 @@
 .hero h1 em { font-style: italic; }
 
 .hero-sub {
-  font-family: var(--f-body);
-  font-size: 24px;
+  font-family: var(--f-display);
+  font-size: 1.8rem;
   line-height: 1.4;
   color: var(--text-1);
-  margin: 1rem 0 2rem;
+  margin: 2rem 0 4rem;
   padding-bottom: 2rem;
 }
 

@@ -274,6 +274,12 @@
             <div class="card-title">nav — the exception to mode switching</div>
             <p>Navigation elements don't switch between light and dark mode — they stay fixed regardless of the active theme. Isolating them in their own class makes that behavior clear and prevents accidental overrides. Example: <code>nav.color.background.logo</code>.</p>
           </div>
+          <!-- VIDEO PLACEHOLDER -->
+          <div class="media-block">
+            <video autoplay loop muted playsinline>
+              <source src="images/class-segment.mp4" type="video/mp4">
+            </video>
+          </div>
       </div>
 
       <div class="testimonial-card testimonial-card--inline">
@@ -383,22 +389,8 @@
       <p>
         After tokens, that duplication was gone. Components referenced semantic tokens. Switching modes meant switching the token set, not rebuilding the component. One source of truth.
       </p>
-
-      <div class="media-block before-after-block">
-        <div class="ba-row">
-          <div class="ba-side">
-            <div class="ba-label before-label">Before</div>
-            <div class="media-placeholder">
-              <div class="media-label">Image: two component versions<br/>(light + dark, hardcoded)</div>
-            </div>
-          </div>
-          <div class="ba-side">
-            <div class="ba-label after-label">After</div>
-            <div class="media-placeholder">
-              <div class="media-label">Image: one component,<br/>mode switched via tokens</div>
-            </div>
-          </div>
-        </div>
+      <div class="media-block">
+        <img src="images/before-after.png" alt="two component versions: light + dark, hardcoded vs. one component mode switched via tokens " />
       </div>
 
       <h3>Color blind mode: a new use for the token system</h3>
