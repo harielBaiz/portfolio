@@ -713,6 +713,8 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 }
 
 
+/* ─────────────────────────────────────────────
+   UNIFIED CARD — replaces: .seg-def-card,
    .tension-card, .ref-card, .feature-card,
    .method-card, .matrix-card
    ───────────────────────────────────────────── */
