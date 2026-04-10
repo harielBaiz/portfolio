@@ -366,7 +366,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 
 /* ── TESTIMONIALS ───────────────────────────────────────── */
 .testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; }
-.testimonial-card { background: var(--surface-feature); margin: 2rem 0 4rem;}
+.testimonial-card { margin: 2rem 0 4rem;}
 .testimonial-quote { font-family: var(--f-body); font-size: 2rem; font-style: italic; line-height: 1.3; color: var(--text); margin-bottom: 1.3rem; }
 .quote-icon{
   font-size: 8rem;
@@ -728,6 +728,13 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
   color: var(--text-2);
   font-size: 1rem;
 }
+@media (max-width: 768px) {
+  
+  .cs-card > p code {
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+}
 .card-title {
   font-family: var(--f-ui);
   font-weight: 600;
@@ -741,7 +748,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
   font-size: 0.8rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text-3);
   display: flex;
   align-items: center;

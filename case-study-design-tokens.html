@@ -297,12 +297,10 @@
       </p>
 
       <!-- VIDEO PLACEHOLDER -->
-      <div class="media-block video-block">
-        <div class="media-placeholder">
-          <div class="media-icon">▶</div>
-          <div class="media-label">Video: sizing token demo</div>
-          <div class="media-hint">Replace this block with your screen recording</div>
-        </div>
+       <div class="media-block">
+        <video autoplay loop muted playsinline>
+          <source src="images/spacing-tokens.mp4" type="video/mp4">
+        </video>
       </div>
 
       <h3>Documenting what never existed before</h3>
@@ -368,7 +366,16 @@
       <p>
         What used to take days — designing two versions of every component for light and dark mode, hunting for the right hex value, manually keeping everything in sync — was reduced to minutes. Three modes supported out of the box: light, dark, and color blind. No redesign. No duplication. Just a token switch.
       </p>
-
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <div class="testimonial-quote">
+          Wait — You just changed the mode and everything updated? I've been doing this manually every single time.
+        </div>
+        <div class="testimonial-meta">
+          <span class="t-role">Designer</span>
+          <span class="t-moment">First mode switch in a weekly design review</span>
+        </div>
+      </div>
       <h3>Before tokens: two components, one purpose</h3>
       <p>
         Before the token system, supporting light and dark modes meant designing two separate versions of every component. Two sets of color values, two frames in Figma, double the maintenance overhead. When a color changed, it changed in two places — or inconsistently, because someone missed one.
@@ -403,10 +410,7 @@
       </p>
 
       <div class="media-block">
-        <div class="media-placeholder tall">
-          <div class="media-label">Image: default scale colors vs. color blind mode<br/>— side by side comparison</div>
-          <div class="media-hint">Add your screenshots here</div>
-        </div>
+        <img src="images/color-blind-mode.png" alt="Color blind mode comparison" />
       </div>
 
       <div class="callout">
@@ -423,19 +427,7 @@
       <p>
         That feedback loop — live, immediate, personal — gave this project a kind of satisfaction that user research can't fully replicate.
       </p>
-
-      <!-- TESTIMONIALS -->
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <div class="quote-icon">"</div>
-          <div class="testimonial-quote">
-            Wait — You just changed the mode and everything updated? I've been doing this manually every single time.
-          </div>
-          <div class="testimonial-meta">
-            <span class="t-role">Designer</span>
-            <span class="t-moment">First mode switch in a weekly design review</span>
-          </div>
-        </div>
+        
         <div class="testimonial-card">
           <div class="quote-icon">"</div>
           <div class="testimonial-quote">
@@ -446,7 +438,6 @@
             <span class="t-moment">On switching from value-hunting to intent-based naming</span>
           </div>
         </div>
-      </div>
 
       <div class="callout">
         <p>The result is not a finished system — it's a <em>controllable one.</em> Components continue to be added and evolved. But now there are building blocks in place to make scalable changes without structural rewrites.</p>
