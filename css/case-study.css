@@ -55,7 +55,7 @@
   font-size: 24px;
   line-height: 1.4;
   color: var(--text-1);
-  margin: 2.5rem 0 2rem;
+  margin: 1rem 0 2rem;
   padding-bottom: 2rem;
 }
 
@@ -632,7 +632,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
   gap: 0 2.5rem;
   max-width: calc(152px + 2.5rem + 720px + 3rem);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 3rem 1.5rem 0;
   align-items: start;
 }
 
