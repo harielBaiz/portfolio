@@ -700,8 +700,19 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
     padding-right: 0;
   }
 }
-/* ─────────────────────────────────────────────
-   UNIFIED CARD — replaces: .seg-def-card,
+/* ── INLINE PARAGRAPH LINKS ──────────────────────────────── */
+.page-wrap p a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--border-str);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.page-wrap p a:hover {
+  text-decoration-color: var(--text-2);
+}
+
+
    .tension-card, .ref-card, .feature-card,
    .method-card, .matrix-card
    ───────────────────────────────────────────── */
