@@ -324,6 +324,28 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .iteration-card { display: flex; flex-direction: column; gap: 0.5rem; }
 .iter-label { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--text-3); padding: 0.2rem 0; }
 
+/* Wide breakout image inside iteration-row — matches hero-cover width (100vw) */
+/* cs-layout offset = 24px (padding) + 152px (sidebar) + 40px (gap) = 216px */
+.iteration-wide-img {
+  grid-column: 1 / -1;
+  width: 100vw;
+  margin-left: calc(-1 * (max((100vw - 960px) / 2, 0px) + 216px));
+  margin-top: 0.75rem;
+}
+.iteration-wide-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
+@media (max-width: 960px) {
+  .iteration-wide-img {
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+  }
+}
+
 /* ── AI BONUS BANNER ────────────────────────────────────── */
 .ai-banner { background: var(--bg-inverse); border-radius: var(--r-lg); padding: 2rem; margin: 2rem 0; position: relative; overflow: hidden; transition: background 0.25s ease; }
 .ai-banner-tag { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-on-inverse-2); margin-bottom: 0.6rem; }
