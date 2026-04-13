@@ -235,7 +235,7 @@ p strong, strong {
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0;
 }
-.callout p { margin: 0; font-size: 15px; line-height: 25px; color: var(--text); }
+.callout p { margin: 0; font-size: 16px; line-height: 1.4; color: var(--text); }
 .callout p em { font-style: italic; color: var(--text-2); }
 
 blockquote {
@@ -271,7 +271,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .media-icon  { font-size: 2rem; color: var(--border-str); }
 .media-label { font-family: var(--f-mono); font-size: 0.85rem; color: var(--text-3); line-height: 1.5; }
 .media-hint  { font-family: var(--f-ui); font-size: 0.75rem; color: var(--text-3); opacity: 0.6; margin-top: 0.25rem; }
-.media-caption { font-family: var(--f-ui); font-size: 0.78rem; color: var(--text-3); font-style: italic; text-align: center; margin-top: 0.5rem; }
+.media-caption { font-family: var(--f-ui); font-size: 0.8125rem; color: var(--text-3); text-align: left; margin-top: 0.5rem; }
 
 /* ── TEAM ROW ────────────────────────────────────────────── */
 .team-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0; }
@@ -629,8 +629,8 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .cs-layout {
   display: grid;
   grid-template-columns: 152px minmax(0, 720px);
-  gap: 0 2.5rem;
-  max-width: calc(152px + 2.5rem + 720px + 3rem);
+  gap: 0 3rem;
+  max-width: calc(152px + 3rem + 720px + 3rem);
   margin: 0 auto;
   padding: 3rem 1.5rem 0;
   align-items: start;
@@ -648,9 +648,9 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
   top: 8rem;
   padding-top: 2rem;
   height: auto;
-  background: none;
+  background: var(--bg-opacity);
   border-bottom: none;
-  padding:0;
+  padding:2rem 1rem;
 }
 
 .cs-index ol {
