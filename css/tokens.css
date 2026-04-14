@@ -35,7 +35,7 @@
 :root {
   /* Neutral scale — doc.cc foundation */
   --n-0:   #ffffff;
-  --n-0-opacity: #fafafaaf;
+  --n-0-opacity: #fafafa9f;
   --n-50:  #fafafa;
   --n-100: #f5f5f5;
   --n-200: #e8e8e8;
@@ -47,7 +47,7 @@
   --n-800: #262626;
   --n-900: #171717;
   --n-950: #0a0a0a;
-  --n-950-opacity: #171717af;
+  --n-950-opacity: #1717179f;
 
   /* Brand primitives */
   --purple-600: #3a149a;   /* hover state */

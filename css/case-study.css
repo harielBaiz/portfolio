@@ -291,7 +291,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .feature-card .fc-desc  { font-family: var(--f-ui); font-size: 0.82rem; color: var(--text-3); line-height: 1.5; }
 
 /* ── RESEARCH METHODS ───────────────────────────────────── */
-.method-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.method-row { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; }
 .method-card { border-radius: var(--r-md); padding: 1.25rem; border: 1px solid var(--border); background: var(--surface-feature); }
 .methods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
 .method-card h3 { font-size: 0.9rem; color: var(--brand); margin-bottom: 0.5rem; margin-top: 0; }
@@ -329,15 +329,17 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .iteration-wide-img {
   grid-column: 1 / -1;
   width: 100vw;
+  height: auto;
   margin-left: calc(-1 * (max((100vw - 960px) / 2, 0px) + 216px));
   margin-top: 0.75rem;
+  padding: 2rem 48px 0;
 }
 .iteration-wide-img img {
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 21 / 9;
-  object-fit: cover;
+  object-fit: contain;
+  border-radius: var(--r-md);
 }
 @media (max-width: 960px) {
   .iteration-wide-img {
@@ -522,10 +524,6 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .lesson-body strong { display: block; font-family: var(--f-ui); font-weight: 600; color: var(--text); margin-bottom: 0.2rem; font-size: 0.95rem; }
 .lesson-body p { margin: 0; font-size: 1.1rem; color: var(--text-3); }
 
-.method-card.qualitative { background: var(--surface-feature); border-color: var(--border-mid); }
-.method-card.qualitative .mc-label { color: var(--brand); }
-.method-card.expert { background: var(--bg-muted); border-color: var(--border); }
-.method-card.expert .mc-label { color: var(--text-2); }
 
 .tension-card.design { border-top: 3px solid var(--brand); }
 .tension-card.eng    { border-top: 3px solid var(--border-str); }
@@ -673,6 +671,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
   background: var(--bg-opacity);
   border-bottom: none;
   padding:2rem 1rem;
+  border-radius: var(--r-md);
 }
 
 .cs-index ol {
