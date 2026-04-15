@@ -7,7 +7,60 @@
   <link rel="stylesheet" href="css/case-study.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Questionnaire Redesign — Ariel's Portfolio</title>
-  
+  <style>
+    /* ── OO Diagram ── */
+    .oo-diagram-wrap { margin: 2rem 0 1.5rem; }
+    .oo-diagram-label {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary, #7a6e66);
+      margin-bottom: 0.75rem;
+    }
+    .oo-diagram-wrap svg { width: 100%; overflow: visible; }
+
+    .oo-box         { fill: #fdf8f2; stroke: #c4b5a8; stroke-width: 0.5; }
+    .oo-box--hero   { fill: #fdf8f2; stroke: #2b0c7d; stroke-width: 1.5; }
+    .oo-box--dashed { fill: #fdf8f2; stroke: #c4b5a8; stroke-width: 0.5; stroke-dasharray: 5 3; }
+
+    .oo-divider             { stroke: #c4b5a8; stroke-width: 0.5; fill: none; }
+    .oo-divider--dashed     { stroke: #ddd5cc; stroke-width: 0.5; fill: none; stroke-dasharray: 3 2; }
+    .oo-divider--hero       { stroke: #2b0c7d; stroke-width: 0.5; opacity: 0.5; fill: none; }
+    .oo-divider--hero-dashed{ stroke: #2b0c7d; stroke-width: 0.5; opacity: 0.35; fill: none; stroke-dasharray: 3 2; }
+    .oo-divider--box-dashed { stroke: #c4b5a8; stroke-width: 0.5; fill: none; stroke-dasharray: 5 3; }
+
+    .oo-relation    { stroke: #8a7b70; stroke-width: 0.5; fill: none; }
+    .oo-derived     { stroke: #c4b5a8; stroke-width: 0.5; stroke-dasharray: 4 3; fill: none; }
+
+    .oo-diamond-hollow { fill: #fdf8f2; stroke: #8a7b70; stroke-width: 0.5; }
+    .oo-diamond-solid  { fill: #8a7b70; stroke: #8a7b70; stroke-width: 0.5; }
+
+    .oo-th          { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; fill: #2c1d14; }
+    .oo-ts          { font-family: 'DM Mono', monospace; font-size: 11px; fill: #5a5048; }
+    .oo-legend      { font-family: 'DM Mono', monospace; font-size: 10px; fill: #7a6e66; }
+
+    /* Dark mode */
+    [data-theme="dark"] .oo-box,
+    [data-theme="dark"] .oo-box--hero,
+    [data-theme="dark"] .oo-box--dashed { fill: #1e1812; }
+    [data-theme="dark"] .oo-box         { stroke: #4a3d33; }
+    [data-theme="dark"] .oo-box--hero   { stroke: #9b8fca; }
+    [data-theme="dark"] .oo-box--dashed { stroke: #4a3d33; }
+    [data-theme="dark"] .oo-divider,
+    [data-theme="dark"] .oo-divider--dashed,
+    [data-theme="dark"] .oo-divider--box-dashed { stroke: #4a3d33; }
+    [data-theme="dark"] .oo-divider--hero,
+    [data-theme="dark"] .oo-divider--hero-dashed { stroke: #9b8fca; }
+    [data-theme="dark"] .oo-relation    { stroke: #6b5d52; }
+    [data-theme="dark"] .oo-derived     { stroke: #4a3d33; }
+    [data-theme="dark"] .oo-diamond-hollow { fill: #1e1812; stroke: #6b5d52; }
+    [data-theme="dark"] .oo-diamond-solid  { fill: #6b5d52; stroke: #6b5d52; }
+    [data-theme="dark"] .oo-th          { fill: #e8ddd4; }
+    [data-theme="dark"] .oo-ts          { fill: #a89890; }
+    [data-theme="dark"] .oo-legend      { fill: #7a6e66; }
+  </style>
 </head>
 <body>
 
@@ -67,6 +120,7 @@
     <li><a href="#problem">02 — Problem</a></li>
     <li><a href="#research">03 — Research</a></li>
     <li><a href="#design">04 — Design</a></li>
+    <li><a href="#domain">04a — Object model</a></li>
     <li><a href="#outcomes">05 — Outcomes</a></li>
     <li><a href="#lessons">06 — Lessons</a></li>
   </ol>
@@ -246,7 +300,7 @@
 
     <h3>Feature inventory first</h3>
     <p>
-      Before starting any new designs, I ran a complete inventory of the existing platform: every feature, every interaction state, every edge case. This gave the team a shared map of what existed and what had to be accounted for — and revealed several features that had no clear home in the new layout.
+      Before starting any new designs, I ran a complete inventory of the existing platform: every feature, every interaction state, every edge case. Because there was no formal documentation of the original product, this was essentially reverse engineering — mapping the live system from scratch to understand what the new design had to account for. It gave the team a shared map of what existed and revealed several features that had no clear home in the new layout.
     </p>
 
     <!-- INVENTORY PLACEHOLDER -->
@@ -258,6 +312,150 @@
       </div>
     </div>
 
+    <h3>Mapping the domain before the UI</h3>
+    <p>
+      The feature inventory revealed something deeper than a list of things to build: the questionnaire had no clear conceptual model from the reviewer's perspective. Features had accumulated over years without a shared understanding of what objects reviewers were actually working <em>with</em>.
+    </p>
+    <p>
+      Before sketching any screens, I mapped the domain — identifying the core objects, their attributes, and the operations reviewers performed on them. The model came from a deduction of the old platform: what existed, what was missing, and what relationships the new system had to support.
+    </p>
+
+    <!-- DOMAIN MODEL IMAGE -->
+    <div class="media-block">
+      <div class="media-placeholder">
+        <div class="media-icon">◈</div>
+        <div class="media-label">Image: domain model — deduced from the existing questionnaire</div>
+        <div class="media-hint">Add your Figma domain model image here</div>
+      </div>
+    </div>
+
+    <p>
+      The analysis surfaced one key insight: <strong>Question is the unit of work</strong>, not the Questionnaire. Reviewers think and act at the question level — they flag, approve, annotate, and download one question at a time. The Questionnaire is a container; the Question is where decisions happen. This single observation explained why the toolbar needed to be scoped to the question, not the page.
+    </p>
+
+    <!-- OO CONCEPTUAL MODEL -->
+    <figure class="oo-diagram-wrap">
+      <span class="oo-diagram-label">Specification-level object model — reviewer perspective</span>
+      <svg viewBox="0 0 680 490" role="img" aria-label="UML class diagram showing six objects: Questionnaire, Question, Score, Finding, Message, Internal Note, and Document">
+        <title>Conceptual model — InfoSec Questionnaire reviewer experience</title>
+        <defs>
+          <marker id="oo-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#8a7b70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+
+        <!-- R1: Questionnaire ◇── Question (aggregation) -->
+        <line class="oo-relation" x1="191" y1="158" x2="245" y2="146"/>
+        <polygon class="oo-diamond-hollow" points="185,153 191,158 185,163 179,158"/>
+        <text class="oo-legend" text-anchor="middle" x="207" y="145">1</text>
+        <text class="oo-legend" text-anchor="middle" x="237" y="139">*</text>
+
+        <!-- R2: Question ──◆ Finding (composition) -->
+        <line class="oo-relation" x1="431" y1="72" x2="455" y2="72"/>
+        <polygon class="oo-diamond-solid" points="425,67 431,72 425,77 419,72"/>
+
+        <!-- R3: Question ──◆ Message (composition) -->
+        <line class="oo-relation" x1="431" y1="147" x2="455" y2="147"/>
+        <polygon class="oo-diamond-solid" points="425,142 431,147 425,152 419,147"/>
+
+        <!-- R4: Question ──◆ Internal Note (composition) -->
+        <line class="oo-relation" x1="431" y1="222" x2="455" y2="222"/>
+        <polygon class="oo-diamond-solid" points="425,217 431,222 425,227 419,222"/>
+
+        <!-- R5: Question ──◆ Document (composition, L-path from bottom) -->
+        <path class="oo-relation" d="M360,252 L360,260 L453,260 L453,345 L455,345"/>
+        <polygon class="oo-diamond-solid" points="354,252 360,247 366,252 360,257"/>
+
+        <!-- R6: Question → Score (derived) -->
+        <line class="oo-derived" x1="335" y1="252" x2="335" y2="305" marker-end="url(#oo-arrow)"/>
+
+        <!-- QUESTIONNAIRE -->
+        <rect class="oo-box" x="20" y="70" width="165" height="176" rx="4"/>
+        <line class="oo-divider" x1="20" y1="102" x2="185" y2="102"/>
+        <text class="oo-th" text-anchor="middle" x="102" y="86" dominant-baseline="central">Questionnaire</text>
+        <text class="oo-ts" x="30" y="121" dominant-baseline="central">progress</text>
+        <text class="oo-ts" x="30" y="139" dominant-baseline="central">overall_score</text>
+        <text class="oo-ts" x="30" y="157" dominant-baseline="central">category_scores</text>
+        <line class="oo-divider--dashed" x1="20" y1="174" x2="185" y2="174"/>
+        <text class="oo-ts" x="30" y="193" dominant-baseline="central">finalizeReview()</text>
+        <text class="oo-ts" x="30" y="211" dominant-baseline="central">downloadAll()</text>
+        <text class="oo-ts" x="30" y="229" dominant-baseline="central">filterByCategory()</text>
+
+        <!-- QUESTION — HERO -->
+        <rect class="oo-box--hero" x="245" y="40" width="180" height="212" rx="4"/>
+        <line class="oo-divider--hero" x1="245" y1="72" x2="425" y2="72"/>
+        <text class="oo-th" text-anchor="middle" x="335" y="56" dominant-baseline="central">Question</text>
+        <text class="oo-ts" x="255" y="91"  dominant-baseline="central">type</text>
+        <text class="oo-ts" x="255" y="109" dominant-baseline="central">priority</text>
+        <text class="oo-ts" x="255" y="127" dominant-baseline="central">category</text>
+        <text class="oo-ts" x="255" y="145" dominant-baseline="central">answer</text>
+        <text class="oo-ts" x="255" y="163" dominant-baseline="central">score</text>
+        <line class="oo-divider--hero-dashed" x1="245" y1="180" x2="425" y2="180"/>
+        <text class="oo-ts" x="255" y="199" dominant-baseline="central">approve()</text>
+        <text class="oo-ts" x="255" y="217" dominant-baseline="central">flag()</text>
+        <text class="oo-ts" x="255" y="235" dominant-baseline="central">bookmark()</text>
+
+        <!-- SCORE — derived -->
+        <rect class="oo-box--dashed" x="245" y="305" width="180" height="122" rx="4"/>
+        <line class="oo-divider--box-dashed" x1="245" y1="337" x2="425" y2="337"/>
+        <text class="oo-th" text-anchor="middle" x="335" y="321" dominant-baseline="central">Score</text>
+        <text class="oo-ts" x="255" y="356" dominant-baseline="central">answer_impact</text>
+        <text class="oo-ts" x="255" y="374" dominant-baseline="central">priority_weight</text>
+        <text class="oo-ts" x="255" y="392" dominant-baseline="central">category_score</text>
+        <text class="oo-ts" x="255" y="410" dominant-baseline="central">overall_score</text>
+
+        <!-- FINDING (compact) -->
+        <rect class="oo-box" x="455" y="40" width="170" height="65" rx="4"/>
+        <line class="oo-divider" x1="455" y1="64" x2="625" y2="64"/>
+        <text class="oo-th" text-anchor="middle" x="540" y="52" dominant-baseline="central">Finding</text>
+        <text class="oo-ts" x="465" y="79" dominant-baseline="central">text</text>
+        <text class="oo-ts" x="465" y="94" dominant-baseline="central">status</text>
+
+        <!-- MESSAGE (compact) -->
+        <rect class="oo-box" x="455" y="115" width="170" height="65" rx="4"/>
+        <line class="oo-divider" x1="455" y1="139" x2="625" y2="139"/>
+        <text class="oo-th" text-anchor="middle" x="540" y="127" dominant-baseline="central">Message</text>
+        <text class="oo-ts" x="465" y="154" dominant-baseline="central">content</text>
+        <text class="oo-ts" x="465" y="169" dominant-baseline="central">sender</text>
+
+        <!-- INTERNAL NOTE (compact) -->
+        <rect class="oo-box" x="455" y="190" width="170" height="65" rx="4"/>
+        <line class="oo-divider" x1="455" y1="214" x2="625" y2="214"/>
+        <text class="oo-th" text-anchor="middle" x="540" y="202" dominant-baseline="central">Internal Note</text>
+        <text class="oo-ts" x="465" y="229" dominant-baseline="central">text</text>
+        <text class="oo-ts" x="465" y="244" dominant-baseline="central">author</text>
+
+        <!-- DOCUMENT (full) -->
+        <rect class="oo-box" x="455" y="290" width="170" height="110" rx="4"/>
+        <line class="oo-divider" x1="455" y1="318" x2="625" y2="318"/>
+        <text class="oo-th" text-anchor="middle" x="540" y="304" dominant-baseline="central">Document</text>
+        <text class="oo-ts" x="465" y="333" dominant-baseline="central">filename</text>
+        <text class="oo-ts" x="465" y="351" dominant-baseline="central">type</text>
+        <line class="oo-divider--dashed" x1="455" y1="368" x2="625" y2="368"/>
+        <text class="oo-ts" x="465" y="383" dominant-baseline="central">view()</text>
+        <text class="oo-ts" x="465" y="401" dominant-baseline="central">download()</text>
+
+        <!-- LEGEND -->
+        <polygon class="oo-diamond-hollow" points="22,460 28,455 34,460 28,465"/>
+        <line class="oo-relation" x1="34" y1="460" x2="50" y2="460"/>
+        <text class="oo-legend" x="55" y="460" dominant-baseline="central">aggregation</text>
+        <polygon class="oo-diamond-solid" points="160,460 166,455 172,460 166,465"/>
+        <line class="oo-relation" x1="172" y1="460" x2="188" y2="460"/>
+        <text class="oo-legend" x="193" y="460" dominant-baseline="central">composition</text>
+        <line class="oo-derived" x1="298" y1="460" x2="320" y2="460"/>
+        <text class="oo-legend" x="328" y="460" dominant-baseline="central">derived</text>
+      </svg>
+      <figcaption class="media-caption">
+        Six core objects from the reviewer's perspective. Solid diamonds (composition) — Finding, Message, Internal Note, and Document belong to the Question. Hollow diamond (aggregation) — the Questionnaire contains Questions. Score is derived (dashed border) from answer values and priority weights, not entered by the reviewer.
+      </figcaption>
+    </figure>
+
+    <div class="callout">
+      <p>
+        Three distinct objects handle communication per question: <strong>Finding</strong> (formal, visible to the vendor — permanent record), <strong>Message</strong> (async thread with the vendor — scoped to the question), and <strong>Internal Note</strong> (private to the review team — never shared). Collapsing these into a single "comment" field would have broken the workflow. Keeping them separate was a deliberate design decision, not a technical constraint.
+      </p>
+    </div>
+
     <h3>Question tools: the hardest interaction design problem</h3>
     <p>
       Each question in a questionnaire can have up to five independent tools associated with it: review (approve or flag), bookmark, finding creation, messaging, and internal notes. In the old platform, these were scattered and inconsistently placed. Users had to hunt for them.
@@ -267,10 +465,10 @@
     </p>
 
     <!-- ITERATION PLACEHOLDERS -->
-      <figure class="iteration-wide-img">
-        <img src="images/question-iterations.png" alt="Three toolbar proposals side by side — inline variant, hover panel, and the chosen vertical action rail">
-      </figure>
-    <p class="media-caption">Three layout proposals for question-level tools. The vertical rail balanced visibility with density and became the foundation for the final design.</p>
+    <div class="media-block">
+      <img src="images/question-iterations.png" alt="Questionnaire UI — light and dark mode side by side" />
+      <p class="media-caption">Three layout proposals for question-level tools. The vertical rail balanced visibility with density and became the foundation for the final design.</p>
+    </div>
 
     <div class="callout">
       <p>The chosen solution — a vertical action rail anchored to each question — kept tools consistently reachable without competing with question content. <em>Actions are always in the same place, regardless of question length or answer type.</em></p>
@@ -282,6 +480,26 @@
         <div class="media-icon">✦</div>
         <div class="media-label">Image: final question design with tool rail</div>
         <div class="media-hint">Add your final Figma screenshot or prototype here</div>
+      </div>
+    </div>
+
+    <h3>Surfacing the score without exposing the formula</h3>
+    <p>
+      The scoring system calculated risk from three inputs — answer value, question priority, and category weight — combined into an overall score. The result was always visible, fixed in the questionnaire header. The challenge was legibility: reviewers couldn't link what they saw on screen back to those inputs. The score felt like a black box, not a signal.
+    </p>
+    <p>
+      The solution was to make the inputs readable at the question level, not to explain the formula. Each question already carried its answer score and priority as attributes — surfacing both inline meant reviewers could intuitively understand what was driving the number without needing to think about the calculation. The overall score became predictable because its ingredients were visible.
+    </p>
+    <p>
+      The score uses a five-state icon + color system — Good, Fair, Warn, Bad, and N/A — adopted from the Bitsight DS, which had moved from a color-only scale to icon + color. This improved accessibility and kept the feature visually consistent with the rest of the product. At the category and questionnaire level the score becomes numerical, paired with the same icon, so reviewers can compare categories at a glance.
+    </p>
+
+    <!-- SCORING UI -->
+    <div class="media-block">
+      <div class="media-placeholder">
+        <div class="media-icon">◈</div>
+        <div class="media-label">Image: score at question level (qualitative) vs. questionnaire level (numerical)</div>
+        <div class="media-hint">Add your scoring UI screenshots here</div>
       </div>
     </div>
 
@@ -321,13 +539,13 @@
       The usability test results validated the core direction: all tasks were completed successfully, and participants responded positively to the new tool layout. The pain points surfaced in research were documented, triaged, and communicated to the product team with clear feasibility context.
     </p>
 
-    <!-- FULL REDESIGN PLACEHOLDER -->
+    
+    <!-- FULL REDESIGN VIDEO PLACEHOLDER -->
     <div class="media-block">
-      <div class="media-placeholder tall">
-        <div class="media-icon">✦</div>
-        <div class="media-label">Image: full questionnaire redesign — key screens</div>
-        <div class="media-hint">Add your final deliverable screenshots here</div>
-      </div>
+      <video autoplay loop muted playsinline>
+        <source src="images/questionnaire.mp4" type="video/mp4">
+      </video>
+      <p class="media-caption">Video showing the questionnaire UI in action</p>
     </div>
 
     <!-- AI BONUS -->
@@ -346,38 +564,27 @@
     <h2>What this project taught me</h2>
     <ul class="lesson-list">
       <li>
-        <span class="lesson-num">1</span>
         <div class="lesson-body">
-          <strong>Inventory before ideation</strong>
-          <p>Starting with a complete feature audit prevented redesign blind spots. Every edge case we documented in the inventory saved a conversation later when a developer asked "what about this state?"</p>
+          <strong>Understand the system before you touch the UI</strong>
+          <p>The original platform had no formal documentation, so the feature inventory was reverse engineering work — mapping every state and edge case from the live product. That ground-level understanding, combined with the object analysis that followed, meant design decisions came from a model of how the system actually worked, not from assumption. Every edge case documented saved a conversation with engineering later.</p>
         </div>
       </li>
       <li>
-        <span class="lesson-num">2</span>
         <div class="lesson-body">
-          <strong>Two research methods are better than one</strong>
-          <p>The PURE evaluation caught issues before users ever saw the design. The usability test validated what survived. Running both gave a fuller picture than either study would have provided alone.</p>
+          <strong>Structural decisions need to be made consciously</strong>
+          <p>The domain model revealed that what looked like a feature list was actually a set of distinct objects with different purposes. Keeping Finding, Message, and Internal Note as three separate channels — rather than collapsing them into one — was only possible because the domain was mapped first. The same thinking applied to the score: the solution wasn't to explain the formula, it was to surface its inputs at the right level. Without a model, both would have defaulted to the simpler, less useful option.</p>
         </div>
       </li>
       <li>
-        <span class="lesson-num">3</span>
         <div class="lesson-body">
-          <strong>Prioritization is a design skill too</strong>
-          <p>Not every pain point can be solved in the same release. Communicating clearly which problems were deprioritized — and why — kept stakeholder expectations realistic and gave the backlog real shape.</p>
+          <strong>Two research methods give you two different things</strong>
+          <p>The PURE evaluation caught structural issues before users ever saw the design. The usability test validated what survived — and surfaced friction that heuristics alone wouldn't have predicted. Running both gave a fuller picture, and the combination made prioritization conversations with the product team much clearer: some problems had evidence from both studies, others from only one.</p>
         </div>
       </li>
       <li>
-        <span class="lesson-num">4</span>
         <div class="lesson-body">
-          <strong>Token-first design pays off fast</strong>
-          <p>Building on the design token system meant light and dark mode were never separate design tasks. That decision, made early, saved real time during delivery and kept both themes consistent without extra effort.</p>
-        </div>
-      </li>
-      <li>
-        <span class="lesson-num">5</span>
-        <div class="lesson-body">
-          <strong>Cross-team alignment needs structure</strong>
-          <p>Collaborating with the TMH team on the vendor side required intentional touchpoints. Without regular cross-team reviews, components would have diverged silently. Consistency doesn't happen by accident — it needs a process.</p>
+          <strong>System-level decisions don't just solve one problem</strong>
+          <p>Building on design tokens meant light and dark mode were never separate tasks. Adopting the DS icon system meant accessibility came with the decision. Maintaining intentional touchpoints with the TMH team meant shared components didn't diverge silently. Each of these was a decision made once that kept paying off — which is a different kind of design work than solving individual problems one at a time.</p>
         </div>
       </li>
     </ul>

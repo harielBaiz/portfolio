@@ -204,6 +204,62 @@ function initProgressBar() {
 }
 
 /* ─────────────────────────────────────────────────────────
+   5. VIDEO LIGHTBOX
+   ─────────────────────────────────────────────────────────
+   Click any .media-block video to open it fullscreen in an
+   overlay with audio controls. Close via ×, backdrop, or Esc.
+───────────────────────────────────────────────────────── */
+function initVideoLightbox() {
+  const videos = document.querySelectorAll('.media-block video');
+  if (!videos.length) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'video-lightbox';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Video lightbox');
+
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'video-lightbox-close';
+  closeBtn.setAttribute('aria-label', 'Close video');
+  closeBtn.textContent = '×';
+
+  const lbVideo = document.createElement('video');
+  lbVideo.controls = true;
+  lbVideo.setAttribute('playsinline', '');
+
+  overlay.appendChild(closeBtn);
+  overlay.appendChild(lbVideo);
+  document.body.appendChild(overlay);
+
+  function open(src) {
+    lbVideo.src = src;
+    lbVideo.play().catch(() => {});
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function close() {
+    overlay.classList.remove('is-open');
+    lbVideo.pause();
+    lbVideo.src = '';
+    document.body.style.overflow = '';
+  }
+
+  videos.forEach(v => {
+    v.addEventListener('click', () => {
+      const src = v.querySelector('source')?.src || v.src;
+      open(src);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+}
+
+/* ─────────────────────────────────────────────────────────
    INIT — runs after DOM is ready
 ───────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -226,6 +282,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Progress bar (case studies)
   initProgressBar();
 
+  // Video lightbox
+  initVideoLightbox();
+
   // Sync OS theme preference change (no stored value)
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     if (!localStorage.getItem('portfolio-theme')) {
@@ -236,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* ─────────────────────────────────────────────────────────
-   5. EMAIL INJECTION — avoids Cloudflare obfuscation
+   6. EMAIL INJECTION — avoids Cloudflare obfuscation
    All mailto: links are written by JS at runtime.
    Replace YOUR_EMAIL below with your actual address.
 ───────────────────────────────────────────────────────── */
@@ -258,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* ─────────────────────────────────────────────────────────
-   6. CASE STUDY INDEX — active section highlight
+   7. CASE STUDY INDEX — active section highlight
    Watches each section with an id and marks the matching
    .cs-index link as .is-active while it's in view.
 ───────────────────────────────────────────────────────── */
