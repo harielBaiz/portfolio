@@ -60,7 +60,7 @@ portfolio/
 | `index.html` | ✅ Done | Nav, hero, 3 project cards, skills, about, contact |
 | `about.html` | ✅ Done | Bio, PVP, personal section, contact |
 | `case-study-design-tokens.html` | ✅ Structure done | Needs real images in placeholders |
-| `case-study-infosec-questionnaire.html` | ✅ Structure done | Needs real images in placeholders |
+| `case-study-infosec-questionnaire.html` | ✅ Structure done | New sections added (see CS2 notes below). Needs real images in placeholders |
 | `case-study-personas-ia.html` | ✅ Structure done | Needs real images in placeholders |
 | `css/tokens.css` | ✅ Done | Light + dark mode tokens |
 | `css/base.css` | ✅ Done | Shared components |
@@ -85,6 +85,7 @@ portfolio/
 
 ### References
 - **Figma DS:** https://www.figma.com/design/NrZReZOBki85NDzJlQKQrg/portfolio-DS
+- **Wireframe page node:** `242:40156` (wireframe page — custom questionnaire lo-fi frames live here)
 - **Visual reference:** https://www.doc.cc/articles/craft-crisis — editorial layout, narrow column, neutral color system
 
 ### Color Rules
@@ -150,6 +151,52 @@ const domain = 'email.com'; // ← your email domain
 - **Outcomes:** −40% review time, −60% clarification requests, +40% satisfaction
 - **Bonus:** AI hackathon → became SOC2 Instant Insights product
 
+### Sections added this session
+
+**"Feature inventory first"** (Design Decisions section)
+- Added reverse engineering context: no formal documentation existed, inventory was built from scratch by mapping the live product.
+
+**"Mapping the domain before the UI"** (new subsection in Design Decisions)
+- OO domain analysis: 6 core objects (Questionnaire, Question, Score, Finding, Message, Internal Note, Document)
+- Inline SVG UML conceptual model — styled with DM Mono, warm paper palette, dark mode aware
+- Key insight: Question is the unit of work; toolbar scoped to Question, not the page
+- Callout explaining the three distinct communication channels (Finding / Message / Internal Note)
+- Placeholder for Figma domain model image (to add when ready)
+
+**"Surfacing the score without exposing the formula"** (new subsection in Design Decisions)
+- Problem: score formula was opaque — reviewers couldn't link the number back to inputs
+- Solution: surface inputs (answer score + priority) inline at question level
+- Score uses five-state icon + color system: Good, Fair, Warn, Bad, N/A — adopted from Bitsight DS (icon + color, replacing color-only scale → accessibility improvement)
+- At category/questionnaire level: numerical with same icon for comparison
+- Tooltip copy for N/A: *"Questions haven't been answered or graded yet"*
+- Tooltip range for Bad: **0–24** (0 included as safe default; confirm minimum with engineering)
+- Placeholder for scoring UI screenshots
+
+**"What this project taught me"** (Lessons section — rewritten)
+- Consolidated from 5 numbered items to 4 unnumbered paragraphs
+- Lessons now reflect: domain-first thinking, structural decisions (three channels + score transparency), dual research methods, system-level decisions that compound
+
+### Artifacts produced this session
+
+| Artifact | File | Notes |
+|----------|------|-------|
+| Object Analysis spreadsheet | `oo-object-analysis-v2.xlsx` | 2 sheets: Object Analysis (with deferred rows) + Prioritization Matrix |
+| Figma wireframes script | `figma-wireframes-questionnaire.js` | Paste into Figma › Plugins › Development › Open Console — builds 4 lo-fi frames for Custom Questionnaire creation wizard |
+
+### Image placeholders still to fill
+
+| Placeholder | What to add |
+|-------------|-------------|
+| Feature inventory audit | Annotated screenshot or spreadsheet of old platform |
+| Domain model (Figma) | Export from Figma — OO model deduced from existing questionnaire |
+| Question iterations | `images/question-iterations.png` (already referenced) |
+| Final question design | Figma screenshot of vertical rail |
+| Scoring UI | Question-level (qualitative) + questionnaire-level (numerical) side by side |
+| Light/dark | `images/questionnaire-light-dark.png` (already referenced) |
+| Categories panel | `images/categories-panel.png` (already referenced) |
+| Questions view | `images/questions.png` (already referenced) |
+| Prioritization matrix | Your impact vs. feasibility matrix image |
+
 ---
 
 ## Case Study 3 — Personas & IA
@@ -177,7 +224,7 @@ Please [do X].
 ```
 
 ### Claude's GitHub access
-Claude can clone the repo and read all files directly via `git`. It cannot push commits.
+Claude can read public repo pages via `github.com` URLs. **`raw.githubusercontent.com` is blocked** in Claude's sandbox — upload files directly to the chat instead.
 
 **Workflow after Claude edits a file:**
 1. Claude outputs the updated file as a download
@@ -185,6 +232,4 @@ Claude can clone the repo and read all files directly via `git`. It cannot push 
 3. `git add [file] && git commit -m "your message" && git push`
 4. GitHub Pages updates in ~30 seconds
 
-### CSS-only changes
-Claude can output just the changed rule block — no need to re-download the whole file.
-Paste it into the right place in the local file, then push.
+**Do not share GitHub tokens in chat.** If automation is needed, use GitHub Actions secrets or environment variables. Revoke any token shared in a previous session immediately at https://github.com/settings/tokens

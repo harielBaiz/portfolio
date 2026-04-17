@@ -8,38 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Questionnaire Redesign — Ariel's Portfolio</title>
   <style>
-    /* ── OO Diagram ── */
-    .oo-diagram-wrap { margin: 2rem 0 1.5rem; }
-    .oo-diagram-label {
-      display: block;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-secondary, #7a6e66);
-      margin-bottom: 0.75rem;
-    }
-    .oo-diagram-wrap svg { width: 100%; overflow: visible; }
-
-    .oo-box         { fill: #fdf8f2; stroke: #c4b5a8; stroke-width: 0.5; }
-    .oo-box--hero   { fill: #fdf8f2; stroke: #2b0c7d; stroke-width: 1.5; }
-    .oo-box--dashed { fill: #fdf8f2; stroke: #c4b5a8; stroke-width: 0.5; stroke-dasharray: 5 3; }
-
-    .oo-divider             { stroke: #c4b5a8; stroke-width: 0.5; fill: none; }
-    .oo-divider--dashed     { stroke: #ddd5cc; stroke-width: 0.5; fill: none; stroke-dasharray: 3 2; }
-    .oo-divider--hero       { stroke: #2b0c7d; stroke-width: 0.5; opacity: 0.5; fill: none; }
-    .oo-divider--hero-dashed{ stroke: #2b0c7d; stroke-width: 0.5; opacity: 0.35; fill: none; stroke-dasharray: 3 2; }
-    .oo-divider--box-dashed { stroke: #c4b5a8; stroke-width: 0.5; fill: none; stroke-dasharray: 5 3; }
-
-    .oo-relation    { stroke: #8a7b70; stroke-width: 0.5; fill: none; }
-    .oo-derived     { stroke: #c4b5a8; stroke-width: 0.5; stroke-dasharray: 4 3; fill: none; }
-
-    .oo-diamond-hollow { fill: #fdf8f2; stroke: #8a7b70; stroke-width: 0.5; }
-    .oo-diamond-solid  { fill: #8a7b70; stroke: #8a7b70; stroke-width: 0.5; }
-
-    .oo-th          { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; fill: #2c1d14; }
-    .oo-ts          { font-family: 'DM Mono', monospace; font-size: 11px; fill: #5a5048; }
-    .oo-legend      { font-family: 'DM Mono', monospace; font-size: 10px; fill: #7a6e66; }
 
     /* Dark mode */
     [data-theme="dark"] .oo-box,
@@ -120,7 +88,6 @@
     <li><a href="#problem">02 — Problem</a></li>
     <li><a href="#research">03 — Research</a></li>
     <li><a href="#design">04 — Design</a></li>
-    <li><a href="#domain">04a — Object model</a></li>
     <li><a href="#outcomes">05 — Outcomes</a></li>
     <li><a href="#lessons">06 — Lessons</a></li>
   </ol>
@@ -130,9 +97,7 @@
 
   <p class="hero-sub">
       After Bitsight acquired ThirdPartyTrust, the questionnaire feature needed more than a visual refresh — it needed a new foundation. I led the UI redesign and research plan for a complex, high-stakes workflow used by security teams every day.
-    </p>
-
-
+  </p>
 
   <!-- OUTCOME BANNER -->
   <div class="outcome-banner" aria-label="Key outcomes">
@@ -305,11 +270,7 @@
 
     <!-- INVENTORY PLACEHOLDER -->
     <div class="media-block">
-      <div class="media-placeholder">
-        <div class="media-icon">📋</div>
-        <div class="media-label">Image: feature inventory audit — old platform</div>
-        <div class="media-hint">Add your audit spreadsheet or annotated screenshot here</div>
-      </div>
+      <img src="images/questionnaire-3pt-design.png" alt="Feature inventory audit — old platform" />
     </div>
 
     <h3>Mapping the domain before the UI</h3>
@@ -322,11 +283,7 @@
 
     <!-- DOMAIN MODEL IMAGE -->
     <div class="media-block">
-      <div class="media-placeholder">
-        <div class="media-icon">◈</div>
-        <div class="media-label">Image: domain model — deduced from the existing questionnaire</div>
-        <div class="media-hint">Add your Figma domain model image here</div>
-      </div>
+      <img src="images/OO-domain-level.png" alt="Domain model — deduced from the existing questionnaire" />
     </div>
 
     <p>
@@ -334,121 +291,10 @@
     </p>
 
     <!-- OO CONCEPTUAL MODEL -->
-    <figure class="oo-diagram-wrap">
-      <span class="oo-diagram-label">Specification-level object model — reviewer perspective</span>
-      <svg viewBox="0 0 680 490" role="img" aria-label="UML class diagram showing six objects: Questionnaire, Question, Score, Finding, Message, Internal Note, and Document">
-        <title>Conceptual model — InfoSec Questionnaire reviewer experience</title>
-        <defs>
-          <marker id="oo-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#8a7b70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-        </defs>
-
-        <!-- R1: Questionnaire ◇── Question (aggregation) -->
-        <line class="oo-relation" x1="191" y1="158" x2="245" y2="146"/>
-        <polygon class="oo-diamond-hollow" points="185,153 191,158 185,163 179,158"/>
-        <text class="oo-legend" text-anchor="middle" x="207" y="145">1</text>
-        <text class="oo-legend" text-anchor="middle" x="237" y="139">*</text>
-
-        <!-- R2: Question ──◆ Finding (composition) -->
-        <line class="oo-relation" x1="431" y1="72" x2="455" y2="72"/>
-        <polygon class="oo-diamond-solid" points="425,67 431,72 425,77 419,72"/>
-
-        <!-- R3: Question ──◆ Message (composition) -->
-        <line class="oo-relation" x1="431" y1="147" x2="455" y2="147"/>
-        <polygon class="oo-diamond-solid" points="425,142 431,147 425,152 419,147"/>
-
-        <!-- R4: Question ──◆ Internal Note (composition) -->
-        <line class="oo-relation" x1="431" y1="222" x2="455" y2="222"/>
-        <polygon class="oo-diamond-solid" points="425,217 431,222 425,227 419,222"/>
-
-        <!-- R5: Question ──◆ Document (composition, L-path from bottom) -->
-        <path class="oo-relation" d="M360,252 L360,260 L453,260 L453,345 L455,345"/>
-        <polygon class="oo-diamond-solid" points="354,252 360,247 366,252 360,257"/>
-
-        <!-- R6: Question → Score (derived) -->
-        <line class="oo-derived" x1="335" y1="252" x2="335" y2="305" marker-end="url(#oo-arrow)"/>
-
-        <!-- QUESTIONNAIRE -->
-        <rect class="oo-box" x="20" y="70" width="165" height="176" rx="4"/>
-        <line class="oo-divider" x1="20" y1="102" x2="185" y2="102"/>
-        <text class="oo-th" text-anchor="middle" x="102" y="86" dominant-baseline="central">Questionnaire</text>
-        <text class="oo-ts" x="30" y="121" dominant-baseline="central">progress</text>
-        <text class="oo-ts" x="30" y="139" dominant-baseline="central">overall_score</text>
-        <text class="oo-ts" x="30" y="157" dominant-baseline="central">category_scores</text>
-        <line class="oo-divider--dashed" x1="20" y1="174" x2="185" y2="174"/>
-        <text class="oo-ts" x="30" y="193" dominant-baseline="central">finalizeReview()</text>
-        <text class="oo-ts" x="30" y="211" dominant-baseline="central">downloadAll()</text>
-        <text class="oo-ts" x="30" y="229" dominant-baseline="central">filterByCategory()</text>
-
-        <!-- QUESTION — HERO -->
-        <rect class="oo-box--hero" x="245" y="40" width="180" height="212" rx="4"/>
-        <line class="oo-divider--hero" x1="245" y1="72" x2="425" y2="72"/>
-        <text class="oo-th" text-anchor="middle" x="335" y="56" dominant-baseline="central">Question</text>
-        <text class="oo-ts" x="255" y="91"  dominant-baseline="central">type</text>
-        <text class="oo-ts" x="255" y="109" dominant-baseline="central">priority</text>
-        <text class="oo-ts" x="255" y="127" dominant-baseline="central">category</text>
-        <text class="oo-ts" x="255" y="145" dominant-baseline="central">answer</text>
-        <text class="oo-ts" x="255" y="163" dominant-baseline="central">score</text>
-        <line class="oo-divider--hero-dashed" x1="245" y1="180" x2="425" y2="180"/>
-        <text class="oo-ts" x="255" y="199" dominant-baseline="central">approve()</text>
-        <text class="oo-ts" x="255" y="217" dominant-baseline="central">flag()</text>
-        <text class="oo-ts" x="255" y="235" dominant-baseline="central">bookmark()</text>
-
-        <!-- SCORE — derived -->
-        <rect class="oo-box--dashed" x="245" y="305" width="180" height="122" rx="4"/>
-        <line class="oo-divider--box-dashed" x1="245" y1="337" x2="425" y2="337"/>
-        <text class="oo-th" text-anchor="middle" x="335" y="321" dominant-baseline="central">Score</text>
-        <text class="oo-ts" x="255" y="356" dominant-baseline="central">answer_impact</text>
-        <text class="oo-ts" x="255" y="374" dominant-baseline="central">priority_weight</text>
-        <text class="oo-ts" x="255" y="392" dominant-baseline="central">category_score</text>
-        <text class="oo-ts" x="255" y="410" dominant-baseline="central">overall_score</text>
-
-        <!-- FINDING (compact) -->
-        <rect class="oo-box" x="455" y="40" width="170" height="65" rx="4"/>
-        <line class="oo-divider" x1="455" y1="64" x2="625" y2="64"/>
-        <text class="oo-th" text-anchor="middle" x="540" y="52" dominant-baseline="central">Finding</text>
-        <text class="oo-ts" x="465" y="79" dominant-baseline="central">text</text>
-        <text class="oo-ts" x="465" y="94" dominant-baseline="central">status</text>
-
-        <!-- MESSAGE (compact) -->
-        <rect class="oo-box" x="455" y="115" width="170" height="65" rx="4"/>
-        <line class="oo-divider" x1="455" y1="139" x2="625" y2="139"/>
-        <text class="oo-th" text-anchor="middle" x="540" y="127" dominant-baseline="central">Message</text>
-        <text class="oo-ts" x="465" y="154" dominant-baseline="central">content</text>
-        <text class="oo-ts" x="465" y="169" dominant-baseline="central">sender</text>
-
-        <!-- INTERNAL NOTE (compact) -->
-        <rect class="oo-box" x="455" y="190" width="170" height="65" rx="4"/>
-        <line class="oo-divider" x1="455" y1="214" x2="625" y2="214"/>
-        <text class="oo-th" text-anchor="middle" x="540" y="202" dominant-baseline="central">Internal Note</text>
-        <text class="oo-ts" x="465" y="229" dominant-baseline="central">text</text>
-        <text class="oo-ts" x="465" y="244" dominant-baseline="central">author</text>
-
-        <!-- DOCUMENT (full) -->
-        <rect class="oo-box" x="455" y="290" width="170" height="110" rx="4"/>
-        <line class="oo-divider" x1="455" y1="318" x2="625" y2="318"/>
-        <text class="oo-th" text-anchor="middle" x="540" y="304" dominant-baseline="central">Document</text>
-        <text class="oo-ts" x="465" y="333" dominant-baseline="central">filename</text>
-        <text class="oo-ts" x="465" y="351" dominant-baseline="central">type</text>
-        <line class="oo-divider--dashed" x1="455" y1="368" x2="625" y2="368"/>
-        <text class="oo-ts" x="465" y="383" dominant-baseline="central">view()</text>
-        <text class="oo-ts" x="465" y="401" dominant-baseline="central">download()</text>
-
-        <!-- LEGEND -->
-        <polygon class="oo-diamond-hollow" points="22,460 28,455 34,460 28,465"/>
-        <line class="oo-relation" x1="34" y1="460" x2="50" y2="460"/>
-        <text class="oo-legend" x="55" y="460" dominant-baseline="central">aggregation</text>
-        <polygon class="oo-diamond-solid" points="160,460 166,455 172,460 166,465"/>
-        <line class="oo-relation" x1="172" y1="460" x2="188" y2="460"/>
-        <text class="oo-legend" x="193" y="460" dominant-baseline="central">composition</text>
-        <line class="oo-derived" x1="298" y1="460" x2="320" y2="460"/>
-        <text class="oo-legend" x="328" y="460" dominant-baseline="central">derived</text>
-      </svg>
-      <figcaption class="media-caption">
-        Six core objects from the reviewer's perspective. Solid diamonds (composition) — Finding, Message, Internal Note, and Document belong to the Question. Hollow diamond (aggregation) — the Questionnaire contains Questions. Score is derived (dashed border) from answer values and priority weights, not entered by the reviewer.
-      </figcaption>
-    </figure>
+    <div class="media-block">
+      <img src="images/OO-specification-level-object-model.png" alt="Questionnaire UI — light and dark mode side by side" />
+      <p class="media-caption">Six core objects from the reviewer's perspective. Solid diamonds (composition) — Finding, Message, Internal Note, and Document belong to the Question. Hollow diamond (aggregation) — the Questionnaire contains Questions. Score is derived (dashed border) from answer values and priority weights, not entered by the reviewer.</p>
+    </div>
 
     <div class="callout">
       <p>
