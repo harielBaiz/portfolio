@@ -8,6 +8,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Questionnaire Redesign — Ariel's Portfolio</title>
   <style>
+    /* ── OO Diagram ── */
+    .oo-diagram-wrap { margin: 2rem 0 1.5rem; }
+    .oo-diagram-label {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary, #7a6e66);
+      margin-bottom: 0.75rem;
+    }
+    .oo-diagram-wrap svg { width: 100%; overflow: visible; }
+
+    .oo-box         { fill: #fdf8f2; stroke: #c4b5a8; stroke-width: 0.5; }
+    .oo-box--hero   { fill: #fdf8f2; stroke: #2b0c7d; stroke-width: 1.5; }
+    .oo-box--dashed { fill: #fdf8f2; stroke: #c4b5a8; stroke-width: 0.5; stroke-dasharray: 5 3; }
+
+    .oo-divider             { stroke: #c4b5a8; stroke-width: 0.5; fill: none; }
+    .oo-divider--dashed     { stroke: #ddd5cc; stroke-width: 0.5; fill: none; stroke-dasharray: 3 2; }
+    .oo-divider--hero       { stroke: #2b0c7d; stroke-width: 0.5; opacity: 0.5; fill: none; }
+    .oo-divider--hero-dashed{ stroke: #2b0c7d; stroke-width: 0.5; opacity: 0.35; fill: none; stroke-dasharray: 3 2; }
+    .oo-divider--box-dashed { stroke: #c4b5a8; stroke-width: 0.5; fill: none; stroke-dasharray: 5 3; }
+
+    .oo-relation    { stroke: #8a7b70; stroke-width: 0.5; fill: none; }
+    .oo-derived     { stroke: #c4b5a8; stroke-width: 0.5; stroke-dasharray: 4 3; fill: none; }
+
+    .oo-diamond-hollow { fill: #fdf8f2; stroke: #8a7b70; stroke-width: 0.5; }
+    .oo-diamond-solid  { fill: #8a7b70; stroke: #8a7b70; stroke-width: 0.5; }
+
+    .oo-th          { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; fill: #2c1d14; }
+    .oo-ts          { font-family: 'DM Mono', monospace; font-size: 11px; fill: #5a5048; }
+    .oo-legend      { font-family: 'DM Mono', monospace; font-size: 10px; fill: #7a6e66; }
 
     /* Dark mode */
     [data-theme="dark"] .oo-box,
@@ -86,8 +118,8 @@
   <ol>
     <li><a href="#context">01 — Context</a></li>
     <li><a href="#problem">02 — Problem</a></li>
-    <li><a href="#research">03 — Research</a></li>
-    <li><a href="#design">04 — Design</a></li>
+    <li><a href="#design">03 — Design</a></li>
+    <li><a href="#research">04 — Research</a></li>
     <li><a href="#outcomes">05 — Outcomes</a></li>
     <li><a href="#lessons">06 — Lessons</a></li>
   </ol>
@@ -186,81 +218,12 @@
     </div>
   </section>
 
-  <!-- RESEARCH -->
-  <section id="research">
-    <div class="section-label">03 — Research</div>
-    <h2>Two studies, two different angles</h2>
-    <p>
-      Before committing to a direction, I designed a two-study research plan. The goal was to validate usability with real users while also getting structured expert feedback on our design decisions early — before reaching users.
-    </p>
-
-    <div class="method-row">
-      <div class="cs-card">
-        <div class="card-label">Study 1 · External</div>
-        <div class="card-title">Moderated Usability Test</div>
-        <p>Sessions with existing users of the ThirdPartyTrust platform. Participants completed representative tasks using the new design and verbalized their reactions. Primary metrics: task success rate, time on task, error patterns, and qualitative feedback.</p>
-      </div>
-      <div class="cs-card">
-        <div class="card-label">Study 2 · Internal</div>
-        <div class="card-title">PURE Expert Evaluation</div>
-        <p>A structured heuristic review with internal company stakeholders. PURE (Practical Usability Rating by Experts) uses a defined set of criteria to surface usability issues before external testing — faster and cheaper than waiting for real users to find them.</p>
-      </div>
-    </div>
-
-    <h3>What we found</h3>
-    <p>
-      The usability test results were encouraging: participants completed all tasks successfully and responded positively to the new interface. One of the most common reactions was around the question tools — the actions were clearer and easier to reach than in the original product.
-    </p>
-
-    <ul class="insight-list">
-      <li class="win">
-        <span class="insight-icon">✓</span>
-        <span><strong>All tasks completed successfully.</strong> Existing users navigated the redesigned interface without significant errors. The general reaction was that actions felt "more clear and easy to use."</span>
-      </li>
-      <li class="pain">
-        <span class="insight-icon">↓</span>
-        <span><strong>Bulk document download.</strong> Users needed to download all documents from a questionnaire at once — but the system required them to do it one by one, per question. A recurring and painful friction point.</span>
-      </li>
-      <li class="pain">
-        <span class="insight-icon">↓</span>
-        <span><strong>Cross-category filtering.</strong> Categories were rendered client-side, which limited filtering to within each category. Users expected to filter across the full questionnaire — a structural constraint from engineering, not design.</span>
-      </li>
-      <li class="pain">
-        <span class="insight-icon">↓</span>
-        <span><strong>User-built questionnaires.</strong> Users wanted to build questionnaires themselves. In the current state, questionnaires were created on demand by the Customer Success team — a bottleneck users found frustrating.</span>
-      </li>
-    </ul>
-
-    <div class="callout">
-      <p>The last two pain points were highly requested — but low feasibility for engineering at that stage. They went into the backlog with clear rationale. <em>Honest prioritization is part of good research communication.</em></p>
-    </div>
-
-    <!-- PRIORITIZATION MATRIX PLACEHOLDER -->
-    <div class="media-block">
-      <div class="media-placeholder short">
-        <div class="media-label">Image: Prioritization matrix — impact vs. feasibility</div>
-        <div class="media-hint">Add your matrix image here</div>
-      </div>
-    </div>
-
-    <div class="matrix-note">
-      <div class="matrix-card shipped">
-        <div class="mx-label">Shipped ↗ High impact · High feasibility</div>
-        <p>Bulk document download workaround, improved flag filtering, clearer question tools, review flow redesign.</p>
-      </div>
-      <div class="matrix-card deferred">
-        <div class="mx-label">Deferred ↘ High impact · Low feasibility</div>
-        <p>Cross-category filtering, user-built questionnaire creation — added to product backlog with documented rationale.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- DESIGN DECISIONS -->
   <section id="design">
-    <div class="section-label">04 — Design Decisions</div>
+    <div class="section-label">03 — Design Decisions</div>
     <h2>Iterating toward the right answer</h2>
     <p>
-      The design process was structured around planned delivery cycles — each iteration scoped to a set of features that could be shipped independently. This meant making decisions about what to finalize early and what to keep flexible as we learned more.
+      The design process started with a complete inventory of the existing platform, followed by the first designs and user flows built on the Bitsight DS. Each iteration was scoped to a set of features that could be shipped independently — which meant making early decisions about what to finalize and what to keep flexible as we learned more.
     </p>
 
     <h3>Feature inventory first</h3>
@@ -271,6 +234,7 @@
     <!-- INVENTORY PLACEHOLDER -->
     <div class="media-block">
       <img src="images/questionnaire-3pt-design.png" alt="Feature inventory audit — old platform" />
+      <p class="media-caption">The existing ThirdPartyTrust questionnaire interface — captured during the feature inventory audit before the redesign began.</p>
     </div>
 
     <h3>Mapping the domain before the UI</h3>
@@ -284,6 +248,7 @@
     <!-- DOMAIN MODEL IMAGE -->
     <div class="media-block">
       <img src="images/OO-domain-level.png" alt="Domain model — deduced from the existing questionnaire" />
+      <p class="media-caption">Domain-level object model deduced from the existing platform — mapping the core entities, attributes, and relationships the new design had to account for.</p>
     </div>
 
     <p>
@@ -296,11 +261,9 @@
       <p class="media-caption">Six core objects from the reviewer's perspective. Solid diamonds (composition) — Finding, Message, Internal Note, and Document belong to the Question. Hollow diamond (aggregation) — the Questionnaire contains Questions. Score is derived (dashed border) from answer values and priority weights, not entered by the reviewer.</p>
     </div>
 
-    <div class="callout">
-      <p>
-        Three distinct objects handle communication per question: <strong>Finding</strong> (formal, visible to the vendor — permanent record), <strong>Message</strong> (async thread with the vendor — scoped to the question), and <strong>Internal Note</strong> (private to the review team — never shared). Collapsing these into a single "comment" field would have broken the workflow. Keeping them separate was a deliberate design decision, not a technical constraint.
-      </p>
-    </div>
+    <p>
+      Three distinct objects handle communication per question: <strong>Finding</strong> (formal, visible to the vendor — permanent record), <strong>Message</strong> (async thread with the vendor — scoped to the question), and <strong>Internal Note</strong> (private to the review team — never shared). Keeping them separate was a deliberate design decision. The domain model also shaped how the research tasks were written — tasks like "go to vendor X → open questionnaire Y → flag question N → create a finding" trace the exact path through the object hierarchy, which is part of why participants navigated the test naturally.
+    </p>
 
     <h3>Question tools: the hardest interaction design problem</h3>
     <p>
@@ -348,29 +311,101 @@
         <div class="media-hint">Add your scoring UI screenshots here</div>
       </div>
     </div>
+  </section>
 
-    <h3>Light and dark themes, ready at launch</h3>
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-label">04 — Research</div>
+    <h2>Two studies, two different angles</h2>
     <p>
-      Because this project ran in parallel with the design token adoption work, the questionnaire became one of the first features to be fully tokenized. Every component in the redesign referenced semantic tokens — which meant both light and dark mode were supported from the start, with no separate design files and no duplication.
+      With the initial designs and user flows built on the Bitsight DS, I ran two research studies to validate the direction and surface friction before full delivery. The goal was to test with real users while also getting structured expert feedback early — catching issues at both ends of the process.
     </p>
 
-    <!-- LIGHT/DARK PLACEHOLDER -->
-    <div class="media-block">
-      <img src="images/questionnaire-light-dark.png" alt="Questionnaire UI — light and dark mode side by side" />
-      <p class="media-caption">The four-part naming convention: class · foundation · property · modifier. Each segment answers one question about how the token should be used.</p>
+    <div class="method-row">
+      <div class="cs-card">
+        <div class="card-label">Study 1 · External</div>
+        <div class="card-title">Moderated Usability Test</div>
+        <p>Sessions with existing users of the ThirdPartyTrust platform. Participants completed representative tasks using the new design and verbalized their reactions. Primary metrics: task success rate, time on task, error patterns, and qualitative feedback.</p>
+      </div>
+      <div class="cs-card">
+        <div class="card-label">Study 2 · Internal</div>
+        <div class="card-title">PURE Expert Evaluation</div>
+        <p>A structured heuristic review with internal company stakeholders. PURE (Practical Usability Rating by Experts) uses a defined set of criteria to surface usability issues before external testing — faster and cheaper than waiting for real users to find them.</p>
+      </div>
     </div>
 
-    <h3>Collaboration with the vendor-side team</h3>
+    <h3>What we found</h3>
     <p>
-      The questionnaire feature has two sides: the reviewer experience (what security teams see) and the respondent experience (what vendors see). I was responsible for the reviewer UI, and collaborated closely with the TMH team who owned the vendor-facing design. Keeping both sides consistent required ongoing alignment — shared components, shared tokens, and regular cross-team reviews.
+      The usability test results were encouraging: participants completed all tasks successfully and responded positively to the new interface. One of the most common reactions was around the question tools — the actions were clearer and easier to reach than in the original product.
     </p>
-    <div class="media-block">
-      <img src="images/categories-panel.png" alt="Questionnaire UI — categories panel for review and edit modes" />
-      <p class="media-caption">insert caption</p>
+
+    <ul class="insight-list">
+      <li class="win">
+        <span class="insight-icon">✓</span>
+        <span><strong>All tasks completed successfully.</strong> Existing users navigated the redesigned interface without significant errors. The general reaction was that actions felt "more clear and easy to use."</span>
+      </li>
+      <li class="pain">
+        <span class="insight-icon">↓</span>
+        <span><strong>Bulk document download.</strong> Users needed to download all documents from a questionnaire at once — but the system required them to do it one by one, per question. A recurring and painful friction point.</span>
+      </li>
+      <li class="pain">
+        <span class="insight-icon">↓</span>
+        <span><strong>Cross-category filtering.</strong> Categories were rendered client-side, which limited filtering to within each category. Users expected to filter across the full questionnaire — a structural constraint from engineering, not design.</span>
+      </li>
+      <li class="pain">
+        <span class="insight-icon">↓</span>
+        <span><strong>User-built questionnaires.</strong> Users wanted to build questionnaires themselves. In the current state, questionnaires were created on demand by the Customer Success team — a bottleneck users found frustrating.</span>
+      </li>
+    </ul>
+
+    <div class="testimonial-card testimonial-card--inline">
+      <div class="quote-icon">"</div>
+      <div class="testimonial-quote">Questionnaire info is more clear now</div>
+      <div class="testimonial-meta">
+        <span class="t-role">Usability test participant</span>
+        <span class="t-moment">On the redesigned question layout</span>
+      </div>
     </div>
+
+    <div class="testimonial-card testimonial-card--inline">
+      <div class="quote-icon">"</div>
+      <div class="testimonial-quote">We download the files question by question — we need to download all at once</div>
+      <div class="testimonial-meta">
+        <span class="t-role">Usability test participant</span>
+        <span class="t-moment">On document download</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card testimonial-card--inline">
+      <div class="quote-icon">"</div>
+      <div class="testimonial-quote">Filtering by categories is annoying</div>
+      <div class="testimonial-meta">
+        <span class="t-role">Usability test participant</span>
+        <span class="t-moment">On cross-category filtering</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>The last two pain points were highly requested — but low feasibility for engineering at that stage. They went into the backlog with clear rationale. <em>Honest prioritization is part of good research communication.</em></p>
+    </div>
+
+    <!-- PRIORITIZATION MATRIX PLACEHOLDER -->
     <div class="media-block">
-      <img src="images/questions.png" alt="Questionnaire UI — question cards for review and edit modes" />
-      <p class="media-caption">insert caption</p>
+      <div class="media-placeholder short">
+        <div class="media-label">Image: Prioritization matrix — impact vs. feasibility</div>
+        <div class="media-hint">Add your matrix image here</div>
+      </div>
+    </div>
+
+    <div class="matrix-note">
+      <div class="matrix-card shipped">
+        <div class="mx-label">Shipped ↗ High impact · High feasibility</div>
+        <p>Bulk document download workaround, improved flag filtering, clearer question tools, review flow redesign.</p>
+      </div>
+      <div class="matrix-card deferred">
+        <div class="mx-label">Deferred ↘ High impact · Low feasibility</div>
+        <p>Cross-category filtering, user-built questionnaire creation — added to product backlog with documented rationale.</p>
+      </div>
     </div>
   </section>
 
@@ -379,19 +414,91 @@
     <div class="section-label">05 — Outcomes</div>
     <h2>A complex feature, delivered in pieces that held together</h2>
     <p>
-      The redesign shipped progressively across planned delivery cycles. Each iteration was tested or reviewed before the next began — which meant problems were caught early, not after everything was built. At the end of the process, two research studies, a complete feature redesign, and a set of reusable components were delivered.
-    </p>
-    <p>
-      The usability test results validated the core direction: all tasks were completed successfully, and participants responded positively to the new tool layout. The pain points surfaced in research were documented, triaged, and communicated to the product team with clear feasibility context.
+      The redesign shipped progressively across planned delivery cycles. Each iteration was tested or reviewed before the next began — problems were caught early, not after everything was built.
     </p>
 
-    
-    <!-- FULL REDESIGN VIDEO PLACEHOLDER -->
+    <h3>Light and dark themes, ready at launch</h3>
+    <p>
+      Because this project ran in parallel with the design token adoption work, the questionnaire became one of the first features to be fully tokenized. Every component in the redesign referenced semantic tokens — which meant both light and dark mode were supported from the start, with no separate design files and no duplication.
+    </p>
+    <div class="media-block">
+      <img src="images/questionnaire-light-dark.png" alt="Questionnaire UI — light and dark mode side by side" />
+      <p class="media-caption">Light and dark mode, ready at launch — both themes came with the token system decision, not as extra design work.</p>
+    </div>
+
+    <h3>Collaboration with the vendor-side team</h3>
+    <p>
+      The questionnaire feature has two sides: the reviewer experience (what security teams see) and the respondent experience (what vendors see). I was responsible for the reviewer UI, and collaborated closely with the TMH team who owned the vendor-facing design. Keeping both sides consistent required ongoing alignment — shared components, shared tokens, and regular cross-team reviews.
+    </p>
+    <div class="media-block">
+      <img src="images/categories-panel.png" alt="Questionnaire UI — categories panel for review and edit modes" />
+      <p class="media-caption">Categories panel in review mode and edit mode — the same structure adapts to different workflow states without changing its position or hierarchy.</p>
+    </div>
+    <div class="media-block">
+      <img src="images/questions.png" alt="Questionnaire UI — question cards for review and edit modes" />
+      <p class="media-caption">Question cards in review mode and edit mode — the vertical tool rail remains consistently positioned regardless of answer type or question length.</p>
+    </div>
+
+    <h3>Results</h3>
+    <p>
+      Two research studies, a complete feature redesign, and a set of reusable components were delivered. The usability test validated the core direction: all tasks were completed successfully, and participants responded positively to the new tool layout. The pain points surfaced in research were documented, triaged, and communicated to the product team with clear feasibility context.
+    </p>
     <div class="media-block">
       <video autoplay loop muted playsinline>
         <source src="images/questionnaire.mp4" type="video/mp4">
       </video>
-      <p class="media-caption">Video showing the questionnaire UI in action</p>
+      <p class="media-caption">The questionnaire redesign in action</p>
+    </div>
+
+    <h3>Validation in the wild</h3>
+    <p>
+      After all designs were delivered to production, the product team ran a pilot program with both new and existing customers during the platform's unification phase. Legacy customers accessed VRM Beta for a preview and feedback gathering. New customers enrolled directly in the VRM Beta Pilot Program.
+    </p>
+
+    <ul class="insight-list">
+      <li class="win">
+        <span class="insight-icon">→</span>
+        <span>Confirm Bitsight VRM's value proposition by asking users whether the product was delivering according to their expectations</span>
+      </li>
+      <li class="win">
+        <span class="insight-icon">→</span>
+        <span>Test and learn for continuous improvement — gathering feedback on usability, functionality, and overall experience</span>
+      </li>
+      <li class="win">
+        <span class="insight-icon">→</span>
+        <span>Continue promoting Bitsight VRM to new customers while existing customers remained on the legacy platform</span>
+      </li>
+    </ul>
+
+    <div class="testimonial-card testimonial-card--inline">
+      <div class="quote-icon">"</div>
+      <div class="testimonial-quote">We need flexibility to whom we can send the questionnaire…</div>
+      <div class="testimonial-meta">
+        <span class="t-role">University of California, Davis</span>
+        <span class="t-moment">VRM Beta Pilot participant</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card testimonial-card--inline">
+      <div class="quote-icon">"</div>
+      <div class="testimonial-quote">You can use SAP Ariba or other TPRM products to send questionnaires easily but not necessarily create this kind of live experience… in real time you can start conversations, send messages to the supplier and cooperate having everything in one place</div>
+      <div class="testimonial-meta">
+        <span class="t-role">VRM Beta Pilot participant</span>
+        <span class="t-moment">On real-time collaboration</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card testimonial-card--inline">
+      <div class="quote-icon">"</div>
+      <div class="testimonial-quote">What's amazing is this ability to easily define requirements and create these conversations to follow up about the questions</div>
+      <div class="testimonial-meta">
+        <span class="t-role">VRM Beta Pilot participant</span>
+        <span class="t-moment">On question-level messaging</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>I didn't run the pilot program — but having that kind of feedback from a live platform, from real customers using the feature in production, was a meaningful signal that the design direction held up beyond the controlled conditions of usability testing.</p>
     </div>
 
     <!-- AI BONUS -->

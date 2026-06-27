@@ -7,6 +7,66 @@
   <link rel="stylesheet" href="css/case-study.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personas & IA — Ariel's Portfolio</title>
+  <style>
+    /* ── Before & After Section ── */
+    .before-after-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8, 2rem);
+      margin-block: var(--space-8, 2rem);
+    }
+    @media (max-width: 768px) {
+      .before-after-grid { grid-template-columns: 1fr; }
+    }
+    .before-after-col {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4, 1rem);
+    }
+    .before-after-label {
+      font-family: var(--font-mono, 'DM Mono', monospace);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.625rem;
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+    }
+    .before-label {
+      background: color-mix(in srgb, var(--color-text, #1a1a1a) 8%, transparent);
+      color: var(--color-text-secondary, #525252);
+    }
+    .after-label {
+      background: color-mix(in srgb, var(--color-accent, #2b0c7d) 12%, transparent);
+      color: var(--color-accent, #2b0c7d);
+    }
+    .before-after-figure {
+      margin: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--color-border, #e8e8e8);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .before-after-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .before-after-notes {
+      margin: 0;
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .before-after-notes li {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--color-text-secondary, #525252);
+    }
+  </style>
 </head>
 <body>
 
@@ -65,9 +125,10 @@
       <li><a href="#journey">04 — Journey</a></li>
       <li><a href="#insights">05 — Insights</a></li>
       <li><a href="#architecture">06 — Architecture</a></li>
-      <li><a href="#patterns">07 — Patterns</a></li>
-      <li><a href="#outcomes">08 — Outcomes</a></li>
-      <li><a href="#reflection">09 — Reflection</a></li>
+      <li><a href="#before-after">07 — Before &amp; After</a></li>
+      <li><a href="#patterns">08 — Patterns</a></li>
+      <li><a href="#outcomes">09 — Outcomes</a></li>
+      <li><a href="#reflection">10 — Reflection</a></li>
     </ol>
   </nav>
 
@@ -622,9 +683,47 @@
       </div>
     </section>
 
+    <!-- BEFORE & AFTER -->
+    <section id="before-after">
+      <div class="section-label">07 — Before &amp; After</div>
+      <h2>Two products. One decision that changed the navigation.</h2>
+      <p>The IA split wasn't just structural — it produced a fundamentally different UI for each user type. The before and after below show the same page concept (vendor/connection list) in each product: the old ThirdPartyTrust experience and the redesigned Bitsight VRM.</p>
+
+      <div class="before-after-grid">
+        <div class="before-after-col">
+          <div class="before-after-label before-label">Before — ThirdPartyTrust</div>
+          <figure class="before-after-figure">
+            <img src="img/before.png" alt="ThirdPartyTrust Connections page — two navigation bars, horizontal top nav and left sidebar, dense table with colored score badges" loading="lazy" />
+          </figure>
+          <ul class="before-after-notes">
+            <li>Two navigation bars — horizontal top nav + left sidebar — requiring users to orient themselves across two axes</li>
+            <li>Customers and vendors shared the same sections with no dedicated context</li>
+            <li>Score columns displayed raw numbers (Impact, Trust, Risk) without clear visual hierarchy</li>
+            <li>No clear product identity — the platform served everyone, so it served no one well</li>
+          </ul>
+        </div>
+        <div class="before-after-col">
+          <div class="before-after-label after-label">After — Bitsight VRM</div>
+          <figure class="before-after-figure">
+            <img src="img/after.png" alt="Bitsight VRM Vendors page — single left navigation bar, cleaner table layout, consistent design system components" loading="lazy" />
+          </figure>
+          <ul class="before-after-notes">
+            <li>Single left navigation — one axis, one mental model, clear product scope</li>
+            <li>The page title changed from "Connections" to "Vendors" — named after the user's core object</li>
+            <li>Security Rating displayed as a primary column with consistent iconography from the Bitsight DS</li>
+            <li>Dedicated VRM product — Sarah's world, built around her objects and her workflow</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>This wasn't a visual refresh. The navigation change was the direct consequence of the persona research — two different user mental models required two different products. The UI followed the IA decision, not the other way around.</p>
+      </div>
+    </section>
+
     <!-- FEEDBACK PATTERNS -->
     <section id="patterns">
-      <div class="section-label">07 — Feedback Patterns</div>
+      <div class="section-label">08 — Feedback Patterns</div>
       <h2>Designing for visibility</h2>
       <p>Before the redesign, users had no reliable way to know where an assessment stood, what required their attention, or whether an action had succeeded. This generated support tickets — not because the feature was broken, but because users couldn't read the system.</p>
       <div class="patterns-grid">
@@ -654,7 +753,7 @@
 
     <!-- OUTCOMES -->
     <section id="outcomes">
-      <div class="section-label">08 — Outcomes</div>
+      <div class="section-label">09 — Outcomes</div>
       <h2>What shipped. What changed.</h2>
       <div class="outcomes-grid">
         <div class="cs-card">
@@ -697,7 +796,7 @@
 
     <!-- REFLECTION -->
     <section id="reflection">
-      <div class="section-label">09 — Reflection</div>
+      <div class="section-label">10 — Reflection</div>
       <h2>What I'd do differently</h2>
       <div class="reflection-grid">
         <div class="cs-card">
