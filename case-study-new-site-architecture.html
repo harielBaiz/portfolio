@@ -113,17 +113,17 @@
       <h2>Two users. One navigation. Zero clarity.</h2>
       <p>The platform's core problem wasn't any single broken feature. It was structural: customers and vendors were forced to share the same mental model of the product, even though they were there for completely different reasons.</p>
 
-      <div class="methods-grid">
+      <div class="seg-defs">
         <div class="cs-card">
-          <h3>Navigation confusion</h3>
+          <div class="card-title">Navigation confusion</div>
           <p>The top bar and left sidebar served both user types at once. Customers looking for their vendor list and vendors looking for their pending assessments landed in the same place — with no clear path forward.</p>
         </div>
         <div class="cs-card">
-          <h3>No system feedback</h3>
+          <div class="card-title">No system feedback</div>
           <p>Users couldn't tell if an action had succeeded. No confirmation after sending a questionnaire. No status on submitted responses. Empty screens with no guidance on what to do next.</p>
         </div>
         <div class="cs-card">
-          <h3>Invisible failure mode</h3>
+          <div class="card-title">Invisible failure mode</div>
           <p>Users without a subscription had no support channel. Their frustration generated support tickets — but without research, there was no way to distinguish a usability problem from a missing feature.</p>
         </div>
       </div>
@@ -136,17 +136,17 @@
       <h2>Understanding two different worlds</h2>
       <p>The research goal was exploratory: understand how each user type thought about their work, what they needed from the platform, and where the experience was breaking down. I used three methods, each chosen for a specific purpose.</p>
 
-      <div class="methods-grid">
+      <div class="seg-defs">
         <div class="cs-card">
-          <h3>User interviews</h3>
+          <div class="card-title">User interviews</div>
           <p>To understand motivations, mental models, and day-to-day workflows. I talked to subscribed and unsubscribed users on both sides — customers and vendors. The goal was to hear how they described their own work before asking how the product fit into it.</p>
         </div>
         <div class="cs-card">
-          <h3>Affinity diagramming</h3>
+          <div class="card-title">Affinity diagramming</div>
           <p>To synthesize observations across participants and surface shared themes. I ran sessions with the VRM and TMH teams together — so the findings weren't just mine. They became a shared understanding across the two product teams.</p>
         </div>
         <div class="cs-card">
-          <h3>Usability studies</h3>
+          <div class="card-title">Usability studies</div>
           <p>To validate the new IA after the product split decision was made. Testing whether users could navigate the new structure before committing to building it.</p>
         </div>
       </div>
@@ -197,8 +197,8 @@
       </table>
 
         <div class="media-block">
-            <img src="images/affinity-diagram.png" alt="Affinity diagram — User research findings" />
-            <p class="media-caption">Affinity diagram — User research findings</p>
+            <img src="images/affinityDiagram-journeyMap.png" alt="Affinity diagram — User research findings" />
+            <p class="media-caption">Affinity diagram and Journey map — User research findings</p>
         </div>  
     </section>
 
@@ -208,10 +208,10 @@
       <div class="section-label">04 — Personas</div>
       <h2>Four people. Two sides of the same platform.</h2>
       <p>Primary personas drove design decisions. Secondary personas revealed where the experience was silently failing. Both were necessary — subscribed users showed the potential; unsubscribed users showed the cracks.</p>
-            <div class="media-block">
-                <img src="images/user_personas.png" alt="User personas — Sarah Chen and Tiago Ferreira" />
-                <p class="media-caption">Sarah Chen and Tiago Ferreira — two primary personas representing different sides of the platform.</p>
-            </div>  
+          <div class="media-block">
+              <img src="images/user_personas.png" alt="User personas — Sarah Chen and Tiago Ferreira" />
+              <p class="media-caption">Sarah Chen and Tiago Ferreira — two primary personas representing different sides of the platform.</p>
+          </div>  
     </section>
 
 
@@ -221,33 +221,28 @@
       <h2>What the affinity diagram surfaced</h2>
       <p>After clustering observations across all participants, five themes emerged consistently. Each one became a design principle for the new IA.</p>
 
-      <div class="themes-grid">
-        <div class="cs-card">
-          <div class="theme-number">01</div>
+      <div class="seg-defs">
+        <div class="cs-card"> 
           <div class="theme-title">Time</div>
           <p>Customers were running risk programs from spreadsheets alongside the platform. Vendors were copy-pasting the same answers into different tools.</p>
           <div class="theme-implication">Workflows had to be linear and fast. No dead ends, no unnecessary steps.</div>
         </div>
         <div class="cs-card">
-          <div class="theme-number">02</div>
           <div class="theme-title">Customization</div>
           <p>Neither user type felt the platform was built for their context. Customers needed control over risk criteria. Vendors needed control over their profile.</p>
           <div class="theme-implication">Customization had to be a first-class concept — not a buried settings page.</div>
         </div>
         <div class="cs-card">
-          <div class="theme-number">03</div>
           <div class="theme-title">Collaboration</div>
           <p>Both sides described their work as inherently cross-functional. Customers coordinated with internal security teams. Vendors coordinated across legal, engineering, and finance.</p>
           <div class="theme-implication">Contacts, roles, and delegation needed to be core objects in the navigation — not utility features.</div>
         </div>
         <div class="cs-card">
-          <div class="theme-number">04</div>
           <div class="theme-title">Automation</div>
           <p>Manual repetitive work was the biggest source of frustration on both sides: chasing vendors, tracking progress in spreadsheets, re-sending the same documents.</p>
           <div class="theme-implication">Automation touchpoints needed to be integrated into primary flows — not optional add-ons.</div>
         </div>
         <div class="cs-card">
-          <div class="theme-number">05</div>
           <div class="theme-title">Navigation</div>
           <p>Users couldn't orient themselves. A customer looking for their vendor list and a vendor looking for their active assessments ended up in the same place. Navigation was the symptom. The cause was structural: the platform had no conceptual model that matched how either user thought about their work.</p>
           <div class="theme-implication">The IA itself needed to be rebuilt around user mental models — which is where the object-oriented design approach became critical.</div>
@@ -261,47 +256,11 @@
       <div class="section-label">06 — Architecture</div>
       <h2>Objects first, not features</h2>
       <p>The research revealed something deeper than a usability problem. Customers and vendors weren't just different personas — they were operating with fundamentally different conceptual objects. Merging them in the same navigation was the root cause of the confusion.</p>
-
-      <div class="objects-grid">
-        <div class="objects-col">
-          <h3>Customer (VRM) — core objects</h3>
-          <div class="object-item">
-            <div class="object-dot"></div>
-            <div><div class="object-name">Vendor</div><div class="object-desc">The company being assessed</div></div>
-          </div>
-          <div class="object-item">
-            <div class="object-dot"></div>
-            <div><div class="object-name">Requirement</div><div class="object-desc">A questionnaire, certification, or audit assigned to a vendor</div></div>
-          </div>
-          <div class="object-item">
-            <div class="object-dot"></div>
-            <div><div class="object-name">Assessment</div><div class="object-desc">The active evaluation lifecycle</div></div>
-          </div>
-          <div class="object-item">
-            <div class="object-dot"></div>
-            <div><div class="object-name">Finding</div><div class="object-desc">A risk identified during assessment</div></div>
-          </div>
-        </div>
-        <div class="objects-col">
-          <h3>Vendor (TMH) — core objects</h3>
-          <div class="object-item">
-            <div class="object-dot secondary"></div>
-            <div><div class="object-name">Profile</div><div class="object-desc">Their security posture, visible to all customers</div></div>
-          </div>
-          <div class="object-item">
-            <div class="object-dot secondary"></div>
-            <div><div class="object-name">Request</div><div class="object-desc">An incoming requirement — questionnaire, certification, or insurance</div></div>
-          </div>
-          <div class="object-item">
-            <div class="object-dot secondary"></div>
-            <div><div class="object-name">Certificate</div><div class="object-desc">SOC 2, ISO 27001 — with expiry tracking</div></div>
-          </div>
-          <div class="object-item">
-            <div class="object-dot secondary"></div>
-            <div><div class="object-name">Insurance</div><div class="object-desc">Cyber liability policy with renewal date</div></div>
-          </div>
-        </div>
-      </div>
+      <div class="media-block">
+          <img src="images/products-core-objects.png" alt="Core objects — Customers and Vendors" />
+          <p class="media-caption">Core objects — Customers and Vendors</p>
+      </div>  
+      
 
       <div class="callout">
         <p>These two object sets didn't overlap at all. Sharing a navigation between them was the root cause — not a symptom. The IA decision followed directly: <strong>split the products</strong>. VRM for customers. TMH for vendors.</p>
@@ -310,7 +269,7 @@
       <h3>Before &amp; after</h3>
       <p>ThirdPartyTrust used a dual navigation — a top bar for primary sections and a context-sensitive left sidebar. The redesign moved to a single left sidebar per product, each organized around its own object model.</p>
 
-      <div class="methods-grid">
+      <div class="seg-defs">
         <div class="cs-card">
           <h3>Before — ThirdPartyTrust</h3>
           <p>Top navigation bar + context-sensitive left sidebar. Both user types shared the same primary nav. The sidebar changed depending on which section you were in, but both customers and vendors saw the same top-level structure.</p>
