@@ -28,11 +28,14 @@
 
 ```
 portfolio/
-├── index.html                              ← Landing page
+├── index.html                              ← Landing page (CS3 card now links to case-study-new-site-architecture.html)
 ├── about.html                              ← About Me page
+├── session-context.md                      ← This file
 ├── case-study-design-tokens.html           ← Case Study 1 · Design Tokens
 ├── case-study-infosec-questionnaire.html   ← Case Study 2 · InfoSec Questionnaire
-├── case-study-personas-ia.html             ← Case Study 3 · Personas & IA
+├── case-study-personas-ia.html             ← Earlier draft of CS3 — kept for reference/control, not linked from index.html
+├── case-study-new-site-architecture.html   ← Case Study 3 · Personas & IA (active/linked version)
+├── case-study-new-site-architecture2.html  ← Draft variant of CS3 with floating-line TOC style — unlinked, kept for reference
 ├── css/
 │   ├── tokens.css      ← DS tokens: colors, type scale, spacing (EDIT HERE for global changes)
 │   ├── base.css        ← Reset, nav, footer, buttons, chips, animations
@@ -41,14 +44,19 @@ portfolio/
 │   └── about.css       ← About page specific styles
 ├── js/
 │   └── site.js         ← Theme toggle, language switcher, scroll reveal, progress bar
+├── hackathon.gif                           ← Instant Insights hackathon demo — not yet placed in any HTML file
 ├── images/
-│   ├── cs-tokens-cover.jpg
-│   ├── elevation.png
-│   ├── token-naming-structure.jpg
-│   └── token-reference-chain.png
+│   ├── cs-tokens-cover.jpg, token-naming-structure.jpg, token-reference-chain.png, elevation.png  (CS1)
+│   ├── questionnaire-3pt-design.png, OO-domain-level.png, OO-specification-level-object-model.png,
+│   │   question-iterations.png, questionnaire-light-dark.png, categories-panel.png, questions.png,
+│   │   questionnaire.mp4                                                                          (CS2)
+│   ├── affinityDiagram-journeyMap.png, user_personas.png, products-core-objects.png,
+│   │   UIArtifacts-beforeAfter.png, Requirements.png, navigationAndVendorProfile-beforeAfter.png,
+│   │   before-after.png, requirements.mp4, securityProfile.mp4                                    (CS3)
+│   └── (accessibility/tokens reference set: color-blind-mode.png, elevation-table.jpg, spacing-tokens.mp4, etc.)
 └── downloads/
-    ├── resumeCV-EN.pdf
-    └── resumeCV-ES.pdf
+    ├── Hector-Ariel-Baiz-Resume-EN.pdf
+    └── Hector-Ariel-Baiz-Resume-ES.pdf
 ```
 
 ---
@@ -60,8 +68,10 @@ portfolio/
 | `index.html` | ✅ Done | Nav, hero, 3 project cards, skills, about, contact |
 | `about.html` | ✅ Done | Bio, PVP, personal section, contact |
 | `case-study-design-tokens.html` | ✅ Structure done | Needs real images in placeholders |
-| `case-study-infosec-questionnaire.html` | ✅ Structure done | New sections added (see CS2 notes below). Needs real images in placeholders |
-| `case-study-personas-ia.html` | ✅ Structure done | Needs real images in placeholders |
+| `case-study-infosec-questionnaire.html` | ✅ Structure done | New sections added (see CS2 notes below). AI Bonus banner moved OUT to CS3 this session. Needs real images in placeholders |
+| `case-study-personas-ia.html` | ⏸ Kept for reference | Earlier draft of CS3. No longer linked from `index.html` — kept intentionally per Ariel's request, not deleted |
+| `case-study-new-site-architecture.html` | 🔶 In progress | Now the active CS3 file, linked from `index.html`. Content = same as `case-study-personas-ia.html` (personas/IA story) plus the AI Bonus (Instant Insights) banner moved in at the end of Outcomes. Still missing: the planned "07 — Redesign" section (Security Profile / Requirements / Navigation before-after, analyzed in `before-after-analysis.md` but not yet built into HTML) |
+| `case-study-new-site-architecture2.html` | 🔲 Draft variant | Same content as above, alternate floating-line TOC style. Unlinked, kept for reference |
 | `css/tokens.css` | ✅ Done | Light + dark mode tokens |
 | `css/base.css` | ✅ Done | Shared components |
 | `css/landing.css` | ✅ Done | Landing-specific styles |
@@ -77,7 +87,9 @@ portfolio/
 - [ ] Add LinkedIn URL — search `linkedin.com/in/yourprofile` across all HTML files
 - [ ] Replace placeholder images (`<figure class="hero-cover hero-cover--placeholder">`) with real screenshots in all 3 case studies
 - [ ] Fill in Spanish translations in `js/site.js` → `es: {}` object
-- [ ] Rename CV files to match `about.html` nav link: `downloads/Hector-Ariel-Baiz-Resume-EN.pdf` (or update the href to match current filenames)
+- [ ] Build the "07 — Redesign" section in `case-study-new-site-architecture.html`: three before/after scenarios (Security Profile, Requirements, Navigation & Vendor Profile) — full analysis and HTML section plan already written in `before-after-analysis.md`, images already in repo (`UIArtifacts-beforeAfter.png`, `Requirements.png`, `navigationAndVendorProfile-beforeAfter.png`); `requirements.mp4` / `securityProfile.mp4` are also available if video is preferred over stills
+- [ ] Place `hackathon.gif` into the AI Bonus banner in `case-study-new-site-architecture.html` (Outcomes section)
+- [ ] Decide fate of `case-study-personas-ia.html` and `case-study-new-site-architecture2.html` — both kept intentionally for now, not linked from `index.html`
 
 ---
 
@@ -149,7 +161,7 @@ const domain = 'email.com'; // ← your email domain
 - **Key design:** 3 toolbar proposals → vertical action rail (review, flag, bookmark)
 - **Pain points solved:** flag filtering, bulk document download
 - **Outcomes:** −40% review time, −60% clarification requests, +40% satisfaction
-- **Bonus:** AI hackathon → became SOC2 Instant Insights product
+- **Bonus (moved):** AI hackathon → became SOC2 Instant Insights product. The `.ai-banner` block now lives in `case-study-new-site-architecture.html` (Outcomes section), not here — cross-link the two case studies if useful, since the SOC-2 artifact this feature analyzes shows up in CS3's Requirements redesign
 
 ### Sections added this session
 
@@ -201,11 +213,18 @@ const domain = 'email.com'; // ← your email domain
 
 ## Case Study 3 — Personas & IA
 
-- **File:** `case-study-personas-ia.html`
+- **Active file:** `case-study-new-site-architecture.html` (linked from `index.html`)
+- **Reference-only files:** `case-study-personas-ia.html` (earlier draft), `case-study-new-site-architecture2.html` (floating-TOC variant) — both kept intentionally, not linked
 - **Role:** Lead designer · user research + IA strategy
 - **Key outcomes:** 4 research-backed personas, product split (VRM / TMH), 15→2 day assessment turnaround
 - **Key themes:** object-oriented IA, mental models, feedback pattern design
 - **Research methods:** stakeholder interviews, CS ticket analysis, affinity mapping
+- **Bonus banner:** AI Bonus / Instant Insights `.ai-banner` moved in from CS2 this session — sits at the end of the Outcomes section
+- **Pending — Redesign section:** three before/after scenarios analyzed and ready to build (see `before-after-analysis.md` in the same repo):
+  1. Security Profile — unified artifact-row list replacing mixed cards/tables
+  2. Requirements — accordion + summary dashboard replacing single-requirement tab view
+  3. Navigation & Vendor Profile — Vendor Profile as a nested nav section replacing a full-screen dialog
+  Narrative thread: define the object once (Security Profile), reuse it in the accordion (Requirements), reuse the same thinking in the nav hierarchy (Navigation)
 
 ---
 
