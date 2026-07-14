@@ -10,7 +10,11 @@
   <style>
     /* ── Password gate ── */
     body.cs3-locked > *:not(#cs3-gate) { display: none !important; }
-    #cs3-gate {
+    /* #cs3-gate only shows while locked — this was previously unconditional,
+       which meant the overlay never disappeared even after a correct
+       password removed .cs3-locked from <body>. */
+    #cs3-gate { display: none; }
+    body.cs3-locked #cs3-gate {
       position: fixed;
       inset: 0;
       z-index: 999;
@@ -526,6 +530,10 @@
 
     function unlock() {
       document.body.classList.remove('cs3-locked');
+      // Belt-and-suspenders: hide the overlay directly too, so this
+      // doesn't depend solely on the CSS rule being scoped correctly.
+      var gateEl = document.getElementById('cs3-gate');
+      if (gateEl) gateEl.style.display = 'none';
     }
 
     // localStorage can throw (private browsing, strict cookie/storage
