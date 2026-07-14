@@ -57,10 +57,10 @@
   <div class="cs3-gate-box">
     <h2>This case study is password protected</h2>
     <p>Enter the password to view Personas &amp; Information Architecture.</p>
-    <form class="cs3-gate-form" id="cs3-gate-form">
-      <input type="password" id="cs3-gate-input" placeholder="Password" autocomplete="off" required />
-      <button type="submit">Unlock</button>
-    </form>
+    <div class="cs3-gate-form">
+      <input type="password" id="cs3-gate-input" placeholder="Password" autocomplete="off" />
+      <button type="button" id="cs3-gate-btn">Unlock</button>
+    </div>
     <div class="cs3-gate-error" id="cs3-gate-error">Incorrect password. Try again.</div>
   </div>
 </div>
@@ -552,13 +552,18 @@
       return (h >>> 0).toString(16);
     }
 
-    var form  = document.getElementById('cs3-gate-form');
     var input = document.getElementById('cs3-gate-input');
+    var button = document.getElementById('cs3-gate-btn');
     var error = document.getElementById('cs3-gate-error');
-    if (!form || !input || !error) return;
+    if (!input || !button || !error) {
+      console.warn('cs3 password gate: expected elements not found in the page.');
+      return;
+    }
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+    // Plain button + keydown handling — deliberately not a <form>/submit,
+    // so there's no native-submission fallback path if anything above
+    // ever fails silently.
+    function tryUnlock() {
       if (simpleHash(input.value) === HASH) {
         setStored();
         error.classList.remove('is-visible');
@@ -567,6 +572,14 @@
         error.classList.add('is-visible');
         input.value = '';
         input.focus();
+      }
+    }
+
+    button.addEventListener('click', tryUnlock);
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        tryUnlock();
       }
     });
   })();
