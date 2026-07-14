@@ -121,27 +121,22 @@
       <li><a href="#context">01 — Context</a></li>
       <li><a href="#problem">02 — Problem</a></li>
       <li><a href="#research">03 — Research</a></li>
-      <li><a href="#personas">04 — Personas</a></li>
-      <li><a href="#insights">05 — Insights</a></li>
+      <li><a href="#insights">04 — Insights</a></li>
+      <li><a href="#feedback-patterns">05 — Feedback Patterns</a></li>
       <li><a href="#architecture">06 — Architecture</a></li>
-      <li><a href="#outcomes">07 — Outcomes</a></li>
-      <li><a href="#reflection">08 — Reflection</a></li>
+      <li><a href="#reflection">07 — Reflection</a></li>
     </ol>
   </nav>
 
   <main class="page-wrap">
 
-    <p class="hero-sub">ThirdPartyTrust served two completely different user types in one shared UI. I led the research that defined 4 personas, ran affinity diagramming sessions across teams, and drove the decision to split the product into two dedicated products — Bitsight VRM and TMH.</p>
+    <p class="hero-sub">ThirdPartyTrust served two completely different user types in one shared UI. I led the research that surfaced 2 personas, ran affinity diagramming sessions across teams, and drove the decision to split the product into two dedicated products — Bitsight VRM and TMH.</p>
 
     <!-- OUTCOME BANNER -->
     <div class="outcome-banner" aria-label="Key outcomes">
       <div class="outcome-stat">
-        <div class="number">4</div>
-        <div class="label">Research-backed personas — 2 primary, 2 secondary</div>
-      </div>
-      <div class="outcome-stat">
-        <div class="number">15→2</div>
-        <div class="label">Days to complete a vendor assessment, before and after</div>
+        <div class="number">2</div>
+        <div class="label">Research-backed personas — one customer-side, one vendor-side</div>
       </div>
       <div class="outcome-stat">
         <div class="number">2</div>
@@ -150,6 +145,10 @@
       <div class="outcome-stat">
         <div class="number">3</div>
         <div class="label">Research methods — interviews, affinity diagramming, usability studies</div>
+      </div>
+      <div class="outcome-stat">
+        <div class="number">↓</div>
+        <div class="label">Customer success tickets — users could read system state and complete tasks without guessing</div>
       </div>
     </div>
 
@@ -199,7 +198,7 @@
       <div class="seg-defs">
         <div class="cs-card">
           <div class="card-title">User interviews</div>
-          <p>To understand motivations, mental models, and day-to-day workflows. I talked to subscribed and unsubscribed users on both sides — customers and vendors. The goal was to hear how they described their own work before asking how the product fit into it.</p>
+          <p>To understand motivations, mental models, and day-to-day workflows. We talked to subscribed and unsubscribed users on both sides — customers and vendors. The goal was to hear how they described their own work before asking how the product fit into it.</p>
         </div>
         <div class="cs-card">
           <div class="card-title">Affinity diagramming</div>
@@ -211,73 +210,26 @@
         </div>
       </div>
 
-      <h3>Who I talked to</h3>
-      <p>Not all users had equal weight in driving decisions. I defined 2 primary and 2 secondary personas based on subscription status, engagement level, and signal strength from support data.</p>
-
-      <table class="participant-table">
-        <thead>
-          <tr>
-            <th>Participants</th>
-            <th>User type</th>
-            <th>Subscription</th>
-            <th>Support access</th>
-            <th>Priority</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Carlos, Emma</td>
-            <td>Customer</td>
-            <td>Yes</td>
-            <td>Customer Success team</td>
-            <td><span class="badge badge-primary">Primary</span></td>
-          </tr>
-          <tr>
-            <td>Lucas, Priya</td>
-            <td>Vendor</td>
-            <td>Yes</td>
-            <td>Customer Success team</td>
-            <td><span class="badge badge-primary">Primary</span></td>
-          </tr>
-          <tr>
-            <td>Tom, Ana</td>
-            <td>Customer</td>
-            <td>No</td>
-            <td>None</td>
-            <td><span class="badge badge-secondary">Secondary</span></td>
-          </tr>
-          <tr>
-            <td>David, Nina</td>
-            <td>Vendor</td>
-            <td>No</td>
-            <td>None</td>
-            <td><span class="badge badge-secondary">Secondary</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <h3>The research team</h3>
+      <p>This wasn't something I did alone. I worked with 2 product designers, 2 product managers, and 5 customer success teammates to plan and run the interviews — customer success in particular gave us direct access to users on both sides of the platform, since they were already talking to them every day. Subscribed users were the primary signal; unsubscribed users, who had no support channel to complain through, showed us where the experience was silently failing.</p>
 
         <div class="media-block">
             <img src="images/affinityDiagram-journeyMap.png" alt="Affinity diagram — User research findings" />
             <p class="media-caption">Affinity diagram and Journey map — User research findings</p>
-        </div>  
-    </section>
+        </div>
 
-
-    <!-- 04 — PERSONAS -->
-    <section id="personas">
-      <div class="section-label">04 — Personas</div>
-      <h2>Four people. Two sides of the same platform.</h2>
-      <p>Primary personas drove design decisions. Secondary personas revealed where the experience was silently failing. Both were necessary — subscribed users showed the potential; unsubscribed users showed the cracks.</p>
+      <h3>Two personas emerged</h3>
+      <p>Out of the interviews and the affinity diagramming sessions, two personas emerged, one per side of the platform. They became the shared reference point for design decisions on both the VRM and TMH teams — proof that customers and vendors needed genuinely different products, not just different views of the same one.</p>
           <div class="media-block">
               <img src="images/user_personas.png" alt="User personas — Sarah Chen and Tiago Ferreira" />
-              <p class="media-caption">Sarah Chen and Tiago Ferreira — two primary personas representing different sides of the platform.</p>
-          </div>  
+              <p class="media-caption">Sarah Chen and Tiago Ferreira — the customer-side and vendor-side personas that came out of this research.</p>
+          </div>
     </section>
 
 
     <!-- 05 — KEY INSIGHTS -->
     <section id="insights">
-      <div class="section-label">05 — Key Insights</div>
+      <div class="section-label">04 — Key Insights</div>
       <h2>What the affinity diagram surfaced</h2>
       <p>After clustering observations across all participants, five themes emerged consistently. Each one became a design principle for the new IA.</p>
 
@@ -306,6 +258,65 @@
           <div class="theme-title">Navigation</div>
           <p>Users couldn't orient themselves. A customer looking for their vendor list and a vendor looking for their active assessments ended up in the same place. Navigation was the symptom. The cause was structural: the platform had no conceptual model that matched how either user thought about their work.</p>
           <div class="theme-implication">The IA itself needed to be rebuilt around user mental models — which is where the object-oriented design approach became critical.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 05 — FEEDBACK PATTERNS -->
+    <section id="feedback-patterns">
+      <div class="section-label">05 — Feedback Patterns</div>
+      <h2>A product that finally talks back</h2>
+      <p>The "No system feedback" problem identified early on (section 02) had a simple root cause: there was no shared vocabulary for how the product talked back to users. Before any of the structural redesign work began, the very first patch shipped on ThirdPartyTrust was smaller: setting up Pendo guides for user onboarding. Those guides carried over when the platform moved to Bitsight and are still in use today.</p>
+
+      <div class="seg-defs">
+        <div class="cs-card">
+          <h3>Before — ThirdPartyTrust</h3>
+          <p>No confirmation after sending a questionnaire. No status on submitted responses. Empty screens with no guidance on what to do next. Users landed on the platform and didn't know what to do without reaching out for technical support.</p>
+        </div>
+        <div class="cs-card">
+          <h3>After — Bitsight DS feedback patterns</h3>
+          <p>Every screen accounts for the same four states: empty, loading, success, and error. Actions confirm themselves. Empty states point to the next step instead of leaving a blank screen.</p>
+        </div>
+      </div>
+
+      <h3>Feedback patterns, standardized</h3>
+      <p>Bitsight DS already had a complete feedback pattern library — the gap wasn't a missing pattern, it was inconsistent use. I made a point of running every new design against it, covering the four states every screen needs to account for, so none of the four got skipped.</p>
+
+      <div class="patterns-grid">
+        <div class="pattern-card">
+          <div class="pattern-icon">▢</div>
+          <h3>Empty states</h3>
+          <p>What a user sees before there's any data: guidance on what to do next, not a blank screen.</p>
+        </div>
+        <div class="pattern-card">
+          <div class="pattern-icon">◔</div>
+          <h3>Loading &amp; progress states</h3>
+          <p>Confirms an action is in motion, so users aren't left wondering if a click registered.</p>
+        </div>
+        <div class="pattern-card">
+          <div class="pattern-icon">✓</div>
+          <h3>Success confirmation</h3>
+          <p>A clear signal that an action completed. Sending a questionnaire now visibly succeeds.</p>
+        </div>
+        <div class="pattern-card">
+          <div class="pattern-icon">!</div>
+          <h3>Inline errors</h3>
+          <p>Errors surface next to the field or action that caused them, not in a disconnected banner.</p>
+        </div>
+      </div>
+
+      <div class="media-block">
+          <img src="images/feedback-patterns-checklist.png" alt="Feedback patterns checklist" />
+          <p class="media-caption">The four-state checklist, kept close at hand on every project since.</p>
+      </div>
+
+      <div class="testimonial-card testimonial-card--inline">
+        <div class="quote-icon">"</div>
+        <div class="testimonial-quote">The empty states were really helpful — they made it clear what to do to complete the task.</div>
+        <div class="testimonial-meta">
+          <span class="t-role">PURE usability test participant</span>
+          <span class="t-moment">On the redesigned empty states</span>
         </div>
       </div>
     </section>
@@ -351,6 +362,10 @@
           <p class="media-caption">Vendor Profile moves from a full-screen dialog disconnected from the main nav to a nested section inside one unified sidebar. Every former tab becomes a real, addressable destination.</p>
       </div>
 
+      <div class="callout">
+        <p>Two things brought support ticket volume down: splitting the UI into two products meant customers and vendors were each looking at a navigation built around their own objects instead of someone else's, and the feedback patterns from the previous section meant that once they were there, the system actually told them what was happening instead of leaving them to guess.</p>
+      </div>
+
       <h3>The same object pattern, reused twice</h3>
       <p>Once Vendor was modeled as an object with defined sub-pages, two of those sub-pages, Security Profile and Requirements, got redesigned around the same underlying idea: stop treating each artifact type as its own UI pattern, and start treating every artifact as an instance of the same object, a <strong>requirement with a status</strong>. These two are only a sample. The same redesign process touched many more sections across the integration; Security Profile and Requirements are shown here because they illustrate the pattern most clearly.</p>
       <p>The two pages answer different questions, even though they end up looking similar. <strong>Security Profile</strong> is the vendor's side of the relationship: everything a vendor has published and shared, built once on their own Trust Management Hub profile, which can include more than what's strictly required. <strong>Requirements</strong> is the customer's side: the specific checklist of artifacts a customer's program actually requires from that vendor. Both views below are the customer's, a reviewer looking first at everything a vendor shared, then at their own requirement checklist mapped against it.</p>
@@ -368,6 +383,15 @@
         <p class="media-caption">Security Profile — the redesign in action</p>
       </div>
 
+      <div class="testimonial-card testimonial-card--inline">
+        <div class="quote-icon">"</div>
+        <div class="testimonial-quote">It will be just much easier for us and the suppliers to have everything in one place.</div>
+        <div class="testimonial-meta">
+          <span class="t-role">VRM customer</span>
+          <span class="t-moment">On the redesigned Security Profile</span>
+        </div>
+      </div>
+
       <h4 style="font-family:var(--f-ui);font-weight:700;font-size:1rem;margin:1.5rem 0 0.5rem;">Requirements — reviewer's view</h4>
       <p>The Requirements page took that same row pattern and reused it a level up, but the bigger problem here wasn't visual inconsistency: the tab couldn't do anything. Requirements lived inside a giant modal packed with tabs (Tiering, Data, External Questionnaires, and others), and the Requirements tab itself was read-only. It could only tell a reviewer what was required, not let them act on it. To actually review a questionnaire response or a piece of documentation, the reviewer had to leave the tab entirely, jump over to Data or External Questionnaires, do the review there, and come back, repeating that trip for every artifact in every requirement.</p>
       <p>The redesign made Requirements fully actionable. Questionnaires and documentation can now be reviewed inline, without leaving the page: questionnaires open directly in the row, and documentation opens in a side sheet, so a reviewer never has to go hunting through other tabs to do the work the Requirements page is supposed to support. The accordion, the summary, and the per-artifact status all sit on top of that one change. Review happens where the requirement lives, not somewhere else.</p>
@@ -382,6 +406,22 @@
         <p class="media-caption">Requirements — the redesign in action</p>
       </div>
 
+      <div class="testimonial-card testimonial-card--inline">
+        <div class="quote-icon">"</div>
+        <div class="testimonial-quote">It's just much more efficient for us than reviewing requirements in one tool and the questionnaire responses in another, and having to make notes on the side to connect the two.</div>
+        <div class="testimonial-meta">
+          <span class="t-role">VRM customer</span>
+          <span class="t-moment">On the redesigned Requirements review</span>
+        </div>
+      </div>
+      <div class="testimonial-card testimonial-card--inline">
+        <div class="quote-icon">"</div>
+        <div class="testimonial-quote">I am not seeing enough value in the product today but I can see the vision and look forward to moving away from Excel once VRM has more features introduced.</div>
+        <div class="testimonial-meta">
+          <span class="t-role">VRM customer</span>
+          <span class="t-moment">Early adopter, migrating off Excel</span>
+        </div>
+      </div>
       <div class="callout">
         <p>The through-line across all three: define the object once, a requirement with a status, and reuse it everywhere it shows up, in a single artifact row, in an accordion of requirements, and in the nav hierarchy that gets you there.</p>
       </div>
@@ -396,102 +436,22 @@
           </p>
         </div>
       </div>
+
+      
     </section>
 
 
-    <!-- 07 — OUTCOMES -->
-    <section id="outcomes">
-      <div class="section-label">07 — Outcomes</div>
-      <h2>What shipped. What changed.</h2>
 
-      <div class="outcomes-grid">
-        <div class="cs-card">
-          <div class="outcome-area">Assessment speed</div>
-          <span class="outcome-highlight">15→2</span>
-          <div class="outcome-result">Days to complete a vendor assessment, before and after</div>
-        </div>
-        <div class="cs-card">
-          <div class="outcome-area">Product architecture</div>
-          <div class="outcome-result">VRM and TMH launched as dedicated products — each built around their user's core objects, with a single left sidebar navigation</div>
-        </div>
-        <div class="cs-card">
-          <div class="outcome-area">Support volume</div>
-          <div class="outcome-result">Customer success tickets dropped — users could now read the system state and complete tasks without guessing</div>
-        </div>
-        <div class="cs-card">
-          <div class="outcome-area">Shared personas</div>
-          <div class="outcome-result">4 research-backed personas became the common language between the ThirdPartyTrust team (VRM) and the Bitsight team (TMH)</div>
-        </div>
-        <div class="cs-card">
-          <div class="outcome-area">Feedback patterns</div>
-          <div class="outcome-result">New feedback pattern library added to Bitsight DS — empty states, progress states, success confirmation, inline errors — standardized across both products</div>
-        </div>
-        <div class="cs-card">
-          <div class="outcome-area">Design system</div>
-          <div class="outcome-result">Patterns built for this project became reusable DS components, reducing design and dev time on future features across the Bitsight platform</div>
-        </div>
-      </div>
-
-      <p>Before any of the structural redesign work began, the very first patch shipped on ThirdPartyTrust was smaller: setting up Pendo guides for user onboarding. Those guides carried over when the platform moved to Bitsight and are still in use today.</p>
-
-      <h3>Feedback patterns, standardized</h3>
-      <p>The "No system feedback" problem identified early on (section 02) had a simple root cause: there was no shared vocabulary for how the product talked back to users. The redesign closed that gap by building a feedback pattern library into Bitsight DS, covering the four states every screen needs to account for. It's now a checklist I run on every design, so none of the four get forgotten.</p>
-
-      <div class="patterns-grid">
-        <div class="pattern-card">
-          <div class="pattern-icon">▢</div>
-          <h3>Empty states</h3>
-          <p>What a user sees before there's any data: guidance on what to do next, not a blank screen.</p>
-        </div>
-        <div class="pattern-card">
-          <div class="pattern-icon">◔</div>
-          <h3>Loading &amp; progress states</h3>
-          <p>Confirms an action is in motion, so users aren't left wondering if a click registered.</p>
-        </div>
-        <div class="pattern-card">
-          <div class="pattern-icon">✓</div>
-          <h3>Success confirmation</h3>
-          <p>A clear signal that an action completed. Sending a questionnaire now visibly succeeds.</p>
-        </div>
-        <div class="pattern-card">
-          <div class="pattern-icon">!</div>
-          <h3>Inline errors</h3>
-          <p>Errors surface next to the field or action that caused them, not in a disconnected banner.</p>
-        </div>
-      </div>
-
-      <div class="media-block">
-          <img src="images/feedback-patterns-checklist.png" alt="Feedback patterns checklist" />
-          <p class="media-caption">The four-state checklist, kept close at hand on every project since.</p>
-      </div>
-
-      <div class="testimonial-card testimonial-card--inline">
-        <div class="quote-icon">"</div>
-        <div class="testimonial-quote">We were assessing our third-parties using Excel spreadsheets and it was hard to keep track of everything. With ThirdPartyTrust, our average assessment turnaround went from 15 days to 2 days.</div>
-        <div class="testimonial-meta">
-          <span class="t-role">Thiago Ribeiro</span>
-          <span class="t-moment">Associate Director for Information Security Engineering, Charles River Laboratories</span>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- 08 — REFLECTION -->
+    <!-- 07 — REFLECTION -->
     <section id="reflection">
-      <div class="section-label">08 — Reflection</div>
+      <div class="section-label">07 — Reflection</div>
       <h2>What I'd do differently</h2>
 
       <ul class="lesson-list">
         <li>
           <div class="lesson-body">
-            <strong>Run tree testing before committing to the split</strong>
-            <p>The product split decision was driven by research — but we validated it with usability studies after the decision was made. Running a quick tree test earlier would have given us structural confidence before committing, and would have reduced risk at the most critical point of the project.</p>
-          </div>
-        </li>
-        <li>
-          <div class="lesson-body">
-            <strong>Reach secondary personas earlier</strong>
-            <p>Unsubscribed users — Diana and James — turned out to be the clearest signal of where the platform was silently failing. But because they had no support relationship, they were harder to recruit. I'd invest more in reaching them early in any future project where there's a free-tier or low-access user type.</p>
+            <strong>Loop customer success in earlier</strong>
+            <p>Customer success teammates were part of the research team, but mainly to help recruit and run sessions. They had direct, daily contact with these users. If I'd brought them in to help shape the research questions from the start, not just to execute them, we probably would have surfaced some of these insights faster.</p>
           </div>
         </li>
         <li>

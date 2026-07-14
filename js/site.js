@@ -204,37 +204,58 @@ function initProgressBar() {
 }
 
 /* ─────────────────────────────────────────────────────────
-   5. VIDEO LIGHTBOX
+   5. MEDIA LIGHTBOX
    ─────────────────────────────────────────────────────────
-   Click any .media-block video to open it fullscreen in an
-   overlay with audio controls. Close via ×, backdrop, or Esc.
+   Click any .media-block video or image to open it fullscreen
+   in an overlay. Close via ×, backdrop, or Esc.
 ───────────────────────────────────────────────────────── */
-function initVideoLightbox() {
-  const videos = document.querySelectorAll('.media-block video');
-  if (!videos.length) return;
+function initMediaLightbox() {
+  const media = document.querySelectorAll('.media-block video, .media-block img, .ai-banner img');
+  if (!media.length) return;
 
   const overlay = document.createElement('div');
   overlay.className = 'video-lightbox';
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Video lightbox');
+  overlay.setAttribute('aria-label', 'Media lightbox');
 
   const closeBtn = document.createElement('button');
   closeBtn.className = 'video-lightbox-close';
-  closeBtn.setAttribute('aria-label', 'Close video');
+  closeBtn.setAttribute('aria-label', 'Close');
   closeBtn.textContent = '×';
 
   const lbVideo = document.createElement('video');
   lbVideo.controls = true;
   lbVideo.setAttribute('playsinline', '');
+  lbVideo.style.display = 'none';
+
+  const lbImg = document.createElement('img');
+  lbImg.alt = '';
+  lbImg.style.display = 'none';
 
   overlay.appendChild(closeBtn);
   overlay.appendChild(lbVideo);
+  overlay.appendChild(lbImg);
   document.body.appendChild(overlay);
 
-  function open(src) {
+  function openVideo(src) {
+    lbImg.style.display = 'none';
+    lbImg.src = '';
+    lbVideo.style.display = '';
     lbVideo.src = src;
     lbVideo.play().catch(() => {});
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function openImage(src, alt) {
+    lbVideo.style.display = 'none';
+    lbVideo.pause();
+    lbVideo.src = '';
+    lbImg.style.display = '';
+    lbImg.src = src;
+    lbImg.alt = alt || '';
     overlay.classList.add('is-open');
     document.body.style.overflow = 'hidden';
     closeBtn.focus();
@@ -244,13 +265,18 @@ function initVideoLightbox() {
     overlay.classList.remove('is-open');
     lbVideo.pause();
     lbVideo.src = '';
+    lbImg.src = '';
     document.body.style.overflow = '';
   }
 
-  videos.forEach(v => {
-    v.addEventListener('click', () => {
-      const src = v.querySelector('source')?.src || v.src;
-      open(src);
+  media.forEach(el => {
+    el.addEventListener('click', () => {
+      if (el.tagName === 'VIDEO') {
+        const src = el.querySelector('source')?.src || el.src;
+        openVideo(src);
+      } else {
+        openImage(el.src, el.alt);
+      }
     });
   });
 
@@ -337,8 +363,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Progress bar (case studies)
   initProgressBar();
 
-  // Video lightbox
-  initVideoLightbox();
+  // Media lightbox (images + videos)
+  initMediaLightbox();
 
   // Testimonial word-by-word reveal
   initTestimonialReveal();
@@ -380,6 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
    .cs-index link as .is-active while it's in view.
 ───────────────────────────────────────────────────────── */
 (function initCsIndex() {
+  const nav = document.querySelector('.cs-index');
   const indexLinks = document.querySelectorAll('.cs-index a');
   if (!indexLinks.length) return;
 
@@ -401,4 +428,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   sections.forEach(s => observer.observe(s));
+
+  // Reveal the fixed left rail only once the hero subtitle has
+  // scrolled out of view — keeps it out of the way of the hero.
+  const heroSub = document.querySelector('.hero-sub');
+  if (nav && heroSub) {
+    const heroObserver = new IntersectionObserver(([entry]) => {
+      const scrolledPast = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+      nav.classList.toggle('is-visible', scrolledPast);
+    }, { threshold: 0 });
+    heroObserver.observe(heroSub);
+  }
 })();
