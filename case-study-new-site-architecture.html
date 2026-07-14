@@ -528,7 +528,17 @@
       document.body.classList.remove('cs3-locked');
     }
 
-    if (localStorage.getItem(STORAGE_KEY) === 'true') {
+    // localStorage can throw (private browsing, strict cookie/storage
+    // blocking, some browser extensions) — never let that stop the gate
+    // from working, it just means "not remembered" instead of "unlocked".
+    function getStored() {
+      try { return localStorage.getItem(STORAGE_KEY); } catch (err) { return null; }
+    }
+    function setStored() {
+      try { localStorage.setItem(STORAGE_KEY, 'true'); } catch (err) { /* ignore */ }
+    }
+
+    if (getStored() === 'true') {
       unlock();
       return;
     }
@@ -545,11 +555,12 @@
     var form  = document.getElementById('cs3-gate-form');
     var input = document.getElementById('cs3-gate-input');
     var error = document.getElementById('cs3-gate-error');
+    if (!form || !input || !error) return;
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (simpleHash(input.value) === HASH) {
-        localStorage.setItem(STORAGE_KEY, 'true');
+        setStored();
         error.classList.remove('is-visible');
         unlock();
       } else {
