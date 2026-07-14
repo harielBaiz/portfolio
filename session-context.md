@@ -70,7 +70,7 @@ portfolio/
 | `case-study-design-tokens.html` | ✅ Structure done | Needs real images in placeholders |
 | `case-study-infosec-questionnaire.html` | ✅ Structure done | New sections added (see CS2 notes below). AI Bonus banner moved OUT to CS3 this session. Needs real images in placeholders |
 | `case-study-personas-ia.html` | ⏸ Kept for reference | Earlier draft of CS3. No longer linked from `index.html` — kept intentionally per Ariel's request, not deleted |
-| `case-study-new-site-architecture.html` | 🔶 In progress | Now the active CS3 file, linked from `index.html`. Content = same as `case-study-personas-ia.html` (personas/IA story) plus the AI Bonus (Instant Insights) banner moved in at the end of Outcomes. Still missing: the planned "07 — Redesign" section (Security Profile / Requirements / Navigation before-after, analyzed in `before-after-analysis.md` but not yet built into HTML) |
+| `case-study-new-site-architecture.html` | ✅ Structure done | Active CS3 file, linked from `index.html`. Personas/IA story + AI Bonus (Instant Insights) banner in Outcomes + all three before-after scenarios (Security Profile, Requirements, Navigation & Vendor Profile) now written into the Architecture (06) section using `before-after-analysis.md`. **Password-protected** (see note below). Needs real hero cover image + final proofread of new prose |
 | `case-study-new-site-architecture2.html` | 🔲 Draft variant | Same content as above, alternate floating-line TOC style. Unlinked, kept for reference |
 | `css/tokens.css` | ✅ Done | Light + dark mode tokens |
 | `css/base.css` | ✅ Done | Shared components |
@@ -85,9 +85,10 @@ portfolio/
 
 - [ ] Add real email address — edit `js/site.js`: set `user` and `domain` variables
 - [ ] Add LinkedIn URL — search `linkedin.com/in/yourprofile` across all HTML files
+- [ ] Add `images/feedback-patterns-checklist.png` — new image referenced in `case-study-new-site-architecture.html`, Outcomes section, for the "Feedback patterns, standardized" subsection (uses the existing unused `.patterns-grid` / `.pattern-card` CSS, already scoped "(cs3)" in `case-study.css`)
 - [ ] Replace placeholder images (`<figure class="hero-cover hero-cover--placeholder">`) with real screenshots in all 3 case studies
 - [ ] Fill in Spanish translations in `js/site.js` → `es: {}` object
-- [ ] Build the "07 — Redesign" section in `case-study-new-site-architecture.html`: three before/after scenarios (Security Profile, Requirements, Navigation & Vendor Profile) — full analysis and HTML section plan already written in `before-after-analysis.md`, images already in repo (`UIArtifacts-beforeAfter.png`, `Requirements.png`, `navigationAndVendorProfile-beforeAfter.png`); `requirements.mp4` / `securityProfile.mp4` are also available if video is preferred over stills
+- [x] Three before/after scenarios (Security Profile, Requirements, Navigation & Vendor Profile) written into the Architecture (06) section of `case-study-new-site-architecture.html`, using `before-after-analysis.md` — `requirements.mp4` / `securityProfile.mp4` still available if video is preferred over stills later
 - [ ] Place `hackathon.gif` into the AI Bonus banner in `case-study-new-site-architecture.html` (Outcomes section)
 - [ ] Decide fate of `case-study-personas-ia.html` and `case-study-new-site-architecture2.html` — both kept intentionally for now, not linked from `index.html`
 
@@ -220,11 +221,13 @@ const domain = 'email.com'; // ← your email domain
 - **Key themes:** object-oriented IA, mental models, feedback pattern design
 - **Research methods:** stakeholder interviews, CS ticket analysis, affinity mapping
 - **Bonus banner:** AI Bonus / Instant Insights `.ai-banner` moved in from CS2 this session — sits at the end of the Outcomes section
-- **Pending — Redesign section:** three before/after scenarios analyzed and ready to build (see `before-after-analysis.md` in the same repo):
-  1. Security Profile — unified artifact-row list replacing mixed cards/tables
-  2. Requirements — accordion + summary dashboard replacing single-requirement tab view
-  3. Navigation & Vendor Profile — Vendor Profile as a nested nav section replacing a full-screen dialog
-  Narrative thread: define the object once (Security Profile), reuse it in the accordion (Requirements), reuse the same thinking in the nav hierarchy (Navigation)
+- **Redesign scenarios — done:** all three before/after scenarios now written into the Architecture (06) section, following `before-after-analysis.md`:
+  1. Navigation & Vendor Profile — Vendor Profile as a nested nav section replacing a full-screen dialog (product-split level)
+  2. Security Profile — unified artifact-row list replacing mixed cards/tables (`UIArtifacts-beforeAfter.png`)
+  3. Requirements — accordion + summary dashboard replacing single-requirement tab view (`Requirements.png`)
+  Narrative thread used in the prose: object modeled once at the nav level → reused as one artifact row (Security Profile) → reused again inside an accordion (Requirements)
+- **Password gate:** the page is client-side password protected (inline `<style>`/`<script>` at the top and bottom of the file). It checks the entered password against a small dependency-free hash (FNV-1a, not Web Crypto — chosen specifically so it also works when the file is opened directly via `file://`, where `crypto.subtle` is unavailable in most browsers) and unlocks by removing a `cs3-locked` class from `<body>`; once correct, it's remembered via `localStorage` so returning visitors don't need to re-enter it. **The plaintext password is intentionally not written anywhere in this repo** (including here), since the repo is public — only its hash lives in the HTML. Change the password by computing the new value's FNV-1a hash (see the `simpleHash()` function near the bottom of `case-study-new-site-architecture.html`) and swapping the `HASH` constant.
+  - ⚠️ Heads up: this is a soft gate, not real security. The page's HTML, images, and video are still fully downloaded by the browser and visible via "View Source" or dev tools; a technically motivated visitor could bypass it. It's fine for keeping the case study out of casual browsing, not for protecting genuinely confidential material.
 
 ---
 

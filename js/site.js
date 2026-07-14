@@ -260,6 +260,61 @@ function initVideoLightbox() {
 }
 
 /* ─────────────────────────────────────────────────────────
+   8. TESTIMONIAL WORD REVEAL
+   ─────────────────────────────────────────────────────────
+   Splits each .testimonial-quote into per-word spans, then
+   fades them in one by one when the quote scrolls into view,
+   as if the person were speaking the line out loud.
+───────────────────────────────────────────────────────── */
+function initTestimonialReveal() {
+  const quotes = document.querySelectorAll('.testimonial-quote');
+  if (!quotes.length) return;
+
+  quotes.forEach(quote => {
+    const nodes = Array.from(quote.childNodes);
+    const words = [];
+    quote.textContent = '';
+
+    nodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent.split(/(\s+)/).forEach(part => {
+          if (!part.length) return;
+          if (/^\s+$/.test(part)) {
+            quote.appendChild(document.createTextNode(part));
+          } else {
+            const span = document.createElement('span');
+            span.className = 'tq-word';
+            span.textContent = part;
+            quote.appendChild(span);
+            words.push(span);
+          }
+        });
+      } else {
+        // Element node (e.g. <code>) — animate as a single word
+        const span = document.createElement('span');
+        span.className = 'tq-word';
+        span.appendChild(node.cloneNode(true));
+        quote.appendChild(span);
+        words.push(span);
+      }
+    });
+
+    words.forEach((w, i) => { w.style.transitionDelay = (i * 35) + 'ms'; });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-talking');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.testimonial-card').forEach(card => observer.observe(card));
+}
+
+/* ─────────────────────────────────────────────────────────
    INIT — runs after DOM is ready
 ───────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -284,6 +339,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Video lightbox
   initVideoLightbox();
+
+  // Testimonial word-by-word reveal
+  initTestimonialReveal();
 
   // Sync OS theme preference change (no stored value)
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
