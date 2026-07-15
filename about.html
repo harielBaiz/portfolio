@@ -6,18 +6,18 @@
   <link rel="stylesheet" href="css/base.css"/>
   <link rel="stylesheet" href="css/about.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About — Héctor Ariel Baiz · Product Designer</title>
+  <title>About — Hariel Baiz · Product Designer</title>
 </head>
 <body>
 
 <nav>
-  <a class="nav-name" href="index.html" data-i18n="nav.brand">Héctor Ariel Baiz</a>
+  <a class="nav-name" href="index.html" data-i18n="nav.brand">Hariel Baiz</a>
   <ul class="nav-links">
     <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
     <li><a href="about.html" aria-current="page" data-i18n="nav.about">About</a></li>
-    <li><a href="downloads/Hector-Ariel-Baiz-Resume-EN.pdf" target="_blank" data-i18n="nav.resume">Resume</a></li>
-    <li><a href="hariel.baiz@gmail.com" data-i18n="nav.contact" data-email-href>Contact</a></li>
-    <li><a href="https://linkedin.com/in/yourprofile" class="nav-cta" target="_blank" data-i18n="nav.linkedin">LinkedIn</a></li>
+    <li><a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank" data-i18n="nav.resume">Resume</a></li>
+    <li><a href="#" data-i18n="nav.contact" data-email-href>Contact</a></li>
+    <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank" data-i18n="nav.linkedin">LinkedIn</a></li>
   </ul>
   <div class="nav-controls">
     <button class="theme-toggle" aria-label="Toggle theme">
@@ -33,7 +33,7 @@
 
 <!-- ── HERO ── -->
 <header class="about-hero">
-  <div class="about-hero__inner">
+  <div class="about-hero__inner reveal">
     <span class="about-eyebrow">Product Designer · Design Systems</span>
     <h1>I design products that <em>scale</em> — and systems that hold them together.</h1>
   </div>
@@ -48,46 +48,20 @@
       <p>I'm a product designer with 5+ years building B2B SaaS tools. Most of that time was spent at Bitsight — a cybersecurity company where design decisions have real consequences for security teams managing hundreds of vendors at once.</p>
       <p>I care most about the work that happens between wireframes and shipping: the alignment conversations, the edge-case inventory, the moment a token system makes a color-blind mode trivially easy to add. Good design is often invisible. Broken design always isn't.</p>
       <p>Outside of product work, I'm drawn to typography, editorial design, and building things that feel considered — not assembled.</p>
+      <!--
+        Graphic design background — hover/focus a term to preview a GIF of related work.
+        Add the actual files at the paths below; the preview box degrades gracefully
+        (shows a plain color chip) until each GIF exists.
+      -->
+      <p class="about-gd-para">
+        Before product design, I spent a few years doing graphic design work: <span class="gd-term" tabindex="0" data-label="Branding" style="--preview: url('images/graphic-branding.gif')">Branding</span>, <span class="gd-term" tabindex="0" data-label="Editorial" style="--preview: url('images/graphic-editorial.gif')">Editorial</span> layouts, and <span class="gd-term" tabindex="0" data-label="Illustration" style="--preview: url('images/graphic-illustration.gif')">Illustration</span>. That background is still the reason I care so much about type, rhythm, and hierarchy in product work. Hover (or tab to) a word to see a glimpse.
+      </p>
     </div>
     <aside class="about-bio__aside">
       <figure class="about-photo about-photo--placeholder">
         <span>Photo</span>
       </figure>
     </aside>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- NUMBERS -->
-  <section class="about-facts reveal">
-    <div class="about-fact">
-      <span class="fact-num">5+</span>
-      <div class="fact-copy">
-        <strong>Years of experience</strong>
-        <span>Product design, design systems, and UX research in B2B SaaS</span>
-      </div>
-    </div>
-    <div class="about-fact">
-      <span class="fact-num">160</span>
-      <div class="fact-copy">
-        <strong>Design tokens shipped</strong>
-        <span>Primitives + semantic tokens covering light, dark, and color-blind modes</span>
-      </div>
-    </div>
-    <div class="about-fact">
-      <span class="fact-num">−40%</span>
-      <div class="fact-copy">
-        <strong>Review time reduced</strong>
-        <span>Measured outcome from the InfoSec Questionnaire redesign</span>
-      </div>
-    </div>
-    <div class="about-fact">
-      <span class="fact-num">15→2</span>
-      <div class="fact-copy">
-        <strong>Days, assessment turnaround</strong>
-        <span>IA redesign driven by research-backed personas</span>
-      </div>
-    </div>
   </section>
 
   <div class="divider"></div>
@@ -114,8 +88,8 @@
     <h2>Resume</h2>
     <p>Available in English and Spanish.</p>
     <div class="resume-links">
-      <a href="downloads/Hector-Ariel-Baiz-Resume-EN.pdf" target="_blank" class="btn-primary">Download — English ↗</a>
-      <a href="downloads/Hector-Ariel-Baiz-Resume-ES.pdf" target="_blank" class="btn-secondary">Descargar — Español ↗</a>
+      <a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank" class="btn-primary">Download — English ↗</a>
+      <a href="downloads/Hariel-Baiz-Resume-ES.pdf" target="_blank" class="btn-secondary">Descargar — Español ↗</a>
     </div>
   </section>
 
@@ -126,16 +100,15 @@
   <h2>Let's work <em>together</em></h2>
   <p>Open to product design and design systems roles. Remote-friendly.</p>
   <div class="contact-links">
-    <a href="#" class="btn-white" data-email>your@email.com</a>
-    <a href="https://linkedin.com/in/yourprofile" class="btn-ghost-dark">LinkedIn ↗</a>
+    <a href="#" class="btn-white" data-email>hariel.baiz@gmail.com</a>
+    <a href="https://www.linkedin.com/in/hariel-baiz" class="btn-ghost-dark">LinkedIn ↗</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Héctor Ariel Baiz · Product Designer</p>
-  <a href="#" data-email>your@email.com</a>
+  <p>© 2025 Hariel Baiz · Product Designer</p>
+  <a href="#" data-email>hariel.baiz@gmail.com</a>
 </footer>
 
 <script src="js/site.js" defer></script>
-</body>
-</html>
+</

@@ -14,9 +14,9 @@
  *
  * COLOR RULES
  *   · UI uses neutral scale exclusively
- *   · --brand (#2b0c7d) = interactive only:
+ *   · --brand (#1e2fc2, blue) = interactive only:
  *     buttons, links, active nav, focus ring, tags text
- *   · Illustration palette (magenta, purple tints) = NOT for UI
+ *   · Accent illustration palette (orange, yellow) = NOT for UI
  *
  * TYPOGRAPHY RULES (from Figma Typography page)
  *   Display  → Space Grotesk Bold    72/56/40px  tracking -2/-1.5/-1px
@@ -49,10 +49,25 @@
   --n-950: #0a0a0a;
   --n-950-opacity: #1717179f;
 
-  /* Brand primitives */
-  --purple-600: #3a149a;   /* hover state */
-  --purple-700: #2b0c7d;   /* default interactive */
-  --purple-300: #9b7dff;   /* brand on dark bg */
+  /* Brand primitives — blue scale (poster reference)
+     Dark mode needs separate values for TEXT (must be light enough to
+     read on near-black bg) vs FILL (must be dark enough for white
+     button text to pass AA on top of it) — a single mid-blue can't
+     satisfy both. See blue-400 (text) vs blue-500 (fill) below. */
+  --blue-300: #8CA0FF;   /* lightest — dark-mode text hover (WCAG AA verified) */
+  --blue-400: #6E86FF;   /* dark-mode default TEXT (links, tags, CTAs) — AA verified */
+  --blue-500: #3350F0;   /* dark-mode button/progress FILL (pairs with white text) — AA verified */
+  --blue-600: #1E2FC2;   /* primary interactive — light-mode default (text + fill) */
+  --blue-700: #131F94;   /* deepest blue — light-mode hover */
+
+  /* Accent primitives — illustration / decorative use only, not for core UI */
+  --orange-500: #E2601C;
+  --yellow-500: #E3A72A;
+
+  /* Legacy purple aliases kept for reference — no longer used as brand */
+  --purple-600: #3a149a;
+  --purple-700: #2b0c7d;
+  --purple-300: #9b7dff;
   --purple-500: #4B1EBA;
   --purple-400: #673CD8;
 }
@@ -81,12 +96,14 @@
   --border:     var(--n-200);   /* default #e8e8e8 */
   --border-mid: var(--n-300);   /* medium  #d4d4d4 */
   --border-str: var(--n-400);   /* strong  #a3a3a3 */
-  --border-on-inverse: var(--n-600);
+  --border-on-inverse: var(--n-400);  /* 7.11:1 vs --bg-inverse here (near-black #171717) */
 
   /* Brand — interactive elements only */
-  --brand:       var(--purple-500);  /* #2b0c7d */
-  --brand-hover: var(--purple-600);  /* #3a149a */
-  --brand-tag-bg: var(--n-200);      /* tag pill background */
+  --brand:       var(--blue-600);  /* #1E2FC2 — text/link use */
+  --brand-hover: var(--blue-700);  /* #131F94 */
+  --brand-fill:       var(--brand);        /* button/progress-bar backgrounds */
+  --brand-fill-hover: var(--brand-hover);
+  --brand-tag-bg: var(--n-200);    /* tag pill background */
 
   /* Nav */
   --nav-bg:      var(--surface-overlay);
@@ -130,17 +147,25 @@
   --border:     var(--n-700);   /* #262626 */
   --border-mid: var(--n-600);   /* #3d3d3d */
   --border-str: var(--n-500);   /* #525252 */
+  /* --bg-inverse flips to near-white here — was missing this override
+     entirely, so .btn-ghost-dark's border fell back to the light-mode
+     value (n-600) or, worse, a hardcoded white that vanished. */
+  --border-on-inverse: var(--n-500);  /* 4.35:1 vs --bg-inverse here (near-white #f5f5f5) */
 
-  /* Brand — lighter purple for dark bg contrast */
-  --brand:       var(--purple-400); 
-  --brand-hover: var(--purple-300);
-  --brand-tag-bg: var(--n-600);
+  /* Brand — text use: lighter blue, AA-verified against --bg and --bg-subtle */
+  --brand:       var(--blue-400);
+  --brand-hover: var(--blue-300);
+  /* Fill use (buttons, progress bar): darker blue so white text stays AA-compliant */
+  --brand-fill:       var(--blue-500);
+  --brand-fill-hover: var(--blue-600);
+  /* n-600 was too light for blue-400 text (1.2:1) — n-800 gives 4.7:1 */
+  --brand-tag-bg: var(--n-800);
 
   /* Nav */
   --nav-bg:     var(--surface-overlay);
   --nav-border: var(--border);
-  --nav-text:   var(--text);
-  --nav-link:   var(--purple-300);
+  --nav-text:   var(--text-3);
+  --nav-link:   var(--text);
 
   /* Callout surfaces */
   --surface-feature: var(--n-900);
@@ -202,9 +227,9 @@
   --radius-sm:  var(--r-sm);
   --radius-md:  var(--r-md);
   --radius-lg:  var(--r-lg);
-  --purple:     var(--brand);
-  --purple-mid: var(--brand-hover);
-  --magenta:    var(--brand);
+  --purple:     var(--brand);        /* now resolves to blue */
+  --purple-mid: var(--brand-hover);  /* now resolves to blue */
+  --magenta:    var(--brand);        /* now resolves to blue */
   --bg-soft:    var(--bg-subtle);
   --bg-card:    var(--surface-card);
   --text-mid:   var(--text-2);

@@ -511,7 +511,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .objects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0; }
 .objects-col h3 { font-family: var(--f-ui); font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 1rem; margin-top: 0; }
 .object-item { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; }
-.object-dot  { width: 8px; height: 8px; border-radius: 50%; background: var(--brand); flex-shrink: 0; margin-top: 0.35rem; }
+.object-dot  { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-fill); flex-shrink: 0; margin-top: 0.35rem; }
 .object-name { font-family: var(--f-ui); font-weight: 600; font-size: 0.875rem; color: var(--text); margin-bottom: 2px; }
 .object-desc { font-family: var(--f-ui); font-size: 0.8rem; color: var(--text-3); }
 
@@ -521,7 +521,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .anatomy-part { font-family: var(--f-mono); font-size: 0.78rem; background: var(--bg-muted); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 0.2rem 0.6rem; color: var(--text-2); }
 .anatomy-dot  { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 4px; }
 .a-foundation { background: var(--n-200); }
-.a-property   { background: var(--brand); opacity: 0.6; }
+.a-property   { background: var(--brand-fill); opacity: 0.6; }
 .a-class      { background: var(--n-300); }
 .a-modifier   { background: var(--n-400); }
 .a-optional   { background: var(--n-500); }

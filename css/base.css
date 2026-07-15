@@ -181,7 +181,7 @@ nav {
   line-height: 20px;
   letter-spacing: 0.1px;
   color: #fff;
-  background: var(--brand);
+  background: var(--brand-fill);
   padding: 10px 20px;
   border-radius: var(--r-md);
   border: none;
@@ -191,7 +191,7 @@ nav {
   white-space: nowrap;
 }
 .btn-primary:hover {
-  background: var(--brand-hover);
+  background: var(--brand-fill-hover);
   transform: translateY(-1px);
 }
 
@@ -248,7 +248,7 @@ nav {
   font-size: 14px;
   line-height: 20px;
   color: var(--text-on-inverse);
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid var(--border-on-inverse);
   padding: 10px 22px;
   border-radius: var(--r-md);
   text-decoration: none;
@@ -256,7 +256,7 @@ nav {
   background: transparent;
   transition: border-color 0.15s;
 }
-.btn-ghost-dark:hover { border-color: rgba(255,255,255,0.6); }
+.btn-ghost-dark:hover { border-color: var(--text-on-inverse); }
 
 /* ── CHIPS / TAGS ───────────────────────────────────────── */
 
@@ -350,7 +350,7 @@ footer a:hover { font-weight: 600; }
 .progress-fill {
   height: 100%;
   width: 0%;
-  background: var(--brand);
+  background: var(--brand-fill);
   transition: width 0.1s linear;
 }
 

@@ -1,4 +1,4 @@
-# Héctor Ariel Baiz · Portfolio — Session Context
+# Hariel Baiz · Portfolio — Session Context
 
 > Keep this file in the root of the repo.
 > Start each Claude session with:
@@ -8,12 +8,36 @@
 
 ## Who I am
 
-- **Name:** Héctor Ariel Baiz
+- **Name:** Hariel Baiz (goes by Ariel; "Hariel" is the consistent brand name used across email, LinkedIn, and this portfolio as of 2026-07-14 — see decision note below)
 - **Role targeting:** Product Designer / Design Systems Designer
 - **Experience:** 5–8 years
 - **Domain:** B2B SaaS · Last company: Bitsight (cybersecurity) — [add current/target domain if different]
 - **Native language:** Spanish (English is secondary)
 - **Tools:** Figma, Design Tokens, Prototyping, WCAG/A11y
+
+---
+
+## Writing Style Rules (apply to all case studies)
+
+- **Avoid overusing the em dash (—) in prose.** Prefer periods, commas, or colons to break up sentences instead. Reserve the em dash for a small number of structural uses only:
+  - Section numbering convention: `01 — Context`, `02 — Problem`, etc. (nav + section labels)
+  - The page `<title>` separator
+  - Direct testimonial/customer quotes, where a dash can reflect natural speech
+- When reviewing or writing new sections, default to: period for a full sentence break, comma for a soft pause, colon to introduce a list or explanation, parentheses for a true aside. Applied to `case-study-infosec-questionnaire.html` on 2026-07-14 (cut from 76 em dashes down to 14 structural ones).
+
+---
+
+## Lessons Learned / Reflection Section — Unified Structure (2026-07-14)
+
+All case studies' closing section now match `case-study-design-tokens.html`'s pattern: `<h3>` subheading + plain `<p>` paragraphs, no bullet list, no bold sub-titles, no card grid. Each paragraph opens with the old bolded title folded into its first sentence (e.g. "Understand the system before you touch the UI. The original platform had no formal documentation...").
+
+Before this, three different structures existed: `case-study-infosec-questionnaire.html` used `<ul class="lesson-list">` with bold titles; `case-study-new-site-architecture.html`, `case-study-personas-ia.html`, and `case-study-new-site-architecture2.html` used a `.reflection-grid` of `.cs-card` items. Those CSS classes (`.lesson-list`, `.lesson-body`, `.reflection-grid`, `.cs-card`) are still defined in `case-study.css` but are no longer used by any of the 5 case study files — safe to remove later if nothing else references them.
+
+If writing a new case study, use `case-study-design-tokens.html`'s Lessons Learned section as the template.
+
+## Naming Decision (2026-07-14)
+
+Portfolio brand name changed from "Héctor Ariel Baiz" to **"Hariel Baiz"** everywhere (nav, hero byline, page titles, footer copyright, resume filenames). Reasoning: email (`hariel.baiz@gmail.com`) and LinkedIn (`linkedin.com/in/hariel-baiz`) already used "Hariel" — using a different name on the portfolio created a 3-way mismatch that made cross-referencing harder for recruiters. Ariel still goes by "Ariel" personally; "Hariel" is the consistent professional/brand handle across all channels. Don't revert to "Héctor Ariel Baiz" without asking first.
 
 ---
 
@@ -55,9 +79,11 @@ portfolio/
 │   │   before-after.png, requirements.mp4, securityProfile.mp4                                    (CS3)
 │   └── (accessibility/tokens reference set: color-blind-mode.png, elevation-table.jpg, spacing-tokens.mp4, etc.)
 └── downloads/
-    ├── Hector-Ariel-Baiz-Resume-EN.pdf
-    └── Hector-Ariel-Baiz-Resume-ES.pdf
+    ├── Hariel-Baiz-Resume-EN.pdf
+    └── Hariel-Baiz-Resume-ES.pdf
 ```
+
+**Note:** the old `Hector-Ariel-Baiz-Resume-*.pdf` files still exist in `downloads/` as duplicates (kept since files can't be silently deleted from this folder). Safe to delete once you've confirmed the new links work — just ask Claude, or remove them yourself.
 
 ---
 
@@ -66,7 +92,7 @@ portfolio/
 | File | Status | Notes |
 |------|--------|-------|
 | `index.html` | ✅ Done | Nav, hero, 3 project cards, skills, about, contact |
-| `about.html` | ✅ Done | Bio, PVP, personal section, contact |
+| `about.html` | ✅ Done | Bio, PVP, personal section, contact. Facts/numbers section removed (2026-07-14). New graphic design paragraph with hover/focus GIF-preview terms (`.gd-term`) — needs real GIF assets, see Pending. Blue page background + curtain-lift intro animation was tried, then rolled back same day per Ariel's request — page is back to the original light/neutral theme (`--bg-muted` hero, standard `--text` tokens); `.gd-term` restyled to use `--brand`/`--text-3` instead of the blue-specific colors |
 | `case-study-design-tokens.html` | ✅ Structure done | Needs real images in placeholders |
 | `case-study-infosec-questionnaire.html` | ✅ Structure done | New sections added (see CS2 notes below). AI Bonus banner moved OUT to CS3 this session. Needs real images in placeholders |
 | `case-study-personas-ia.html` | ⏸ Kept for reference | Earlier draft of CS3. No longer linked from `index.html` — kept intentionally per Ariel's request, not deleted |
@@ -83,8 +109,9 @@ portfolio/
 
 ### Pending
 
-- [ ] Add real email address — edit `js/site.js`: set `user` and `domain` variables
-- [ ] Add LinkedIn URL — search `linkedin.com/in/yourprofile` across all HTML files
+- [x] Real email address set in `js/site.js` (`hariel.baiz@gmail.com`)
+- [x] LinkedIn URL set (`linkedin.com/in/hariel-baiz`)
+- [ ] Add the 3 graphic design preview GIFs for `about.html`'s hover terms: `images/graphic-branding.gif`, `images/graphic-editorial.gif`, `images/graphic-illustration.gif`. Until these exist, hovering/focusing "Branding" / "Editorial" / "Illustration" shows a plain blue color chip with the word as a label (graceful fallback, not broken) — see `.gd-term` in `css/about.css`
 - [ ] Add `images/feedback-patterns-checklist.png` — new image referenced in `case-study-new-site-architecture.html`, Outcomes section, for the "Feedback patterns, standardized" subsection (uses the existing unused `.patterns-grid` / `.pattern-card` CSS, already scoped "(cs3)" in `case-study.css`)
 - [ ] Replace placeholder images (`<figure class="hero-cover hero-cover--placeholder">`) with real screenshots in all 3 case studies
 - [ ] Fill in Spanish translations in `js/site.js` → `es: {}` object
@@ -103,8 +130,9 @@ portfolio/
 
 ### Color Rules
 - **Neutral scale only** for all UI: backgrounds, borders, text, surfaces
-- **`--brand` (`#4B1EBA` purple)** = interactive elements ONLY: buttons, links, active nav, tag text, focus ring
-- **Illustration palette** (magenta, purple tints) = NOT for UI — illustration only
+- **`--brand` (`#1E2FC2` blue, light mode / `#4F6BFB` dark mode)** = interactive elements ONLY: buttons, links, active nav, tag text, focus ring. Full scale: `--blue-300` `#8CA0FF` → `--blue-700` `#131F94`, defined in `css/tokens.css`. Changed from purple to blue on 2026-07-14, sourced from a Bauhaus-style poster reference.
+- **Accent illustration palette** (`--orange-500` `#E2601C`, `--yellow-500` `#E3A72A`) = NOT for UI — illustration/decorative only
+- Old purple primitives (`--purple-500` etc.) kept in `tokens.css` for reference but no longer wired to `--brand`
 - Dark mode handled by `[data-theme="dark"]` in `tokens.css` — all colors flip automatically
 
 ### Typography System

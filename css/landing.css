@@ -84,10 +84,11 @@
   flex-wrap: wrap;
 }
 
-/* ── CASE LIST — one row per project ────────────────────── */
+/* ── CASE LIST — one card per project ───────────────────── */
 .case-list {
   display: flex;
   flex-direction: column;
+  gap: var(--space-md);
   margin-top: 48px;
 }
 
@@ -97,14 +98,17 @@
   align-items: stretch;
   text-decoration: none;
   color: inherit;
-  border-top: 1px solid var(--border);
-  transition: background 0.2s;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: background 0.2s, border-color 0.2s;
   min-height: 420px;
 }
-.case-list .case-row:last-child {
-  border-bottom: 1px solid var(--border);
+.case-row:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border-mid);
 }
-.case-row:hover { background: var(--bg-subtle); }
 
 /* Flip layout on even rows */
 .case-row--reverse { direction: rtl; }
@@ -118,13 +122,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid var(--border);
   min-height: 420px;
   position: relative;
+  /* Match the card's outer radius on the two outer corners only */
+  border-radius: var(--r-lg) 0 0 var(--r-lg);
 }
 .case-row--reverse .case-row__image {
-  border-right: none;
-  border-left: 1px solid var(--border);
+  border-radius: 0 var(--r-lg) var(--r-lg) 0;
 }
 .case-row__image img {
   width: 100%;
@@ -132,6 +136,29 @@
   object-fit: cover;
   display: block;
 }
+
+/* Password-protected badge on case study thumbnail */
+.case-row__lock {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--f-ui);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  color: var(--text);
+  background: var(--surface-overlay);
+  border: 1px solid var(--border-mid);
+  padding: 5px 10px 5px 8px;
+  border-radius: var(--r-pill);
+}
+.case-row--reverse .case-row__lock { right: auto; left: 14px; }
+.case-row__lock svg { width: 12px; height: 12px; flex-shrink: 0; }
+
 /* Placeholder shown via onerror */
 .case-row__image--placeholder::after {
   content: 'Cover image coming soon';
@@ -263,8 +290,8 @@
   .case-row--reverse { direction: ltr; }
   .case-row__image {
     min-height: 260px;
-    border-right: none !important;
-    border-left: none !important;
+    /* Stacked layout: round only the top corners, image now sits on top */
+    border-radius: var(--r-lg) var(--r-lg) 0 0 !important;
     border-bottom: 1px solid var(--border);
   }
   .case-row__body { padding: 32px 24px; }

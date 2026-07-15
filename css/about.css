@@ -57,6 +57,59 @@
 }
 .about-bio__text p:last-child { margin-bottom: 0; }
 
+/* Graphic design paragraph — hover/focus a term for a floating GIF preview */
+.gd-term {
+  position: relative;
+  display: inline-block;
+  color: var(--brand);
+  font-weight: 600;
+  cursor: default;
+  border-bottom: 1px dotted var(--border-str);
+}
+.gd-term:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.gd-term::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  width: 200px;
+  height: 150px;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  background-color: var(--bg-muted);
+  background-image: var(--preview);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translate(-50%, 8px) scale(0.96);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  z-index: 20;
+}
+.gd-term:hover::after,
+.gd-term:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+@media (max-width: 640px) {
+  /* No hover on touch — keep the term readable, skip the floating preview */
+  .gd-term::after { display: none; }
+}
+
 .about-photo {
   width: 100%;
   aspect-ratio: 3/4;
@@ -77,38 +130,6 @@
   font-family: var(--f-mono);
   font-size: 0.7rem; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--text-3);
-}
-
-/* ── FACTS ──────────────────────────────────────────────── */
-.about-facts {
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  overflow: hidden;
-  margin: 3rem 0;
-}
-.about-fact {
-  background: var(--surface-card);
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-}
-.about-fact:last-child { border-bottom: none; }
-.fact-num {
-  font-family: var(--f-display);
-  font-weight: 700; font-size: 28px;
-  line-height: 1; letter-spacing: -1px;
-  color: var(--text); min-width: 64px; flex-shrink: 0;
-}
-.fact-copy strong {
-  display: block; font-family: var(--f-ui);
-  font-weight: 500; font-size: 14px;
-  line-height: 20px; color: var(--text); margin-bottom: 2px;
-}
-.fact-copy span {
-  font-family: var(--f-ui);
-  font-size: 12px; line-height: 16px; color: var(--text-3);
 }
 
 /* ── SKILLS ─────────────────────────────────────────────── */

@@ -4,7 +4,7 @@ document.documentElement.classList.add('js');
 /**
  * site.js
  * ─────────────────────────────────────────────────────────
- * Héctor Ariel Baiz · Portfolio
+ * Hariel Baiz · Portfolio
  *
  * Features:
  *   1. Theme toggle   (light ↔ dark)  — persisted to localStorage
@@ -85,7 +85,7 @@ const i18n = {
     'contact.sub':   'Open to product design and design systems roles. Remote-friendly.',
 
     /* Footer */
-    'footer.copy': '© 2025 Héctor Ariel Baiz · Product Designer',
+    'footer.copy': '© 2025 Hariel Baiz · Product Designer',
   },
 
   es: {
@@ -128,7 +128,7 @@ const i18n = {
     'contact.sub':   'Abierto a roles de diseño de producto y design systems. Trabajo remoto.',
 
     /* Footer */
-    'footer.copy': '© 2025 Héctor Ariel Baiz · Diseñador de Producto',
+    'footer.copy': '© 2025 Hariel Baiz · Diseñador de Producto',
   },
 };
 
@@ -385,8 +385,8 @@ document.addEventListener('DOMContentLoaded', () => {
 ───────────────────────────────────────────────────────── */
 (function injectEmail() {
   // Split the email to prevent static scraping too
-  const user   = 'your';
-  const domain = 'email.com';
+  const user   = 'hariel.baiz';
+  const domain = 'gmail.com';
   const email  = user + '@' + domain;
   const mailto = 'mailto:' + email;
 
