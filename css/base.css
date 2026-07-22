@@ -72,6 +72,9 @@ nav {
   color: var(--nav-text);
   text-decoration: none;
   transition: color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
@@ -133,6 +136,8 @@ nav {
 .theme-toggle .icon-moon { display: block; }
 [data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+.theme-toggle .icon-sun svg,
+.theme-toggle .icon-moon svg { width: 16px; height: 16px; display: block; }
 
 /* Lang toggle */
 .lang-toggle {
@@ -299,6 +304,11 @@ footer a {
   line-height: 16px;
   color: var(--text-on-inverse);
   text-decoration: none;
+}
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 footer a:hover { font-weight: 600; }
 

@@ -50,13 +50,13 @@ const i18n = {
     'nav.work':    'Work',
     'nav.about':   'About',
     'nav.resume':  'Resume',
-    'nav.contact': 'Contact ↗',
+    'nav.contact': 'Contact',
 
     /* Landing — hero */
     'hero.eyebrow': 'Product Designer · Design Systems',
     'hero.title':   'I design products that scale — and systems that hold them together.',
-    'hero.sub':     '5+ years building B2B SaaS at Bitsight. I bridge design and engineering through token-based systems, research-driven decisions, and interfaces that make sense.',
-    'hero.cta.work':  'See my work ↓',
+    'hero.sub':     '6+ years building B2B SaaS at Bitsight. I bridge design and engineering through token-based systems, research-driven decisions, and interfaces that make sense.',
+    'hero.cta.work':  'See my work',
     'hero.cta.about': 'About me',
 
     /* Landing — work section */
@@ -65,7 +65,7 @@ const i18n = {
     'work.sub':   'Research-backed decisions, systems thinking, and a focus on outcomes — not just deliverables.',
 
     /* Card CTAs */
-    'card.cta': 'Read Case Study →',
+    'card.cta': 'Read Case Study',
 
     /* Landing — skills */
     'skills.label': 'Skills & Tools',
@@ -74,7 +74,7 @@ const i18n = {
     /* Landing — about */
     'about.label': 'About',
     'about.title': 'Design that earns its place',
-    'about.p1': "I'm a product designer with 5+ years building B2B SaaS tools. Most of that time was spent at Bitsight — a cybersecurity company where design decisions have real consequences for security teams managing hundreds of vendors.",
+    'about.p1': "I'm a product designer with 6+ years building B2B SaaS tools. Most of that time was spent at Bitsight — a cybersecurity company where design decisions have real consequences for security teams managing hundreds of vendors.",
     'about.p2': "I care most about the work that happens between wireframes and shipping: the alignment conversations, the edge-case inventory, the moment a token system makes a color-blind mode trivially easy to add. Good design is often invisible. Broken design always isn't.",
     'about.p3': 'Outside of product work, I\'m drawn to typography, editorial design, and building things that feel considered — not assembled.',
     'about.cta.resume': 'View Resume ↗',
@@ -85,7 +85,7 @@ const i18n = {
     'contact.sub':   'Open to product design and design systems roles. Remote-friendly.',
 
     /* Footer */
-    'footer.copy': '© 2025 Hariel Baiz · Product Designer',
+    'footer.copy': '© 2026 Hariel Baiz · Product Designer',
   },
 
   es: {
@@ -93,13 +93,13 @@ const i18n = {
     'nav.work':    'Proyectos',
     'nav.about':   'Sobre mí',
     'nav.resume':  'CV',
-    'nav.contact': 'Contacto ↗',
+    'nav.contact': 'Contacto',
 
     /* Landing — hero */
     'hero.eyebrow': 'Diseñador de Producto · Design Systems',
     'hero.title':   'Diseño productos que escalan — y los sistemas que los sostienen.',
-    'hero.sub':     'Más de 5 años construyendo SaaS B2B en Bitsight. Conecto diseño e ingeniería a través de sistemas de tokens, decisiones basadas en investigación e interfaces que realmente tienen sentido.',
-    'hero.cta.work':  'Ver proyectos ↓',
+    'hero.sub':     'Más de 6 años construyendo SaaS B2B en Bitsight. Conecto diseño e ingeniería a través de sistemas de tokens, decisiones basadas en investigación e interfaces que realmente tienen sentido.',
+    'hero.cta.work':  'Ver proyectos',
     'hero.cta.about': 'Sobre mí',
 
     /* Landing — work */
@@ -108,7 +108,7 @@ const i18n = {
     'work.sub':   'Decisiones respaldadas por investigación, pensamiento sistémico y foco en resultados — no solo en entregables.',
 
     /* Card CTAs */
-    'card.cta': 'Ver Case Study →',
+    'card.cta': 'Ver Case Study',
 
     /* Landing — skills */
     'skills.label': 'Habilidades y Herramientas',
@@ -117,7 +117,7 @@ const i18n = {
     /* Landing — about */
     'about.label': 'Sobre mí',
     'about.title': 'Diseño que se justifica solo',
-    'about.p1': 'Soy diseñador de producto con más de 5 años construyendo herramientas SaaS B2B. La mayor parte de ese tiempo lo pasé en Bitsight — una empresa de ciberseguridad donde las decisiones de diseño tienen consecuencias reales para los equipos de seguridad.',
+    'about.p1': 'Soy diseñador de producto con más de 6 años construyendo herramientas SaaS B2B. La mayor parte de ese tiempo lo pasé en Bitsight — una empresa de ciberseguridad donde las decisiones de diseño tienen consecuencias reales para los equipos de seguridad.',
     'about.p2': 'Me importa el trabajo que ocurre entre los wireframes y el lanzamiento: las conversaciones de alineación, el inventario de edge cases, el momento en que un sistema de tokens hace que el modo daltónico sea trivialmente fácil de implementar.',
     'about.p3': 'Fuera del trabajo de producto, me atrae la tipografía, el diseño editorial y construir cosas que se sientan pensadas — no ensambladas.',
     'about.cta.resume': 'Ver CV ↗',
@@ -128,7 +128,7 @@ const i18n = {
     'contact.sub':   'Abierto a roles de diseño de producto y design systems. Trabajo remoto.',
 
     /* Footer */
-    'footer.copy': '© 2025 Hariel Baiz · Diseñador de Producto',
+    'footer.copy': '© 2026 Hariel Baiz · Diseñador de Producto',
   },
 };
 
@@ -340,6 +340,23 @@ function initTestimonialReveal() {
   document.querySelectorAll('.testimonial-card').forEach(card => observer.observe(card));
 }
 
+function initCarouselHoverSlow() {
+  const viewport = document.querySelector('.carousel-viewport');
+  const track = document.querySelector('.carousel-track');
+  if (!viewport || !track) return;
+
+  // Web Animations API: changing playbackRate scales speed from the
+  // animation's current position forward, unlike editing animation-duration
+  // in CSS, which recalculates progress from elapsed-time / duration and
+  // makes the track visibly jump back toward its start position.
+  viewport.addEventListener('mouseenter', () => {
+    track.getAnimations().forEach(anim => { anim.playbackRate = 0.25; });
+  });
+  viewport.addEventListener('mouseleave', () => {
+    track.getAnimations().forEach(anim => { anim.playbackRate = 1; });
+  });
+}
+
 /* ─────────────────────────────────────────────────────────
    INIT — runs after DOM is ready
 ───────────────────────────────────────────────────────── */
@@ -368,6 +385,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Testimonial word-by-word reveal
   initTestimonialReveal();
+
+  // Carousel slows on hover instead of pausing
+  initCarouselHoverSlow();
 
   // Sync OS theme preference change (no stored value)
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {

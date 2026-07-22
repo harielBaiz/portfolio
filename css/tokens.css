@@ -159,7 +159,7 @@
   --brand-fill:       var(--blue-500);
   --brand-fill-hover: var(--blue-600);
   /* n-600 was too light for blue-400 text (1.2:1) — n-800 gives 4.7:1 */
-  --brand-tag-bg: var(--n-800);
+  --brand-tag-bg: var(--n-700);
 
   /* Nav */
   --nav-bg:     var(--surface-overlay);
@@ -168,7 +168,7 @@
   --nav-link:   var(--text);
 
   /* Callout surfaces */
-  --surface-feature: var(--n-900);
+  --surface-feature: var(--n-800);
   --surface-win:  #0d1f15;
   --surface-pain: #1f0f0a;
   --border-win:   #1d4a30;

@@ -15,14 +15,14 @@
   <ul class="nav-links">
     <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
     <li><a href="about.html" aria-current="page" data-i18n="nav.about">About</a></li>
-    <li><a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank" data-i18n="nav.resume">Resume</a></li>
-    <li><a href="#" data-i18n="nav.contact" data-email-href>Contact</a></li>
-    <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank" data-i18n="nav.linkedin">LinkedIn</a></li>
+    <li><a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank"><span data-i18n="nav.resume">Resume</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+    <li><a href="#" data-email-href><span data-i18n="nav.contact">Contact</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a></li>
+    <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank"><span data-i18n="nav.linkedin">LinkedIn</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
   </ul>
   <div class="nav-controls">
     <button class="theme-toggle" aria-label="Toggle theme">
-      <span class="icon-moon">☾</span>
-      <span class="icon-sun">☀</span>
+      <span class="icon-moon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
+      <span class="icon-sun"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
     </button>
     <button class="lang-toggle" aria-label="Toggle language">
       <span class="lang-active">EN</span>
@@ -45,7 +45,7 @@
   <!-- BIO -->
   <section class="about-bio reveal">
     <div class="about-bio__text">
-      <p>I'm a product designer with 5+ years building B2B SaaS tools. Most of that time was spent at Bitsight — a cybersecurity company where design decisions have real consequences for security teams managing hundreds of vendors at once.</p>
+      <p>I'm a product designer with 6+ years building B2B SaaS tools. Most of that time was spent at Bitsight — a cybersecurity company where design decisions have real consequences for security teams managing hundreds of vendors at once.</p>
       <p>I care most about the work that happens between wireframes and shipping: the alignment conversations, the edge-case inventory, the moment a token system makes a color-blind mode trivially easy to add. Good design is often invisible. Broken design always isn't.</p>
       <p>Outside of product work, I'm drawn to typography, editorial design, and building things that feel considered — not assembled.</p>
       <!--
@@ -64,6 +64,36 @@
     </aside>
   </section>
 
+  <!-- WORK CAROUSEL -->
+  <section class="work-carousel reveal">
+    <h2>A peek at the pixels</h2>
+    <div class="carousel-viewport">
+      <div class="carousel-track">
+        <img src="images/cs-tokens-cover.jpg" alt="Design token system cover" />
+        <img src="images/cs-questionnaire-cover.jpg" alt="InfoSec questionnaire redesign" />
+        <img src="images/cs-product-split-cover.png" alt="Product split cover" />
+        <img src="images/questionnaire-3pt-design.png" alt="Questionnaire toolbar proposals" />
+        <img src="images/questionnaire-light-dark.png" alt="Questionnaire light and dark mode" />
+        <img src="images/categories-panel.png" alt="Categories panel" />
+        <img src="images/color-blind-mode.png" alt="Color-blind mode support" />
+        <img src="images/UIArtifacts-beforeAfter.png" alt="Security Profile before and after" />
+        <img src="images/Requirements.png" alt="Requirements page before and after" />
+        <img src="images/new-information-architecture.png" alt="New information architecture" />
+        <!-- duplicated for a seamless loop -->
+        <img src="images/cs-tokens-cover.jpg" alt="" aria-hidden="true" />
+        <img src="images/cs-questionnaire-cover.jpg" alt="" aria-hidden="true" />
+        <img src="images/cs-product-split-cover.png" alt="" aria-hidden="true" />
+        <img src="images/questionnaire-3pt-design.png" alt="" aria-hidden="true" />
+        <img src="images/questionnaire-light-dark.png" alt="" aria-hidden="true" />
+        <img src="images/categories-panel.png" alt="" aria-hidden="true" />
+        <img src="images/color-blind-mode.png" alt="" aria-hidden="true" />
+        <img src="images/UIArtifacts-beforeAfter.png" alt="" aria-hidden="true" />
+        <img src="images/Requirements.png" alt="" aria-hidden="true" />
+        <img src="images/new-information-architecture.png" alt="" aria-hidden="true" />
+      </div>
+    </div>
+  </section>
+
   <div class="divider"></div>
 
   <!-- SKILLS -->
@@ -78,6 +108,7 @@
       <div class="skill-item"><div class="skill-icon">🗺</div><div><div class="skill-name">IA & Navigation</div><div class="skill-cat">Card sorting · Tree testing</div></div></div>
       <div class="skill-item"><div class="skill-icon">🤝</div><div><div class="skill-name">Design/Eng Alignment</div><div class="skill-cat">Handoff · Token bridges</div></div></div>
       <div class="skill-item"><div class="skill-icon">📐</div><div><div class="skill-name">Prototyping</div><div class="skill-cat">High-fidelity · Interactive</div></div></div>
+      <div class="skill-item"><div class="skill-icon">✨</div><div><div class="skill-name">Claude</div><div class="skill-cat">Research synthesis · Content · Prototyping</div></div></div>
     </div>
   </section>
 
@@ -88,8 +119,8 @@
     <h2>Resume</h2>
     <p>Available in English and Spanish.</p>
     <div class="resume-links">
-      <a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank" class="btn-primary">Download — English ↗</a>
-      <a href="downloads/Hariel-Baiz-Resume-ES.pdf" target="_blank" class="btn-secondary">Descargar — Español ↗</a>
+      <a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank" class="btn-primary">Download — English <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a href="downloads/Hariel-Baiz-Resume-ES.pdf" target="_blank" class="btn-secondary">Descargar — Español <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
     </div>
   </section>
 
@@ -101,12 +132,12 @@
   <p>Open to product design and design systems roles. Remote-friendly.</p>
   <div class="contact-links">
     <a href="#" class="btn-white" data-email>hariel.baiz@gmail.com</a>
-    <a href="https://www.linkedin.com/in/hariel-baiz" class="btn-ghost-dark">LinkedIn ↗</a>
+    <a href="https://www.linkedin.com/in/hariel-baiz" class="btn-ghost-dark">LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Hariel Baiz · Product Designer</p>
+  <p>© 2026 Hariel Baiz · Product Designer</p>
   <a href="#" data-email>hariel.baiz@gmail.com</a>
 </footer>
 

@@ -94,14 +94,14 @@
   <ul class="nav-links">
     <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
     <li><a href="about.html" data-i18n="nav.about">About</a></li>
-    <li><a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank" data-i18n="nav.resume">Resume</a></li>
-    <li><a href="#" data-i18n="nav.contact" data-email-href>Contact</a></li>
-    <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank" data-i18n="nav.linkedin">LinkedIn</a></li>
+    <li><a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank"><span data-i18n="nav.resume">Resume</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+    <li><a href="#" data-email-href><span data-i18n="nav.contact">Contact</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a></li>
+    <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank"><span data-i18n="nav.linkedin">LinkedIn</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
   </ul>
   <div class="nav-controls">
     <button class="theme-toggle" aria-label="Toggle theme">
-      <span class="icon-moon">☾</span>
-      <span class="icon-sun">☀</span>
+      <span class="icon-moon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
+      <span class="icon-sun"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
     </button>
     <button class="lang-toggle" aria-label="Toggle language">
       <span class="lang-active">EN</span>
@@ -122,11 +122,6 @@
       <span class="chip">Affinity Diagramming</span>
       <span class="chip outline">Bitsight · B2B SaaS</span>
       <span class="chip outline">Lead Designer</span>
-    </div>
-    <div class="hero-byline">
-      <span class="hero-byline-label">Role</span>
-      <span class="hero-byline-name">Hariel Baiz</span>
-      <span class="hero-byline-role">Lead Designer · UX Research</span>
     </div>
   </div>
   <figure class="hero-cover hero-cover--placeholder">
@@ -193,15 +188,15 @@
 
       <div class="methods-grid">
         <div class="cs-card">
-          <h3>Navigation confusion</h3>
+          <div class="card-title">Navigation confusion</div>
           <p>The top bar and left sidebar served both user types at once. Customers looking for their vendor list and vendors looking for their pending assessments landed in the same place — with no clear path forward.</p>
         </div>
         <div class="cs-card">
-          <h3>No system feedback</h3>
+          <div class="card-title">No system feedback</div>
           <p>Users couldn't tell if an action had succeeded. No confirmation after sending a questionnaire. No status on submitted responses. The gap extended to document sharing too — when a vendor sent a SOC 2 report or certificate by email, there was no way to know if the customer had received or reviewed it. Both sides were operating blind.</p>
         </div>
         <div class="cs-card">
-          <h3>Invisible failure mode</h3>
+          <div class="card-title">Invisible failure mode</div>
           <p>Users without a subscription had no support channel. Their frustration generated support tickets — but without research, there was no way to distinguish a usability problem from a missing feature.</p>
         </div>
       </div>
@@ -216,15 +211,15 @@
 
       <div class="methods-grid">
         <div class="cs-card">
-          <h3>User interviews</h3>
+          <div class="card-title">User interviews</div>
           <p>To understand motivations, mental models, and day-to-day workflows. I talked to subscribed and unsubscribed users on both sides — customers and vendors. The goal was to hear how they described their own work before asking how the product fit into it.</p>
         </div>
         <div class="cs-card">
-          <h3>Affinity diagramming</h3>
+          <div class="card-title">Affinity diagramming</div>
           <p>To synthesize observations across participants and surface shared themes. I ran sessions with the VRM and TMH teams together — so the findings weren't just mine. They became a shared understanding across the two product teams.</p>
         </div>
         <div class="cs-card">
-          <h3>Usability studies</h3>
+          <div class="card-title">Usability studies</div>
           <p>To validate the new IA after the product split decision was made. Testing whether users could navigate the new structure before committing to building it.</p>
         </div>
       </div>
@@ -658,11 +653,11 @@
 
       <div class="methods-grid">
         <div class="cs-card">
-          <h3>Before — ThirdPartyTrust</h3>
+          <div class="card-title">Before — ThirdPartyTrust</div>
           <p>Top navigation bar + context-sensitive left sidebar. Both user types shared the same primary nav. The sidebar changed depending on which section you were in, but both customers and vendors saw the same top-level structure.</p>
         </div>
         <div class="cs-card">
-          <h3>After — Bitsight VRM + TMH</h3>
+          <div class="card-title">After — Bitsight VRM + TMH</div>
           <p>Two separate products. Each with a single left sidebar organized around its own core objects. Customers navigate Vendors, Assessments, and Findings. Vendors navigate Profile, Requests, Questionnaires, Certificates, Insurance, and Audits.</p>
         </div>
       </div>
@@ -733,7 +728,7 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-  <p>← <a href="index.html">Back to all work</a> &nbsp;·&nbsp; Hariel Baiz · Product Designer &nbsp;·&nbsp; <a href="#" data-email-href>Contact</a></p>
+  <p><a href="index.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Back to all work</a> &nbsp;·&nbsp; Hariel Baiz · Product Designer &nbsp;·&nbsp; <a href="#" data-email-href>Contact</a></p>
 </footer>
 
 <script src="js/site.js" defer></script>

@@ -10,7 +10,7 @@
   padding: 5rem 48px 4rem;
 }
 .about-hero__inner {
-  max-width: 720px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .about-eyebrow {
@@ -35,24 +35,66 @@
 
 /* ── MAIN ───────────────────────────────────────────────── */
 .about-wrap {
-  max-width: 720px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 48px 6rem;
+}
+
+/* ── WORK CAROUSEL ──────────────────────────────────────── */
+.work-carousel { padding: 1rem 0 3rem; }
+.work-carousel h2 {
+  font-family: var(--f-ui); font-weight: 700;
+  font-size: 24px; line-height: 32px;
+  letter-spacing: -0.25px; color: var(--text);
+  margin: 0 0 24px;
+}
+.carousel-viewport {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: carousel-scroll 80s linear infinite;
+}
+.carousel-track img {
+  height: 280px;
+  width: auto;
+  max-width: 420px;
+  object-fit: cover;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+@keyframes carousel-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { animation: none; }
+}
+@media (max-width: 640px) {
+  .carousel-track img { height: 160px; }
 }
 
 /* ── BIO ────────────────────────────────────────────────── */
 .about-bio {
   display: grid;
-  grid-template-columns: 1fr 240px;
+  grid-template-columns: minmax(0, 640px) 240px;
   gap: 48px;
   align-items: start;
   padding: 4rem 0;
 }
 .about-bio__text p {
   font-family: var(--f-body);
-  font-size: 16px;
-  line-height: 26px;
-  color: var(--text-2);
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--text-1);
   margin-bottom: 1.1rem;
 }
 .about-bio__text p:last-child { margin-bottom: 0; }
@@ -166,8 +208,8 @@
   letter-spacing: -0.25px; color: var(--text); margin-bottom: 8px;
 }
 .about-resume > p {
-  font-family: var(--f-body); font-size: 16px;
-  line-height: 26px; color: var(--text-2); margin-bottom: 24px;
+  font-family: var(--f-body); font-size: 20px;
+  line-height: 1.6; color: var(--text-1); margin-bottom: 24px;
 }
 .resume-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
